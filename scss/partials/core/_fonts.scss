@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Roboto:400,500');
+
+// FONT VARIABLES
+$Roboto:'Roboto', sans-serif;
+$Noto: 'Noto+Serif', serif;
+
+$font-titles: $Noto;
+$font-display: $Roboto;
+
+.formQuestion {
+    font-family: $Roboto;
+    color: $blue--dark;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.formTitle {
+    font-family: $Noto;
+    font-size: 26px;
+    color: $blue--dark;
+}
+
+.formFieldSelect {
+    font-family: $Roboto;
+    font-size: 14px;
+    color: $text--grey;
+}

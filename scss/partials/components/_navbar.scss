@@ -1,0 +1,15 @@
+.navigation {
+    height: 116px;
+    height: 100%;
+    background: $blue--dark;
+
+    padding-left: 30px;
+    padding-right: 30px;
+
+    color: white;
+
+    & p {
+        margin-bottom: 0rem;
+        margin-left: 8px;
+    }
+}
