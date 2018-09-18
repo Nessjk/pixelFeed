@@ -1,0 +1,62 @@
+.step {
+    margin-top: 4rem;
+
+    &__form {
+        /* Rectangle */
+        background: #FFFFFF;
+        border: 1px solid #E6E6E6;
+        box-shadow: 0 5px 10px 0 rgba(0,0,0,0.10);
+        border-radius: 4px;
+        padding: 40px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.selectInput {
+    width: 128px;
+    height: 128px;
+    text-align: center;
+    padding: 20px 20px 5px 20px;
+    margin-right: 20px;
+    margin-bottom: 36px;
+
+    &:hover {
+        //background: lightgrey;
+        cursor: pointer;
+
+        & p {
+            color: white;
+        }
+
+        & svg {
+            fill: white;
+        }
+    }
+
+    @include boxAndShadow;
+
+    &--big {
+        width: 200px!important;
+        height: 200px!important;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        margin-bottom: 0rem;
+    }
+
+    &__title {
+       text-align: center;
+    }
+}
+
+.big--input {
+    width: 200px!important;
+    height: 200px!important;
+}

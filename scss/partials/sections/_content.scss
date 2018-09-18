@@ -12,3 +12,13 @@
 .container--maxWidth {
     max-width: 960px;
 }
+
+.formButtons {
+    display: flex;
+    justify-content: space-between;
+
+    &--step1 {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

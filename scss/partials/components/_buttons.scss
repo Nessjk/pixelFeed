@@ -1,10 +1,12 @@
 
 input {
-  padding: 14px 20px 14px;
-  border-radius: 30px;
-  outline: none;
-  border: none;
-  //font-family: $mont;
+  padding: 11px 20px 11px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  max-width: 400px;
+
+
+  @include boxAndShadow;
 
   & :hover {
     outline: none;
@@ -23,7 +25,6 @@ input {
   // margin-top: 54px;
   transform: scale(1);
   //font-family: $mont;
-  @extend %shadow;
 
   &:hover {
     box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.14);
@@ -34,10 +35,10 @@ input {
 }
 
 .button {
-    /* Rectangle 3: */
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.10);
+    /* Rectangle */
     border-radius: 4px;
     height: 48px;
+    width: 156px;
     padding: 0rem 2rem;
     border: none;
     /* TEXT */
@@ -53,6 +54,7 @@ input {
     &--primary {
       background: $blue--primary;
       color: $white--off;
+      box-shadow: 0 3px 6px 0 rgba(0,0,0,0.10);
 
       &:hover {
         background: $blue--hover;
@@ -62,6 +64,9 @@ input {
     &--secondary {
       background: $grey;
       color: $text--grey;
+      /* Rectangle */
+      border: 1px solid rgba(151,151,151,0.20);
+      box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10);
 
       &:hover {
         background: $grey--hover;

@@ -1,10 +1,15 @@
 
-@mixin boxShadow {
-    box-shadow: 0px 14px 30px 0px rgba(0,0,0,0.14);
+@mixin boxAndShadow  {
+    /* Rectangle: */
+    //background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+    border-radius: 4px;
   }
   
-  %shadow {
-    -webkit-box-shadow: 0px 14px 30px 0px rgba(0,0,0,0.14);
-    -moz-box-shadow: 0px 14px 30px 0px rgba(0,0,0,0.14);
-    box-shadow: 0px 14px 30px 0px rgba(0,0,0,0.14);
-  }
+  // %boxAndShadow {
+  //   background: #FFFFFF;
+  //   border: 1px solid #E6E6E6;
+  //   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  //   border-radius: 4px;
+  // }

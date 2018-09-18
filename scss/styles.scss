@@ -4,10 +4,13 @@
 @import "partials/core/base.scss";
 @import "partials/core/breakpoints.scss";
 
+@import 'partials/components/mixins.scss';
+
 @import "partials/core/modifiers.scss";
 @import "partials/core/page-layout.scss";
 @import "partials/core/typography.scss";
 @import "partials/core/animations.scss";
+@import "partials/core/icons.scss";
 
 // Components
 @import 'partials/components/buttons.scss';
@@ -16,7 +19,7 @@
 @import 'partials/components/cards.scss';
 @import 'partials/components/tags.scss';
 @import 'partials/components/navbar.scss';
-@import 'partials/components/mixins.scss';
+
 
 // Sections
 @import 'partials/sections/content.scss';
