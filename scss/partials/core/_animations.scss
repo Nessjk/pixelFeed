@@ -23,6 +23,32 @@
     }
 }
 
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
 .sinusoid {
     animation: sinusoid 3s ease infinite;
+}
+
+.fadeIn {
+    animation: fadeIn .3s ease-in;
+}
+
+#lottie {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+
+
+    & svg {
+        width: 300px;
+    }
 }

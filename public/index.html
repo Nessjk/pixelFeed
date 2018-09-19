@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+
+<div class="lottieAnimation d-none">
+    <div id="lottie" style="width:1067px;height:600px">
+
+    </div>
+</div>
+       
     <div id="app">
        
 
@@ -273,29 +280,18 @@
                             </div>
                         
                         <!-- STEP 7 ANIMATION -->
-                        <div class="step" v-show="step === 7">
+                        <div id="animationStep" class="step" v-show="step === 7">
                                 <h1 class="formTitle">
-                                    {{stepSixTitles[0].section}}
+                                    {{stepSevenTitles[0].section}}
                                 </h1>
                                 
                                 <!-- Fields -->
-                                <div class="step__form">
+                                <div class="step__form" style="height: 450px;">
         
-                                    <label for="name" class="formQuestion"> {{stepSixTitles[0].question1}}</label>
+                                    <label for="name" class="formQuestion text-center"> {{stepSevenTitles[0].question1}}</label>
                 
                                     <div class="d-flex flex-wrap ">
-                                        <div  v-for="(card,index) in stepSixContent"
-                                                :class="[
-                                                'selectInput',
-                                                `selectInput--${stepSixTitles[0].size}`,
-                                                'formFieldSelectFont--medium',
-                                                'icon', 
-                                                {active: selected.sectionSix === card.value},
-                                                'justify-content-center'
-                                                ]"
-                                                @click="setStep6($event)">
-                                                {{card.value}}
-                                        </div>
+                                      
                                     </div>
         
                                     <div class="formButtons">
@@ -393,7 +389,47 @@
 <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
 <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js"></script>
 <script src="./js/components.js"></script>
+
+<script>
+    var params = {
+        container: document.getElementById('lottie'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        //path: './img/json/loading_animation.json'
+        path: 'data.json'
+    };
+
+    if (isMyScriptLoaded('https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js')) {
+        var animParams = bodymovin.loadAnimation(params);
+    }
+
+    function isMyScriptLoaded(url) {
+        if (!url) url = "http://www.co.uk/www/script.js";
+        var scripts = document.getElementsByTagName('script');
+        for (var i = scripts.length; i--;) {
+            if (scripts[i].src == url) return true;
+        }
+        return false;
+    }
+
+    // Get Animation step
+    setInterval(function(){ 
+        let animationContainer = document.querySelector('#animationStep');
+        let lottie = document.querySelector('.lottieAnimation');
+        if(animationContainer.style.cssText !== 'display: none;') {
+            
+            lottie.classList.add('d-block', 'fadeIn');
+        } else {
+            if(lottie.classList.contains('d-block')) {
+                lottie.classList.remove('d-block', 'fadeIn');
+            }
+        
+        }
+    }, 500);
+</script>
 <script type="text/javascript">
 
 // STEP 1
@@ -614,10 +650,11 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 7,
+      step: 5,
       buttonNext: 'Weiter',
       buttonPrevious: 'Zurück',
       content: [...steps],
+      temp: false,
       // STEP 1
       stepOneTitles: [...stepOneTitles],
       stepOneContent: [...stepOneContent],
