@@ -47,7 +47,7 @@
         height: 180px!important;
 
         @include mq('sm', max) {
-            width: 100%!important;;
+            width: 100%!important;
             height: 140px!important;
         }
     }
@@ -55,11 +55,21 @@
     &--medium {
         width: 128px!important;
         height: 128px!important;
+
+        @include mq('sm', max) {
+           width: 100%!important;
+            height: 140px!important;
+        }
     }
     
     &--small {
         width: 120px!important;
         height: 51px!important;
+
+        @include mq('sm', max) {
+            width: 100%!important;
+            height: 51px!important;
+         }
     }
 
     &__content {

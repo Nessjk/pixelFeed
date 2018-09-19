@@ -14,7 +14,7 @@
 <body>
 
 <div class="lottieAnimation d-none">
-    <div id="lottie" style="width:1067px;height:600px">
+    <div id="lottie">
 
     </div>
 </div>
@@ -299,7 +299,86 @@
 
                             <!-- STEP 8 -->
                             <div class="step" v-show="step === 8">
-                                STEP 8
+                                <h1 class="formTitle">
+                                        {{ stepEightTitles[0].section}}
+                                </h1>
+                                    
+                                <!-- Fields -->
+                                <div class="step__form">
+    
+                                    <div class="row mb-md-5">
+                                        
+                                        <!-- Thumbnail -->
+                                        <div class="col-xs-12 col-md-3 order-3 order-md-1">
+                                            <div class="thumbnail">
+                                                <img src="./img/img/thumbnail--felix.png" alt="Felix Thumbnail">
+                                                <p class="text--dark">
+                                                    {{ stepEightTitles[0].thumbnailText1}}
+                                                </p>
+                                                <p class="text--light">
+                                                    {{ stepEightTitles[0].thumbnailText2}}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Form -->
+                                        <div class="col-xs-12 col-md-6 order-2 order-md-2">
+                                            <label for="name" class="formQuestion"> {{ stepEightTitles[0].question1}}</label>
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="formWidth--half-1" id="inputEmail4" :placeholder="stepEightTitles[0].name">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="formWidth--half-2" id="inputPassword4" :placeholder="stepEightTitles[0].lastname">
+                                                </div>
+                                            </div>
+
+                                            <div class="">
+                                                <input type="email" class="formWidth--full" id="inputAddress" :placeholder="stepEightTitles[0].email">
+                                            </div>
+                                            <div class="">
+                                                <input type="text" class="formWidth--full" id="inputAddress2" :placeholder="stepEightTitles[0].phone">
+                                            </div>
+                                        </div>
+
+                                        <!-- Bullet points -->
+                                        <div class="col-xs-12 col-md-3 order-1 order-md-3">
+                                            <div class="profileList formFieldSelectFont row">
+                                                <ul>
+                                                    <li>      
+                                                        <p class="order-2 order-md-1 formQuestion">{{stepEightTitles[0].checkmarks[0]}}</p>
+                                                        <svg class="order-1 order-md-2" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                                                            <path fill="#6DAEDB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
+                                                            </svg>
+                                                    </li>
+                                                    <li>
+                                                        
+                                                        <p class="order-2 order-md-1 formQuestion">{{stepEightTitles[0].checkmarks[1]}}</p>
+                                                        <svg class="order-1 order-md-2"  xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                                                            <path fill="#6DAEDB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
+                                                            </svg>
+                                                    </li>
+                                                    <li>
+                                                        <p class="order-2 order-md-1 formQuestion">{{stepEightTitles[0].checkmarks[2]}}</p>
+                                                        <svg class="order-1 order-md-2"  xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                                                            <path fill="#6DAEDB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
+                                                            </svg>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                           
+                                        </div>
+                                           
+                                    </div>
+
+                                    <div class="formButtons">
+                                            <button class="button button--secondary" @click.prevent="prev2()">{{buttonPrevious}}</button>
+                                            <button class="button button--primary noMargin"  @click.prevent="next()">{{buttonNext}}</button>
+                                    </div>
+                                    
+                                </div>
+                                <!-- End of form -->
+
                             </div>
                    
 
@@ -428,7 +507,7 @@
             }
         
         }
-    }, 500);
+    }, 300);
 </script>
 <script type="text/javascript">
 
@@ -596,6 +675,23 @@ const stepSevenTitles = [
     }
 ]
 
+// STEP 8
+const stepEightTitles = [
+    {
+        index: 8,
+        section: "Empfänger",
+        question1: "Wer soll die Kostenlose Werteinschätzung erhalten?",
+        thumbnailText1: "Felix Engelhardt, CFA",
+        thumbnailText2: "Abteilungsleiter Transaktions- und Nachfolgeberatung",
+        checkmarks: ["Vertraulich","Unverbindlich","Experteneinschätzung"],
+        name: "Vorname",
+        lastname: "Nachname",
+        email: "Email",
+        phone: "Telefonnummer"
+    }
+]
+
+
 const steps = 
 [
     // STEP 7
@@ -650,7 +746,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 5,
+      step: 2,
       buttonNext: 'Weiter',
       buttonPrevious: 'Zurück',
       content: [...steps],
@@ -680,6 +776,8 @@ const app = new Vue({
       stepSixSelected: null,
       // STEP 7
       stepSevenTitles: [...stepSevenTitles],
+      // STEP 8
+      stepEightTitles: [...stepEightTitles],
       selected:{
         sectionOne: null,
         sectionTwo: null,
@@ -707,6 +805,9 @@ const app = new Vue({
     },
     next() {
       this.step++;
+    },
+    prev2() {
+        this.step = 6;
     },
     showMe(e) {
         this.selected.sectionOne = e.target.innerText;

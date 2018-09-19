@@ -22,6 +22,9 @@
     font-size: 20px;
     color: #828282; }
 
+.text--light {
+  color: #828282; }
+
 *,
 *::before,
 *::after {
@@ -197,7 +200,14 @@ h1 {
   top: 0;
   left: 0;
   bottom: 0;
-  right: 0; }
+  right: 0;
+  width: 1067px;
+  height: 600px; }
+  @media only screen and (max-width: 575px) {
+    #lottie {
+      width: 400px;
+      height: 600px;
+      margin-top: 200px; } }
   #lottie svg {
     width: 300px; }
 
@@ -347,6 +357,7 @@ input {
   border-radius: 4px;
   margin-bottom: 16px;
   max-width: 400px;
+  margin-right: 8px;
   /* Rectangle: */
   border: 1px solid #E6E6E6;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
@@ -411,6 +422,26 @@ input[type="range"]::-ms-thumb {
     transform: scale(0.98);
     cursor: pointer; }
 
+.formWidth--full {
+  width: 400px; }
+  @media only screen and (max-width: 575px) {
+    .formWidth--full {
+      width: 100% !important; } }
+
+.formWidth--half-1 {
+  width: 190px; }
+  @media only screen and (max-width: 575px) {
+    .formWidth--half-1 {
+      width: 100% !important; } }
+
+.formWidth--half-2 {
+  width: 190px;
+  margin-left: -10px; }
+  @media only screen and (max-width: 575px) {
+    .formWidth--half-2 {
+      margin-left: 0px;
+      width: 100% !important; } }
+
 .button {
   /* Rectangle */
   border-radius: 4px;
@@ -426,7 +457,10 @@ input[type="range"]::-ms-thumb {
   @media only screen and (max-width: 575px) {
     .button {
       width: 80%;
-      margin-right: 2rem; } }
+      margin-right: 2rem;
+      width: 120px;
+      text-align: center;
+      padding: 0rem; } }
   .button:hover {
     cursor: pointer; }
   .button--primary {
@@ -512,9 +546,17 @@ input[type="range"]::-ms-thumb {
   .selectInput--medium {
     width: 128px !important;
     height: 128px !important; }
+    @media only screen and (max-width: 575px) {
+      .selectInput--medium {
+        width: 100% !important;
+        height: 140px !important; } }
   .selectInput--small {
     width: 120px !important;
     height: 51px !important; }
+    @media only screen and (max-width: 575px) {
+      .selectInput--small {
+        width: 100% !important;
+        height: 51px !important; } }
   .selectInput__content {
     display: flex;
     flex-direction: column;
@@ -552,6 +594,49 @@ input[type="range"]::-ms-thumb {
   .formButtons--step1 {
     display: flex;
     justify-content: flex-end; }
+
+.thumbnail {
+  text-align: center; }
+  .thumbnail p {
+    margin-bottom: 0; }
+  @media only screen and (max-width: 575px) {
+    .thumbnail {
+      margin-bottom: 2rem;
+      margin-top: 2rem; } }
+  .thumbnail img {
+    max-width: 124px;
+    max-height: 124px;
+    margin-bottom: 8px; }
+
+.profileList {
+  margin-top: 2.8rem;
+  line-height: 3.5rem;
+  text-align: right;
+  font-size: 17px;
+  font-family: "Roboto", sans-serif; }
+  @media only screen and (max-width: 767px) {
+    .profileList {
+      margin-top: 0rem;
+      margin-left: 0px; } }
+  .profileList ul {
+    list-style: none; }
+    .profileList ul li {
+      display: flex;
+      justify-content: flex-end; }
+      @media only screen and (max-width: 767px) {
+        .profileList ul li {
+          justify-content: flex-start; } }
+      .profileList ul li svg {
+        margin-top: 22px;
+        margin-left: 8px; }
+        @media only screen and (max-width: 767px) {
+          .profileList ul li svg {
+            margin-left: 0px;
+            margin-right: 8px; } }
+
+@media only screen and (max-width: 575px) {
+  .noMargin {
+    margin: 0 !important; } }
 
 .partnerLogos {
   position: fixed;

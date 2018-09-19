@@ -4,7 +4,7 @@ input {
   border-radius: 4px;
   margin-bottom: 16px;
   max-width: 400px;
-
+  margin-right: 8px;
 
   @include boxAndShadow;
 
@@ -81,6 +81,32 @@ input[type="range"]::-ms-thumb {
   }
 }
 
+.formWidth--full {
+  width: 400px;
+  
+  @include mq('sm', max) {
+    width: 100%!important;
+  }
+}
+
+.formWidth--half-1 {
+  width: 190px;
+
+  @include mq('sm', max) {
+    width: 100%!important;
+  }
+}
+
+.formWidth--half-2 {
+  width: 190px;
+  margin-left: -10px;
+
+  @include mq('sm', max) {
+    margin-left: 0px;
+    width: 100%!important;
+  }
+}
+
 
 .button {
     /* Rectangle */
@@ -98,6 +124,9 @@ input[type="range"]::-ms-thumb {
     @include mq('sm', max) {
       width: 80%;
       margin-right: 2rem;
+      width: 120px;
+      text-align: center;
+      padding: 0rem;
   }  
 
     &:hover {
