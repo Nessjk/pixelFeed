@@ -423,8 +423,8 @@
                    
 
                 </form>
-                Page: {{step}}
-                Debug: {{ selected }} {{profile}}
+                <!-- Page: {{step}}
+                Debug: {{ selected }} {{profile}} -->
             </div>
             
           
@@ -519,7 +519,8 @@
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: './img/json/animation-loading.json'
+        path: 'img/json/animation-loading.json'
+        //path: 'https://www.dropbox.com/s/ivklcnjfue8zr1u/animation-loading.json?raw=1'
         //path: 'data.json'
     };
     
@@ -773,7 +774,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 9,
+      step: 1,
       buttonNext: 'Weiter',
       buttonPrevious: 'Zurück',
       // STEP 1
