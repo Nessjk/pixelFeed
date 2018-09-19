@@ -19,9 +19,13 @@
     width: 128px;
     height: 128px;
     text-align: center;
-    padding: 20px 20px 5px 20px;
+    padding: 20px 20px 15px 20px;
     margin-right: 20px;
     margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: flex-end;
 
     &:hover {
         //background: lightgrey;
@@ -39,8 +43,23 @@
     @include boxAndShadow;
 
     &--big {
-        width: 200px!important;
-        height: 200px!important;
+        width: 180px!important;
+        height: 180px!important;
+
+        @include mq('sm', max) {
+            width: 100%!important;;
+            height: 140px!important;
+        }
+    }
+    
+    &--medium {
+        width: 128px!important;
+        height: 128px!important;
+    }
+    
+    &--small {
+        width: 120px!important;
+        height: 51px!important;
     }
 
     &__content {
@@ -54,9 +73,4 @@
     &__title {
        text-align: center;
     }
-}
-
-.big--input {
-    width: 200px!important;
-    height: 200px!important;
 }

@@ -8,7 +8,6 @@
 
     <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/css/bootstrap-slider.min.css"/>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -41,6 +40,8 @@
         
         </nav>
 
+        {{step}}
+
         <!-- FORM -->
         <section class="content">
 
@@ -54,28 +55,78 @@
                     <!-- STEP 1 -->
                     <div class="step" v-show="step === 1">
                         <h1 class="formTitle">
-                                {{stepOneTitles[0].section}}
+                                {{content[0].title}}
                         </h1>
                         <!-- Fields -->
                         <div class="step__form">
                             
-                            <label for="name" class="formQuestion">{{stepOneTitles[0].question1}}</label>
+                            <label for="name" class="formQuestion">{{content[0].question1}}</label>
+                            <!-- <input id="name" name="name" v-model="registration.name"> -->
                             
-                            <div class="d-flex flex-wrap">
-                                <div  v-for="(card,index) in stepOneContent"
-                                      :class="[
-                                        'selectInput',
-                                        `selectInput--${stepOneTitles[0].size}`,
-                                        'formFieldSelectFont',
-                                        'icon', `icon--${card.icon}`,
-                                        {active: selected.sectionOne === card.value},
-                                        'justify-content-end'
-                                      ]"
-                                      @click="setStep1($event)">
-                                     {{card.value}}
+                            <div class="d-flex">
+
+                                <!-- <input id="stepOne.guid" name="1" > -->
+                                <!-- <input type="button" 
+                                    name="name" 
+                                    :value="content[0].fields[0]"
+                                    class="selectInput selectInput--big"
+                                    v-model="registration.sectionOne"
+                                    @click="setValue($event, 'sectionOne')"
+                                    placeholder="content[0].fields[0]">
+                                <input type="button" 
+                                    name="name" 
+                                    :value="content[0].fields[1]"
+                                    class="selectInput selectInput--big"
+                                    v-model="registration.sectionOne"
+                                    @click="setValue($event, 'sectionOne')"
+                                    placeholder="content[0].fields[0]">
+                                <input type="button" 
+                                    name="name" 
+                                    :value="content[0].fields[2]"
+                                    class="selectInput selectInput--big"
+                                    v-model="registration.sectionOne"
+                                    @click="setValue($event, 'sectionOne')"
+                                    placeholder="content[0].fields[0]">
+                                <input type="button" 
+                                    name="name" 
+                                    :value="content[0].fields[3]"
+                                    class="selectInput selectInput--big"
+                                    v-model="registration.sectionOne"
+                                    @click="setValue($event, 'sectionOne')"
+                                    placeholder="content[0].fields[0]">
+
+                                     -->
+                                
+
+                                <div  v-for="card in stepOne"
+                                      :class="[ 'selectInput','selectInput--big' ,'icon', 'formFieldSelect', 'temp']"
+                                      @click="showMe($event)">
+                                     {{card.title}}
                                 </div>
+
+                                <!-- <button-counter 
+                                        v-for="(card, index) in stepOne" 
+                                        class="d-flex" 
+                                        :title="card.statsCards.title"
+                                        :value="card.statsCards.value"
+                                        >
+                                </button-counter> -->
+                                <!-- <button-counter 
+                                        v-for="(card, index) in stepOne.fields" 
+                                        
+                                        class="d-flex" 
+                                        :title="card"
+                                        :class="[ 'icon', `icon-${step1Icons[index]}`, 'selectInput--big' , 'formFieldSelect']"
+                                        @click="log"
+                                        :value="card"
+                                        >
+                                </button-counter> -->
                             </div>
                                 
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 512 512"><path d="M234 272v-48h131.094l7.149-48H234v-1.83c0-35.92 14.975-58.086 79.25-58.086 26.264 0 55.867 2.498 93.189 8.742L416 59.866C377.988 51.123 345.306 48 310.057 48 195.326 48 146 89.225 146 165.43V176H96v48h50v48H96v48h50v26.57C146 422.774 195.297 464 310.027 464c35.25 0 67.848-3.123 105.859-11.866l-9.619-64.96c-37.322 6.244-66.781 8.742-93.045 8.742-64.276 0-79.223-18.739-79.223-63.086V320h116.795l7.148-48H234z"/></svg> -->
+                            
+                            
+
                             <div class="formButtons--step1">
                                 <button class="button button--primary" @click.prevent="next()">{{buttonNext}}</button>
                             </div>
@@ -86,28 +137,14 @@
                     <!-- STEP 2 -->
                     <div class="step" v-show="step === 2">
                         <h1 class="formTitle">
-                            {{stepTwoTitles[0].section}}
+                            {{content[1].title}}
                         </h1>
                         
                         <!-- Fields -->
                         <div class="step__form">
 
-                            <label for="name" class="formQuestion">{{stepTwoTitles[0].question1}}</label>
-
-                            <div class="d-flex flex-wrap">
-                                <div  v-for="(card,index) in stepTwoContent"
-                                        :class="[
-                                        'selectInput',
-                                        `selectInput--${stepTwoTitles[0].size}`,
-                                        'formFieldSelectFont',
-                                        'icon', `icon--${card.icon}`,
-                                        {active: selected.sectionTwo === card.value},
-                                        'justify-content-end'
-                                        ]"
-                                        @click="setStep2($event)">
-                                        {{card.value}}
-                                </div>
-                            </div>
+                            <label for="name" class="formQuestion">{{content[1].question1}}</label>
+                            <input id="name" name="name" v-model="registration.name">
         
                             <div class="formButtons">
                                 <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
@@ -120,29 +157,15 @@
                     <!-- STEP 3 -->
                     <div class="step" v-show="step === 3">
                         <h1 class="formTitle">
-                            {{stepThreeTitles[0].section}}
+                            {{content[2].title}}
                         </h1>
                         
                         <!-- Fields -->
                         <div class="step__form">
 
-                            <label for="name" class="formQuestion"> {{stepThreeTitles[0].question1}}</label>
+                            <label for="name" class="formQuestion">{{content[2].question1}}</label>
+                            <input id="name" name="name" v-model="registration.name">
         
-                            <div class="d-flex flex-wrap ">
-                                <div  v-for="(card,index) in stepThreeContent"
-                                        :class="[
-                                        'selectInput',
-                                        `selectInput--${stepThreeTitles[0].size}`,
-                                        'formFieldSelectFont--big',
-                                        'icon', 
-                                        {active: selected.sectionThree === card.value},
-                                        'justify-content-center'
-                                        ]"
-                                        @click="setStep3($event)">
-                                        {{card.value}}
-                                </div>
-                            </div>
-
                             <div class="formButtons">
                                 <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
                                 <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
@@ -153,164 +176,141 @@
 
                      <!-- STEP 4 -->
                      <div class="step" v-show="step === 4">
-                            <h1 class="formTitle">
-                                {{stepFourTitles[0].section}}
-                            </h1>
-                            
-                            <!-- Fields -->
-                            <div class="step__form">
-    
-                                <!-- Question 1 -->
-                                <label for="step4Question1" class="formQuestion"> {{stepFourTitles[0].question1}}</label>
-                                <input 
-                                    id="step4Question1Input" 
-                                    name="step4Question1Input" 
-                                    v-model="selected.sectionFour1"
-                                    :placeholder="stepFourTitles[0].field1">
-                                
-                                <hr>
+                        <h1 class="formTitle">
+                            {{content[3].title}}
+                        </h1>
+                        
+                        <!-- Fields -->
+                        <div class="step__form">
 
-                                 <!-- Question 2 -->
-                                 <label for="step4Question2" class="formQuestion"> {{stepFourTitles[0].question2}}</label>
-                                 <input 
-                                    id="step4Question2Input" 
-                                    name="step4Question2Input" 
-                                    v-model="selected.sectionFour2"
-                                    :placeholder="stepFourTitles[0].field2">
+                            <label for="name" class="formQuestion">{{content[3].question1}}</label>
+                            <input id="name" name="name" v-model="registration.name">
+                           
+                           <hr>
 
-                                <br><br>
-    
-                                <div class="formButtons">
-                                    <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
-                                    <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
-                                </div>
-                                
+                            <label for="name" class="formQuestion">{{content[3].question2}}</label>
+                            <input id="name" name="name" v-model="registration.name">
+        
+                            <div class="formButtons">
+                                <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
+                                <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
                             </div>
+                            
                         </div>
-                   
+                    </div>
+                    
                     <!-- STEP 5 -->
                      <div class="step" v-show="step === 5">
-                            <h1 class="formTitle">
-                                {{stepFiveTitles[0].section}}
-                            </h1>
-                            
-                            <!-- Fields -->
-                            <div class="step__form">
-    
-                                <!-- Question 1 -->
-                                <label for="step5Question1" class="formQuestion"> {{stepFiveTitles[0].question1}}</label>
-                                <div class="d-flex flex-wrap ">
-                                        <div  v-for="(card,index) in stepFiveContent"
-                                                :class="[
-                                                'selectInput',
-                                                `selectInput--${stepFiveTitles[0].size}`,
-                                                'formFieldSelectFont',
-                                                'icon', 
-                                                {active: selected.sectionFive1 === card.value},
-                                                'justify-content-center'
-                                                ]"
-                                                @click="setStep5($event)">
-                                                {{card.value}}
-                                        </div>
-                                    </div>
-
-                                <hr>
-
-                                 <!-- Question 2 Slider -->
-                                 <label for="step5Question2" class="formQuestion"> {{stepFiveTitles[0].question2}}</label>   
-
-                                 <button type="button" class="btn button-range" data-toggle="tooltip" data-html="true" title="" 
-                                 :style="{ marginLeft: (selected.sectionFive2 - 2.5) * 3.705 + 'px' }">
-                                    {{selected.sectionFive2}}
-                                  </button>
-
-                                 <input type="range" class="form-control-range noShadow noPadding"  min=0 max=100 value=10 id="formControlRange" v-model="selected.sectionFive2">
-                                
-                                 
-
-                                <br><br>
-    
-                                <div class="formButtons">
-                                    <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
-                                    <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
-                                </div>
-                                
-                            </div>
-                        </div>
-
-                        <!-- STEP 6 -->
-                        <div class="step" v-show="step === 6">
-                                <h1 class="formTitle">
-                                    {{stepSixTitles[0].section}}
-                                </h1>
-                                
-                                <!-- Fields -->
-                                <div class="step__form">
-        
-                                    <label for="name" class="formQuestion"> {{stepSixTitles[0].question1}}</label>
-                
-                                    <div class="d-flex flex-wrap ">
-                                        <div  v-for="(card,index) in stepSixContent"
-                                                :class="[
-                                                'selectInput',
-                                                `selectInput--${stepSixTitles[0].size}`,
-                                                'formFieldSelectFont--medium',
-                                                'icon', 
-                                                {active: selected.sectionSix === card.value},
-                                                'justify-content-center'
-                                                ]"
-                                                @click="setStep6($event)">
-                                                {{card.value}}
-                                        </div>
-                                    </div>
-        
-                                    <div class="formButtons">
-                                        <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
-                                        <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
-                                    </div>
-                                    
-                                </div>
-                            </div>
+                        <h1 class="formTitle">
+                            {{content[4].title}}
+                        </h1>
                         
-                        <!-- STEP 7 ANIMATION -->
-                        <div class="step" v-show="step === 7">
-                                <h1 class="formTitle">
-                                    {{stepSixTitles[0].section}}
-                                </h1>
-                                
-                                <!-- Fields -->
-                                <div class="step__form">
+                        <!-- Fields -->
+                        <div class="step__form">
+
+                            <label for="name" class="formQuestion">{{content[4].question1}}</label>
+                            <input id="name" name="name" v-model="registration.name">
         
-                                    <label for="name" class="formQuestion"> {{stepSixTitles[0].question1}}</label>
-                
-                                    <div class="d-flex flex-wrap ">
-                                        <div  v-for="(card,index) in stepSixContent"
-                                                :class="[
-                                                'selectInput',
-                                                `selectInput--${stepSixTitles[0].size}`,
-                                                'formFieldSelectFont--medium',
-                                                'icon', 
-                                                {active: selected.sectionSix === card.value},
-                                                'justify-content-center'
-                                                ]"
-                                                @click="setStep6($event)">
-                                                {{card.value}}
-                                        </div>
-                                    </div>
-        
-                                    <div class="formButtons">
-                                        <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
-                                        <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
-                                    </div>
-                                    
-                                </div>
+                            <div class="formButtons">
+                                <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
+                                <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
                             </div>
-                   
+                            
+                        </div>
+                    </div>
+
+                     <!-- STEP 6 -->
+                     <div class="step" v-show="step === 6">
+                        <h1 class="formTitle">
+                            {{content[5].title}}
+                        </h1>
+                        
+                        <!-- Fields -->
+                        <div class="step__form">
+
+                            <label for="name" class="formQuestion">{{content[5].question1}}</label>
+                            <input id="name" name="name" v-model="registration.name">
+                           
+                            <hr>
+
+                            <label for="name" class="formQuestion">{{content[5].question2}}</label>
+                            <input id="name" name="name" v-model="registration.name">
+        
+                            <div class="formButtons">
+                                <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
+                                <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                     <!-- STEP 7 -->
+                     <div class="step" v-show="step === 7">
+                        <h1 class="formTitle">
+                            {{content[6].title}}
+                        </h1>
+                        
+                        <!-- Fields -->
+                        <div class="step__form">
+
+                            <label for="name" class="formQuestion">{{content[6].fields1}}</label>
+                            <input id="name" name="name" v-model="registration.name">
+        
+                            <div class="formButtons">
+                                <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
+                                <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- STEP 8 -->
+                     <div class="step" v-show="step === 8">
+                        <h1 class="formTitle">
+                            {{content[7].title}}
+                        </h1>
+                        
+                        <!-- Fields -->
+                        <div class="step__form">
+
+                            <label for="name" class="formQuestion">{{content[7].fields1}}</label>
+                            <input id="name" name="name" v-model="registration.name">
+        
+                            <div class="formButtons">
+                                <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
+                                <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- STEP 9 -->
+                     <div class="step" v-show="step === 9">
+                        <h1 class="formTitle">
+                            {{content[8].title}}
+                        </h1>
+                        
+                        <!-- Fields -->
+                        <div class="step__form">
+
+                            <label for="name" class="formQuestion">{{content[8].topTitle}}</label>
+                            <input id="name" name="name" v-model="registration.name">
+                            
+                            <h1>END</h1>
+                            
+                            <label for="name" class="formQuestion">{{content[8].subTitle}}</label>
+                            <input id="name" name="name" v-model="registration.name">
+        
+                            <div class="formButtons">
+                                <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
+                                <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
+                            </div>
+                            
+                        </div>
+                    </div>
 
                 </form>
             </div>
-            
-            Debug: {{selected}}
 
             <!-- Content Footer -->
             <div class="footer">
@@ -384,7 +384,7 @@
             </div>
         </section>
 
-        <!-- <br /><br />Debug: {{content}} -->
+        <br /><br />Debug: {{content}}
     </div>
 
 </div>
@@ -392,176 +392,110 @@
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
 <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.min.js"></script>
 <script src="./js/components.js"></script>
 <script type="text/javascript">
 
-// STEP 1
-const stepOneTitles = [
+const stepOneM = [
     {
-        index: 1,
-        section: "Anlass",
-        question1: "Bitte wählen Sie eine Option aus:",
-        size: "big"
+        "index": 1,
+        "guid": "30eb72eb-34d2-4497-b369-5ab049dadd92",
+        "isActive": null,
+        "title": "Beweggrund",
+        "question1": "Bitte wählen Sie eine Option aus:",
+        "size": "inputSelect--big",
+        "icon": "iosCall",
+       
     }
 ]
-const stepOneContent = [
+
+// STEP 1
+const stepOne = [
             {
-                icon: "euro",
-                value: "Unternehmensverkauf"
+                index: 1,
+                section: "Beweggrund",
+                question1: "Bitte wählen Sie eine Option aus:",
+                size: "inputSelect--big"
             },
             {
-                icon: "handshake",
-                value: "Kapitalbealarf"
-            },
-           
-            {
-                icon: "succession",
-                value: "Interne Nachfolge"
+                type: "warning",
+                icon: "ti-comment-alt",
+                title: "Enquiries",
+                value: "170"
             },
             {
-                icon: "dots",
-                value: "Sonstige"
+                type: "warning",
+                icon: "ti-comment-alt",
+                title: "number2",
+                value: "170"
+            },
+            {
+                type: "warning",
+                icon: "ti-comment-alt",
+                title: "number3",
+                value: "170"
+            },
+            {
+                type: "warning",
+                icon: "ti-comment-alt",
+                title: "number4",
+                value: "170"
             }
         ]
 
-// STEP 2
-const stepTwoTitles = [
-    {
-        index: 2,
-        section: "Branche",
-        question1: "In welcher Branche sind sie aktiv?",
-        size: "medium"
-    }
-]
-const stepTwoContent = [
-            {
-                icon: "people",
-                value: "Dienstleistung"
-            },
-            {
-                icon: "gear",
-                value: "Produktion"
-            },
-            {
-                icon: "software",
-                value: "Software"
-            },
-            {
-                icon: "leaf",
-                value: "Landwirtschaft"
-            },
-            {
-                icon: "tools",
-                value: "Bau"
-            },
-            {
-                icon: "dots--small",
-                value: "Sonstige"
-            }
-]
-
-// STEP 3
-const stepThreeTitles = [
-    {
-        index: 3,
-        section: "Gründungsdatum",
-        question1: "Vor wie vielen Jahren haben Sie Ihr Unternehmen gegründet?",
-        size: "medium"
-    }
-]
-const stepThreeContent = [
-            {
-                value: "<5"
-            },
-            {
-                value: "5-10"
-            },
-            {
-                value: "10-20"
-            },
-            {
-                value: "20-30"
-            },
-            {
-                value: "30+"
-            }
-]
-
-// STEP 4
-const stepFourTitles = [
-    {
-        index: 4,
-        section: "Finanzdaten",
-        question1: "Wie hoch war Ihr erzielter Umsatz im letzten verfügbaren Jahr?",
-        question1Warning : "Unter EUR 1.000.000 Umsatz ist der errechnete Wert nicht aussagekräftig.",
-        question2: "Wie hoch war Ihr letzter Gewinn (vor Steuern und Zinsen)?",
-        field1: "€5.000.000",
-        field2: "€250.000",
-        size: "medium"
-    }
-]
-
-// STEP 5
-const stepFiveTitles = [
-    {
-        index: 5,
-        section: "Kundenstruktur",
-        question1: "Kundenstruktur – Wie groß ist Ihr Kundenstamm ?",
-        question2 : "Kundenstruktur – Anteil Umsatz größter Kunde:",
-        fields2 : "10",
-        size: "small"
-    }
-]
-const stepFiveContent = [
-    {
-        value: "1-5"
-    },
-    {
-        value: "5-10"
-    },
-    {
-        value: "11-50"
-    },
-    {
-        value: "mehr als 50"
-    }
-]
-
-// STEP 6
-const stepSixTitles = [
-    {
-        index: 6,
-        section: "Abhängigkeit vom Eigentümer",
-        question1: "Wie abhängig ist das Unternehmen von Ihnen als Eigentümer?",
-        size: "big"
-    }
-]
-const stepSixContent = [
-    {
-        value: "Niedrig"
-    },
-    {
-        value: "Mittel"
-    },
-    {
-        value: "Hoch"
-    },
-    {
-        value: "Sehr Hoch"
-    }
-]
-// STEP 7 & ANIMATION
-const stepSevenTitles = [
-    {
-        index: 7,
-        section: "Ihr Unternehmenswert wird ermittelt.",
-        question1: "Bitte haben Sie einen Moment Geduld."
-    }
-]
-
 const steps = 
 [
+    // STEP 1
+    {
+        "index": 1,
+        "guid": "30eb72eb-34d2-4497-b369-5ab049dadd92",
+        "isActive": null,
+        "title": "Beweggrund",
+        "question1": "Bitte wählen Sie eine Option aus:",
+        "fields": ["Unternehmensverkauf", "Kapitalbealarf", "Interne Nachfolge", "Sonstige"],
+        "size": "inputSelect--big",
+        "icon": "iosCall"
+    },
+    // STEP 2
+    {
+        "index": 2,
+        "guid": "a1f978ec-136e-45ca-a09c-c0086a2fe38a",
+        "isActive": null,
+        "title": "Branche",
+        "question1": "In welcher Branche sind sie aktiv?",
+        "fields": ["Dienstleistung", "Produktion", "Software", "Landwirtschaft", "Bau", "Sonstige"]
+    },
+    // STEP 3
+    {
+        "index": 3,
+        "guid": "35dc77d4-83f3-4a2a-8c14-48ad0bfe50ad",
+        "isActive": null,
+        "title": "Gründungsdatum",
+        "question1": "Vor wie vielen Jahren haben Sie Ihr Unternehmen gegründet?",
+        "fields": ["<5", "5", "10", "20", "30", "30+"],
+    },
+    // STEP 4
+    {
+        "index": 4,
+        "guid": "4446de656-7e3d-7005-aac1-91234502b",
+        "isActive": null,
+        "title": "Finanzdaten",
+        "question1": "Wie hoch war Ihr erzielter Umsatz im letzten verfügbaren Jahr?",
+        "fields1": "€5.000.000",
+        "question1Warning" : "Unter EUR 1.000.000 Umsatz ist der errechnete Wert nicht aussagekräftig.",
+        "question2" : "Wie hoch war Ihr letzter Gewinn (vor Steuern und Zinsen)?",
+        "fields2" : "€250.000"
+    },
+    // STEP 6
+    {
+        "index": 6,
+        "guid": "1900df-3e3d-9005-aac1-9884502b",
+        "isActive": null,
+        "title": "Kundenstruktur",
+        "question1": "Kundenstruktur – Wie groß ist Ihr Kundenstamm ?",
+        "fields1": ["1-5","5-10","11-50","mehr als 50"],
+        "question2" : "Kundenstruktur – Anteil Umsatz größter Kunde:",
+        "fields2" : "10"
+    },
     // STEP 7
     {
         "index": 7,
@@ -613,45 +547,16 @@ const app = new Vue({
   el:'#app',
   data() {
     return {
-      // GENERAL
-      step: 7,
       buttonNext: 'Weiter',
       buttonPrevious: 'Zurück',
       content: [...steps],
-      // STEP 1
-      stepOneTitles: [...stepOneTitles],
-      stepOneContent: [...stepOneContent],
-      stepOneSelected: null,
-      // STEP 2
-      stepTwoTitles: [...stepTwoTitles],
-      stepTwoContent: [...stepTwoContent],
-      stepTwoSelected: null,
-      // STEP 3
-      stepThreeTitles: [...stepThreeTitles],
-      stepThreeContent: [...stepThreeContent],
-      stepThreeSelected: null,
-      // STEP 4
-      stepFourTitles: [...stepFourTitles],
-      stepFourSelected: null,
-      // STEP 5
-      stepFiveTitles: [...stepFiveTitles],
-      stepFiveContent: [...stepFiveContent],
-      stepFiveSelected: null,
-      // STEP 6
-      stepSixTitles: [...stepSixTitles],
-      stepSixContent: [...stepSixContent],
-      stepSixSelected: null,
-      // STEP 7
-      stepSevenTitles: [...stepSevenTitles],
-      selected:{
+      stepOne: [...stepOne],
+      step:1,
+      step1Icons: ['phone', 'call', 'call', 'call'],
+      registration:{
         sectionOne: null,
         sectionTwo: null,
         sectionThree: null,
-        sectionFour1: null,
-        sectionFour2: null,
-        sectionFive1: null,
-        sectionFive2: 0,
-        sectionSix: null,
       }
     }
   },
@@ -662,37 +567,18 @@ const app = new Vue({
     next() {
       this.step++;
     },
+    log(){
+        console.log(this);
+    },
     showMe(e) {
-        this.selected.sectionOne = e.target.innerText;
-        //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionOne);
+        this.registration.sectionOne = e.target.innerText;
+        console.log(e.target.innerText, this.registration.sectionOne);
     },
-    setStep1(e) {
-        this.selected.sectionOne = e.target.innerText;
-        //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionOne);
-    },
-    setStep2(e) {
-        this.selected.sectionTwo = e.target.innerText;
-        //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionTwo);
-    },
-    setStep3(e) {
-        this.selected.sectionThree = e.target.innerText;
-        //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionThree);
-    },
-    setStep5(e) {
-        this.selected.sectionFive1 = e.target.innerText;
-        //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionFive1);
-    },
-    setStep6(e) {
-        this.selected.sectionSix = e.target.innerText;
-        //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionSix);
+    setValue(e, nodeLocation) {
+        console.log(nodeLocation)
+        //this.registration.nodeLocation = e.target.innerText;
+        console.log(e.target.innerText, this.registration.sectionOne);
     }
-
   }
 });
 

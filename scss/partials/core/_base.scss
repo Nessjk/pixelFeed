@@ -8,7 +8,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 16.5px;
 }
 
 body {
@@ -18,12 +18,16 @@ body {
   font-family: $font-display;
 }
 
-html {
-  font-size: 16.5px;
-}
-
 a:hover {
   text-decoration: none;
+}
+
+.noShadow {
+  box-shadow: none!important;
+}
+
+.noPadding {
+  padding: 0!important;
 }
 
 

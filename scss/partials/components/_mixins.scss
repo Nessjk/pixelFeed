@@ -6,10 +6,33 @@
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
     border-radius: 4px;
   }
+
+// Breakpoints
+$breakpoints: (
+  "phone":        400px,
+  "phone-wide":   480px,
+  "phablet":      560px,
+  "tablet-small": 640px,
+  "tablet":       768px,
+  "tablet-wide":  1024px,
+  "desktop":      1248px,
+  "desktop-wide": 1440px,
+  // BOOTSTRAP
+  "lg":            992px,
+  "md":            768px,
+  "sm":            576px,
+);
+
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+  }
   
-  // %boxAndShadow {
-  //   background: #FFFFFF;
-  //   border: 1px solid #E6E6E6;
-  //   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
-  //   border-radius: 4px;
-  // }
+  

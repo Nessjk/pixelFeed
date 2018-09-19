@@ -21,8 +21,21 @@ $font-display: $Roboto;
     color: $blue--dark;
 }
 
-.formFieldSelect {
+.formFieldSelectFont {
     font-family: $Roboto;
     font-size: 14px;
     color: $text--grey;
+
+    &--big {
+        font-size: 30px;
+        color: $text--grey;
+
+    }
+    
+    &--medium {
+        font-size: 20px;
+        color: $text--grey;
+
+    }
+
 }
