@@ -84,3 +84,10 @@
       margin: 0!important;
     }
   }
+
+  .checkmark {
+      & img {
+          width: 150px;
+          height: 150px;
+      }
+  }

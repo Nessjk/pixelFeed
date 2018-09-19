@@ -18,6 +18,12 @@
 
     </div>
 </div>
+
+<div class="lottieSuccess d-none">
+    <div id="lottieAnimationSuccess">
+
+    </div>
+</div>
        
     <div id="app">
        
@@ -32,7 +38,7 @@
         <!-- NAVBAR -->
         <nav class="navigation">
 
-            <div class="d-flex align-center justify-content-between align-items-center ">
+            <div class="d-flex align-center flex-column flex-md-row justify-content-between align-items-center ">
                 <div class="logos">
                     <img src="https://via.placeholder.com/230x110" alt="">
                 </div>
@@ -326,18 +332,22 @@
                                             <label for="name" class="formQuestion"> {{ stepEightTitles[0].question1}}</label>
                                             <div class="form-row">
                                                 <div class="col-md-6">
-                                                    <input type="text" class="formWidth--half-1" id="inputEmail4" :placeholder="stepEightTitles[0].name">
+                                                    <input type="text" class="formWidth--half-1" id="inputEmail4" :placeholder="stepEightTitles[0].name"
+                                                    v-model="profile.name">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="text" class="formWidth--half-2" id="inputPassword4" :placeholder="stepEightTitles[0].lastname">
+                                                    <input type="text" class="formWidth--half-2" id="inputPassword4" :placeholder="stepEightTitles[0].lastname"
+                                                    v-model="profile.lastname">
                                                 </div>
                                             </div>
 
                                             <div class="">
-                                                <input type="email" class="formWidth--full" id="inputAddress" :placeholder="stepEightTitles[0].email">
+                                                <input type="email" class="formWidth--full" id="inputAddress" :placeholder="stepEightTitles[0].email"
+                                                v-model="profile.email">
                                             </div>
                                             <div class="">
-                                                <input type="text" class="formWidth--full" id="inputAddress2" :placeholder="stepEightTitles[0].phone">
+                                                <input type="text" class="formWidth--full" id="inputAddress2" :placeholder="stepEightTitles[0].phone"
+                                                v-model="profile.phone">
                                             </div>
                                         </div>
 
@@ -348,20 +358,20 @@
                                                     <li>      
                                                         <p class="order-2 order-md-1 formQuestion">{{stepEightTitles[0].checkmarks[0]}}</p>
                                                         <svg class="order-1 order-md-2" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
-                                                            <path fill="#6DAEDB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
+                                                            <path fill="#5BC0EB;" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
                                                             </svg>
                                                     </li>
                                                     <li>
                                                         
                                                         <p class="order-2 order-md-1 formQuestion">{{stepEightTitles[0].checkmarks[1]}}</p>
                                                         <svg class="order-1 order-md-2"  xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
-                                                            <path fill="#6DAEDB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
+                                                            <path fill="#5BC0EB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
                                                             </svg>
                                                     </li>
                                                     <li>
                                                         <p class="order-2 order-md-1 formQuestion">{{stepEightTitles[0].checkmarks[2]}}</p>
                                                         <svg class="order-1 order-md-2"  xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
-                                                            <path fill="#6DAEDB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
+                                                            <path fill="#5BC0EB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
                                                             </svg>
                                                     </li>
                                                 </ul>
@@ -373,19 +383,51 @@
 
                                     <div class="formButtons">
                                             <button class="button button--secondary" @click.prevent="prev2()">{{buttonPrevious}}</button>
-                                            <button class="button button--primary noMargin"  @click.prevent="next()">{{buttonNext}}</button>
+                                            <button class="button button--primary noMargin"  @click.prevent="next()">
+                                            einreichen</button>
                                     </div>
                                     
                                 </div>
+                                </div>
+
+
+                                <!-- STEP 9 ANIMATION -->
+                                <div id="animationStepFinal" class="step" v-show="step === 9">
+                                      
+                                        <!-- Fields -->
+                                        <div class="step__form d-flex justify-content-between text-center" style="min-height: 450px;">
+                
+                                            <label for="name" class="formQuestion text-center"> {{stepNineTitles[0].text1}}</label>
+
+                                            <div class="checkmark sinusoid">
+                                                    <img src="./img/img/check.png" alt="Checkmark">
+                                            </div>
+                                    
+                                            <button 
+                                                style="width: 300px;
+                                                margin: auto;
+                                                padding: 0px;"
+                                                class="button button--primary noMargin"  
+                                                @click.prevent="next()">
+                                                    {{stepNineTitles[0].button}}</button>
+
+                                            <label for="name" class="formQuestion text-center"> {{stepNineTitles[0].text2}}</label>
+                                            
+                                        </div>
+                                    </div>
+
+                                
                                 <!-- End of form -->
 
                             </div>
                    
 
                 </form>
+                Page: {{step}}
+                Debug: {{ selected }} {{profile}}
             </div>
             
-            Page: {{step}}
+          
 
             <!-- Content Footer -->
             <div class="footer">
@@ -459,7 +501,7 @@
             </div>
         </section>
 
-        <!-- <br /><br />Debug: {{content}} -->
+        <br /><br />
     </div>
 
 </div>
@@ -477,12 +519,22 @@
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        //path: './img/json/loading_animation.json'
-        path: 'data.json'
+        path: './img/json/animation-loading.json'
+        //path: 'data.json'
     };
+    
+    // var success = {
+    //     container: document.getElementById('lottieAnimationSuccess'),
+    //     renderer: 'svg',
+    //     loop: true,
+    //     autoplay: false,
+    //     animationSpeed: 0.2,
+    //     path: './img/json/animation-success.json'
+    // };
 
     if (isMyScriptLoaded('https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js')) {
         var animParams = bodymovin.loadAnimation(params);
+        //var animParams2 = bodymovin.loadAnimation(success);
     }
 
     function isMyScriptLoaded(url) {
@@ -496,18 +548,32 @@
 
     // Get Animation step
     setInterval(function(){ 
-        let animationContainer = document.querySelector('#animationStep');
-        let lottie = document.querySelector('.lottieAnimation');
-        if(animationContainer.style.cssText !== 'display: none;') {
-            
-            lottie.classList.add('d-block', 'fadeIn');
+        let animationContainerSuccess = document.querySelector('#animationStepFinal');
+        let lottieSuccess = document.querySelector('.lottieSuccess');
+        if(animationContainerSuccess.style.cssText !== 'display: none;') {
+            lottieSuccess.classList.add('d-block', 'fadeIn');
         } else {
-            if(lottie.classList.contains('d-block')) {
-                lottie.classList.remove('d-block', 'fadeIn');
+            if(lottieSuccess.classList.contains('d-block')) {
+                lottieSuccess.classList.remove('d-block', 'fadeIn');
             }
         
         }
     }, 300);
+
+    // Set interval check to see if the correct page is loaded as vue and bodymovin don't work in the same environment
+    // setInterval(function(){ 
+    //     let animationContainer = document.querySelector('#animationStep');
+    //     let lottie = document.querySelector('.lottieAnimation');
+    //     if(animationContainer.style.cssText !== 'display: none;') {
+            
+    //         lottie.classList.add('d-block', 'fadeIn');
+    //     } else {
+    //         if(lottie.classList.contains('d-block')) {
+    //             lottie.classList.remove('d-block', 'fadeIn');
+    //         }
+        
+    //     }
+    // }, 300);
 </script>
 <script type="text/javascript">
 
@@ -691,66 +757,25 @@ const stepEightTitles = [
     }
 ]
 
-
-const steps = 
-[
-    // STEP 7
+// STEP 9
+const stepNineTitles = [
     {
-        "index": 7,
-        "guid": "8800af-5e3d-97805-78ac1-jg85jh2b",
-        "isActive": null,
-        "title": "Abhängigkeit vom Eigentümer",
-        "question1": "Wie abhängig ist das Unternehmen von Ihnen als Eigentümer?",
-        "fields1": ["Niedrig","Mittel","Hoch","Sehr Hoch"],
-        "question2" : "Kundenstruktur – Anteil Umsatz größter Kunde:",
-        "fields2" : "10"
-    },
-    // STEP 8
-    {
-        "index": 8,
-        "guid": "9900af-5e3d-97805-78ac1-jg85jh2b",
-        "isActive": null,
-        "title": "Ihr Unternehmenswert wird ermittelt.",
-        "question1": null,
-        "fields1": "Bitte haben Sie einen Moment Geduld.",
-        "svg" : null
-    },
-    // STEP 9
-    {
-        "index": 9,
-        "guid": "0100af-57g8u-9799-78ac1-jg85jh2b",
-        "isActive": null,
-        "title": "Empfänger",
-        "question1": null,
-        "fields1": "Wer soll die Kostenlose Werteinschätzung erhalten?",
-        "thumbnail" : "Felix Engelhardt, CFA",
-        "thumbnailSubtitle" : "Abteilungsleiter Transaktions-und Nachfolgeberatung"
-    },
-    // STEP 10
-    {
-        "index": 10,
-        "guid": "1100rf-567g6u-6799-67867c1-UU85jh2b",
-        "isActive": null,
-        "title": null,
-        "question1": null,
-        "fields1": null,
-        "topTitle" : "Wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen!",
-        "subTitle" : "Falls Sie in der Zwischenzeit noch mehr Informationen zur Unternehmensbewertung benötigen, finden Sie einige Artikel zu diesem Thema in unserem Nachfolgemagazin."
+        index: 9,
+        section: "",
+        text1: "Wir haben Ihre Anfrage erhalten und melden uns in Kürze bei Ihnen!",
+        button: "Nachfolgemagazin",
+        text2: "Falls Sie in der Zwischenzeit noch mehr Informationen zur Unternehmensbewertung benötigen, finden Sie einige Artikel zu diesem Thema in unserem Nachfolgemagazin."
     }
-];
-
-//import buttonCounter from '@/js/components';
+]
 
 const app = new Vue({
   el:'#app',
   data() {
     return {
       // GENERAL
-      step: 2,
+      step: 9,
       buttonNext: 'Weiter',
       buttonPrevious: 'Zurück',
-      content: [...steps],
-      temp: false,
       // STEP 1
       stepOneTitles: [...stepOneTitles],
       stepOneContent: [...stepOneContent],
@@ -778,6 +803,8 @@ const app = new Vue({
       stepSevenTitles: [...stepSevenTitles],
       // STEP 8
       stepEightTitles: [...stepEightTitles],
+      // STEP 9
+      stepNineTitles: [...stepNineTitles],
       selected:{
         sectionOne: null,
         sectionTwo: null,
@@ -787,6 +814,12 @@ const app = new Vue({
         sectionFive1: null,
         sectionFive2: 0,
         sectionSix: null,
+      },
+      profile: {
+          name: null,
+          lastname: null,
+          email: null,
+          phone: null
       }
     }
   },
