@@ -293,20 +293,20 @@
                                     <div class="d-flex flex-wrap ">
                                       
                                     </div>
-        
-                                    <div class="formButtons">
-                                        <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
-                                        <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
-                                    </div>
                                     
                                 </div>
+                            </div>
+
+                            <!-- STEP 8 -->
+                            <div class="step" v-show="step === 8">
+                                STEP 8
                             </div>
                    
 
                 </form>
             </div>
             
-            Debug: {{selected}}
+            Page: {{step}}
 
             <!-- Content Footer -->
             <div class="footer">
@@ -691,6 +691,15 @@ const app = new Vue({
         sectionSix: null,
       }
     }
+  },
+  watch: {
+      step: function() {
+          if(this.step == 7 ){
+            setTimeout(() => {
+                this.step++;
+            }, 2000);
+        }
+      }
   },
   methods:{
     prev() {
