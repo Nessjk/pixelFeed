@@ -41,6 +41,9 @@ body {
   line-height: 1.6;
   font-size: 17px;
   font-family: "Roboto", sans-serif; }
+  @media (min-width: 500px) {
+    body {
+      overflow-y: hidden; } }
 
 a:hover {
   text-decoration: none; }
