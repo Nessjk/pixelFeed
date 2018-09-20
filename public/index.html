@@ -37,12 +37,12 @@
         </div>
         
         <!-- NAVBAR -->
-        <nav class="navigation" v-if="!loading">
+        <nav class="navigation d-flex align-center flex-column flex-md-row justify-content-between align-items-center" v-if="!loading">
 
-            <div class="d-flex align-center flex-column flex-md-row justify-content-between align-items-center ">
+            <!-- <div class="d-flex align-center flex-column flex-md-row justify-content-between align-items-center "> -->
                 <div class="logos">
                     <img src="./img/img/logo--temp.png" alt="Nachfolge.de logo">
-                    <img src="./img/img/logo--carl.png" alt="Carl finance logo">
+                    <img src="./img/img/logo--carl--small.png" alt="Carl finance logo">
                 </div>
                 <div class="number">
                     <div class="d-flex align-items-center">
@@ -52,7 +52,7 @@
                         <p>030 40 36 30 710</p>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         
         </nav>
 
@@ -535,8 +535,6 @@
     
     if (isMyScriptLoaded('https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js')) {
         var animParams = bodymovin.loadAnimation(params);
-        //var animParams2 = bodymovin.loadAnimation(success);
-    
     }
 
     function isMyScriptLoaded(url) {
