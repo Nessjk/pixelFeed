@@ -17,3 +17,19 @@
 .number {
     padding: 10px;
 }
+
+.logos {
+    padding: 16px;
+    
+    display: flex;
+    flex-direction: column;
+
+    & img:first-child {
+        height: 40px;
+    }
+    & img:last-child {
+        height: 40px;
+        opacity: 0.5;
+        width: 100px;
+    }
+}
