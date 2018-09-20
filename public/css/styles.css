@@ -604,7 +604,7 @@ input[type="range"]::-ms-thumb {
   transition: all 0.3s ease;
   position: absolute;
   width: 178px;
-  margin-top: 15%;
+  margin-top: calc(178px + 35px);
   font-size: 12px;
   text-align: center;
   color: #101010;
@@ -613,6 +613,19 @@ input[type="range"]::-ms-thumb {
   vertical-align: middle;
   display: flex;
   align-items: center; }
+  .tooltipMe::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #5BC0EB;
+    left: 46%;
+    top: -7px; }
 
 .navigation {
   min-height: 110px;
