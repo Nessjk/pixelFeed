@@ -650,7 +650,8 @@ input[type="range"]::-ms-thumb {
 .thumbnail {
   text-align: center; }
   .thumbnail p {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    font-size: 14px; }
   @media only screen and (max-width: 575px) {
     .thumbnail {
       margin-bottom: 2rem;
@@ -710,6 +711,14 @@ input[type="range"]::-ms-thumb {
     margin-bottom: 36px; }
   .introductionAnimation svg {
     animation: pulse infinite ease-in-out; }
+
+.secure p {
+  margin-top: 12px;
+  margin-left: 8px; }
+
+.secure img {
+  width: 70px;
+  height: 51px; }
 
 .partnerLogos {
   right: 0;
