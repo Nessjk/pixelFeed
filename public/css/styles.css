@@ -665,6 +665,62 @@ input[type="range"]::-ms-thumb {
     margin-top: -2px;
     margin-left: 16px; }
 
+.progressBar {
+  margin-top: 66px;
+  margin-bottom: -20px; }
+  .progressBar__dots {
+    margin-top: -9px;
+    display: flex;
+    justify-content: space-between; }
+
+.dot {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #e9ecef;
+  border: none;
+  cursor: pointer;
+  margin: -10px;
+  /* alignment fix for Chrome */
+  margin-left: 0px; }
+  .dot p {
+    margin-top: -30px; }
+    @media only screen and (max-width: 575px) {
+      .dot p {
+        display: none !important; } }
+  .dot--1 {
+    margin-left: -2px; }
+    .dot--1 p {
+      margin-left: -75px; }
+  .dot--2 {
+    margin-left: 7.2%; }
+    .dot--2 p {
+      margin-left: -32px; }
+  .dot--3 {
+    margin-right: 6.6%; }
+    .dot--3 p {
+      margin-left: -30px; }
+  .dot--4 {
+    width: 35px;
+    height: 35px;
+    margin-top: -16px; }
+    .dot--4 p {
+      margin-left: -55px;
+      margin-top: -52px; }
+    .dot--4 svg {
+      margin-left: 5px; }
+
+.progress-bar-striped {
+  background-image: none !important; }
+
+.progress-bar {
+  background-color: #5BC0EB; }
+
+.dot.active {
+  background: #5BC0EB; }
+
 .content {
   min-height: calc(100vh - 136px);
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQwIiBoZWlnaHQ9Ijk0OSIgdmlld0JveD0iMCAwIDE0NDAgOTQ5Ij4gIDxnIGZpbGw9Im5vbmUiPiAgICA8cG9seWdvbiBmaWxsPSIjRkZGIiBwb2ludHM9IjAgMCA4OTYgOTQ5IC4zIDk0OSIgb3BhY2l0eT0iLjYzOCIvPiAgICA8cG9seWdvbiBmaWxsPSIjODk5NkE1IiBwb2ludHM9IjE0NDAgMzU2IDUxMCA5NDkgMTQzOS43IDk0OSIgb3BhY2l0eT0iLjA3MyIvPiAgPC9nPjwvc3ZnPg==);

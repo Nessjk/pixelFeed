@@ -1,0 +1,89 @@
+.progressBar {
+    //margin-top: 36px;
+    margin-top: 66px;
+    margin-bottom: -20px;
+
+    &__dots {
+        margin-top: -9px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.dot {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #e9ecef;
+    border: none;
+    cursor: pointer;
+  
+    margin: -10px; /* alignment fix for Chrome */
+    margin-left: 0px;
+
+    & p {
+        margin-top: -30px;
+
+        @include mq('sm', max) {
+          display: none!important;
+        }
+    }
+
+    &--1 {
+        margin-left: -2px;
+
+        p {
+            margin-left: -75px;
+        }
+    }
+
+    &--2{
+        margin-left: 7.2%;
+
+        p {
+            margin-left: -32px;
+        }
+    }
+
+    &--3 {
+        margin-right: 6.6%;
+         
+        p {
+            margin-left: -30px;
+        }
+    }
+    
+    &--4 {
+        width: 35px;
+        height: 35px;
+        margin-top: -16px;
+
+         
+        p {
+            margin-left: -55px;
+            margin-top: -52px;
+        }
+
+        & svg {
+            margin-left: 5px;
+        }
+    }
+   
+}
+
+.progress-bar-striped {
+    background-image: none!important;
+
+}
+
+.progress-bar {
+    background-color: $blue--primary;
+}
+
+.dot.active {
+    background: $blue--primary;
+}
+
+//{active: selected.sectionOne === card.value}

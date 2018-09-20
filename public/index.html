@@ -63,6 +63,36 @@
             <div class="container container--maxWidth">
                 <!-- PROGRESS BAR -->
 
+                <div class="progressBar">
+                    <b-progress height="11px" :value="counter" :max="max" animated></b-progress>
+
+                    <div class="progressBar__dots">
+                        <div class="dot dot--1" :class="{active: step >= 1}">
+                            <p>
+                                Unternehmensinformation
+                            </p>
+                        </div>
+                        <div class="dot dot--2" :class="{active: step >= 4}">
+                            <p>
+                                Finanzdaten
+                            </p>
+                        </div>
+                        <div class="dot dot--3" :class="{active: step >= 6}">
+                            <p>
+                                Eigentümer
+                            </p>
+                        </div>
+                        <div class="dot dot--4" :class="{active: step >= 9}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18">
+                                <polygon fill="#FFF" stroke="#FFF" points="2.463 8.105 .4 10.168 7.032 16.8 21.769 2.063 19.706 0 7.032 12.6" transform="translate(1 1)"/>
+                            </svg>     
+                            <p>
+                                Unternehmenswert
+                            </p>                             
+                        </div>
+                    </div>
+                </div>
+
                 <!-- FORM -->
                 <form action="#" method="post">
 
@@ -797,6 +827,8 @@ const app = new Vue({
       introSentence: [...introSentence],
       buttonNext: 'Weiter',
       buttonPrevious: 'Zurück',
+      counter: 0,
+      max: 89,
       isHovered: null,
       // STEP 1
       stepOneTitles: [...stepOneTitles],
@@ -849,7 +881,7 @@ const app = new Vue({
       step: function() {
           if(this.step == 7 ){
             setTimeout(() => {
-                this.step++;
+                this.next();
             }, 2000);
         }
       }
@@ -857,9 +889,11 @@ const app = new Vue({
   methods:{
     prev() {
       this.step--;
+      this.counter = Math.round((this.step -1) / 9 * 100);
     },
     next() {
       this.step++;
+      this.counter = Math.round((this.step -1 )/ 9 * 100);
     },
     prev2() {
         this.step = 6;
