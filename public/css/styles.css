@@ -599,7 +599,7 @@ input[type="range"]::-ms-thumb {
   padding: 10px; }
 
 .content {
-  min-height: calc(100vh - 166px);
+  min-height: calc(100vh - 106px);
   background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTQ0MCA2NjgiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUgc2xpY2UiPjxzdHlsZT4uc3QwLC5zdDF7b3BhY2l0eTouNjM4NTtmaWxsOiNmZmY7ZW5hYmxlLWJhY2tncm91bmQ6bmV3fS5zdDF7b3BhY2l0eTo3LjMyNTYzNGUtMjtmaWxsOiM4OTk2YTV9PC9zdHlsZT48dGl0bGU+R3JvdXAgMjwvdGl0bGU+PGcgaWQ9Im1mbG93LXByb2Nlc3MiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTM1NikiPjxnIGlkPSJHcm91cC0yIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDM1NikiPjxwYXRoIGlkPSJQYXRoLTQiIGNsYXNzPSJzdDAiIGQ9Ik0wIDBsODk2LjMgNjcwLjFILjN6Ii8+PHBhdGggaWQ9IlBhdGgtNC1Db3B5IiBjbGFzcz0ic3QxIiBkPSJNMTQzOS43IDI1MS4xTDUxMCA2NzAuMWg5MjkuNHoiLz48L2c+PC9nPjwvc3ZnPg==);
   background-repeat: no-repeat;
   background-position: 0 100%;
