@@ -73,7 +73,7 @@
                         </h1>
                         <!-- Fields -->
                         <div class="step__form">
-                            
+                            <!-- MMMM -->
                             <div>
                                 <label for="name" class="formQuestion">{{stepOneTitles[0].question1}}</label>
                                 
@@ -87,8 +87,15 @@
                                             {active: selected.sectionOne === card.value},
                                             'justify-content-end'
                                         ]"
-                                        @click="setStep1($event)">
+                                        @click="setStep1($event, card.value)"
+                                        @mouseover="updateValue(index)"
+                                        @mouseleave="hideTooltip()">
                                         {{card.value}}
+
+                                        <div class="tooltipMe" v-if="isHovered === index">
+                                                {{card.tooltip}}
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -596,20 +603,24 @@ const stepOneTitles = [
 const stepOneContent = [
             {
                 icon: "euro",
-                value: "Unternehmensverkauf"
+                value: "Unternehmensverkauf",
+                tooltip: "Sie erwägen einen Verkauf des Unternehmens und sind deshalb an einer Unternehmensbewertung und an einer Einschätzung des zu erzielenden Verkaufspreises interessiert."
             },
             {
                 icon: "handshake",
-                value: "Kapitalbealarf"
+                value: "Kapitalbealarf",
+                tooltip: "Sie haben einen internen Kandidaten und möchten eine Einschätzung Ihres Unternehmenswerts erhalten."
             },
            
             {
                 icon: "succession",
-                value: "Interne Nachfolge"
+                value: "Interne Nachfolge",
+                tooltip: "Sie benötigen zusätzliches Kapital für Investitionen oder Expansion und möchten in diesem Zuge den Wert Ihres Unternehmens bestimmen."
             },
             {
                 icon: "dots",
-                value: "Sonstige"
+                value: "Sonstige",
+                tooltip: "Die anderen Optionen sind nicht zutreffend oder Sie möchten keine nähere Angabe machen."
             }
         ]
 
@@ -781,11 +792,12 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 8,
+      step: 1,
       loading: true,
       introSentence: [...introSentence],
       buttonNext: 'Weiter',
       buttonPrevious: 'Zurück',
+      isHovered: null,
       // STEP 1
       stepOneTitles: [...stepOneTitles],
       stepOneContent: [...stepOneContent],
@@ -857,9 +869,9 @@ const app = new Vue({
         //e.target.add.classList = "active";
         //console.log(e.target.innerText, e.target, this.selected.sectionOne);
     },
-    setStep1(e) {
-        this.selected.sectionOne = e.target.innerText;
-        //console.log(e.target.innerText, e.target, this.selected.sectionOne);
+    setStep1(e, value) {
+        this.selected.sectionOne = value;
+        console.log("value:" + value , e.target.innerText, e.target, this.selected.sectionOne);
     },
     setStep2(e) {
         this.selected.sectionTwo = e.target.innerText;
@@ -876,6 +888,15 @@ const app = new Vue({
     setStep6(e) {
         this.selected.sectionSix = e.target.innerText;
         //console.log(e.target.innerText, e.target, this.selected.sectionSix);
+    },
+    updateValue(index) {
+        //console.log(tooltip);
+        this.isHovered = index;
+        console.log(this.isHovered);
+    },
+    hideTooltip (){
+        this.isHovered = null;
+        console.log(this.isHovered);
     }
 
   },

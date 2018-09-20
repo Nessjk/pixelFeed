@@ -597,6 +597,23 @@ input[type="range"]::-ms-thumb {
   padding: 0px;
   transition: all .3s ease-in-out; }
 
+.tooltipMe {
+  border-radius: 4px;
+  background-color: #5BC0EB;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  position: absolute;
+  width: 178px;
+  margin-top: 15%;
+  font-size: 12px;
+  text-align: center;
+  color: #101010;
+  height: 178px;
+  width: 178px;
+  vertical-align: middle;
+  display: flex;
+  align-items: center; }
+
 .navigation {
   min-height: 110px;
   height: 100%;
