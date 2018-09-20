@@ -20,11 +20,15 @@
 
     </div>
 </div>
-       
+
+<!-- Vue App -->
     <div id="app">
        
         <!-- START ANIMATION -->
 
+        <div class="introductionAnimation">
+
+        </div>
 
         <!-- WRAP -->
         
@@ -431,6 +435,7 @@
                 <!-- Page: {{step}}
                 Debug: {{ selected }} {{profile}} -->
             </div>
+        </section>
             
           
 
@@ -504,7 +509,7 @@
                     </svg>
                 </div>
             </div>
-        </section>
+       
 
         <br /><br />
     </div>
@@ -560,7 +565,7 @@
 <!-- VUE APP -->
 <script type="text/javascript">
 
-// STEP 1
+// STEP 1 == Anlass
 const stepOneTitles = [
     {
         index: 1,
@@ -589,7 +594,7 @@ const stepOneContent = [
             }
         ]
 
-// STEP 2
+// STEP 2 == Branche
 const stepTwoTitles = [
     {
         index: 2,
@@ -625,7 +630,7 @@ const stepTwoContent = [
             }
 ]
 
-// STEP 3
+// STEP 3 == Gründungsdatum
 const stepThreeTitles = [
     {
         index: 3,
@@ -652,7 +657,7 @@ const stepThreeContent = [
             }
 ]
 
-// STEP 4
+// STEP 4 == Finanzdaten
 const stepFourTitles = [
     {
         index: 4,
@@ -666,7 +671,7 @@ const stepFourTitles = [
     }
 ]
 
-// STEP 5
+// STEP 5 == Kundenstruktur
 const stepFiveTitles = [
     {
         index: 5,
@@ -692,7 +697,7 @@ const stepFiveContent = [
     }
 ]
 
-// STEP 6
+// STEP 6 == Abhängigkeit vom Eigentümer
 const stepSixTitles = [
     {
         index: 6,
@@ -715,7 +720,8 @@ const stepSixContent = [
         value: "Sehr Hoch"
     }
 ]
-// STEP 7 & ANIMATION
+
+// STEP 7 & ANIMATION 
 const stepSevenTitles = [
     {
         index: 7,
@@ -724,7 +730,7 @@ const stepSevenTitles = [
     }
 ]
 
-// STEP 8
+// STEP 8 == Empfänger
 const stepEightTitles = [
     {
         index: 8,
@@ -740,7 +746,7 @@ const stepEightTitles = [
     }
 ]
 
-// STEP 9
+// STEP 9 == Final
 const stepNineTitles = [
     {
         index: 9,
@@ -756,7 +762,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 6,
+      step: 1,
       buttonNext: 'Weiter',
       buttonPrevious: 'Zurück',
       // STEP 1

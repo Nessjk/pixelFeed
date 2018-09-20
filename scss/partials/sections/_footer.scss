@@ -1,10 +1,10 @@
 .partnerLogos {
-    position: fixed;
     right: 0;
     bottom: 30px;
     left: 0;
     z-index: 1030;
     text-align: center;
+    padding-top: 40px;
 
     @include mq('sm', max) {
         position: initial;
