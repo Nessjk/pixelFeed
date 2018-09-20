@@ -381,11 +381,11 @@
                                             <label for="name" class="formQuestion"> {{ stepEightTitles[0].question1}}</label>
                                             <div class="form-row">
                                                 <div class="col-md-6">
-                                                    <input type="text" class="formWidth--half-1" id="inputEmail4" :placeholder="stepEightTitles[0].name"
+                                                    <input type="text" name="name" class="formWidth--half-1" id="inputEmail4" :placeholder="stepEightTitles[0].name"
                                                     v-model="profile.name">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="text" class="formWidth--half-2" id="inputPassword4" :placeholder="stepEightTitles[0].lastname"
+                                                    <input type="text" name="lastName" class="formWidth--half-2" id="inputPassword4" :placeholder="stepEightTitles[0].lastname"
                                                     v-model="profile.lastname">
                                                 </div>
                                             </div>
@@ -395,7 +395,7 @@
                                                 v-model="profile.email">
                                             </div>
                                             <div class="">
-                                                <input type="text" class="formWidth--full" id="inputAddress2" :placeholder="stepEightTitles[0].phone"
+                                                <input type="tel" class="formWidth--full" id="inputAddress2" :placeholder="stepEightTitles[0].phone"
                                                 v-model="profile.phone">
                                             </div>
 
