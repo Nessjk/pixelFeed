@@ -214,6 +214,14 @@ h1 {
   #lottie svg {
     width: 300px; }
 
+@keyframes slideshow {
+  0% {
+    margin-left: 0; }
+  50% {
+    margin-left: -300%; }
+  100% {
+    margin-left: 0; } }
+
 .icon.active {
   background: #5BC0EB;
   color: #fdfdfd; }
@@ -608,6 +616,9 @@ input[type="range"]::-ms-thumb {
     height: 40px;
     opacity: 0.5;
     width: 100px; }
+    @media only screen and (max-width: 575px) {
+      .logos img:last-child {
+        margin: auto; } }
 
 .content {
   min-height: calc(100vh - 106px);
@@ -681,3 +692,16 @@ input[type="range"]::-ms-thumb {
   left: 0;
   z-index: 1030;
   text-align: center; }
+  @media only screen and (max-width: 575px) {
+    .partnerLogos {
+      position: initial;
+      width: 100vw;
+      overflow: hidden; } }
+
+@media only screen and (max-width: 575px) {
+  .partnerLogos {
+    padding: 40px; } }
+
+@media only screen and (max-width: 575px) {
+  .partnerLogos svg {
+    animation: slideshow 90s linear infinite; } }

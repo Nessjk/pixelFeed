@@ -514,7 +514,7 @@
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
 <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js"></script>
 
 <script defer>
     var params = {
@@ -528,6 +528,7 @@
     if (isMyScriptLoaded('https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js')) {
         var animParams = bodymovin.loadAnimation(params);
         //var animParams2 = bodymovin.loadAnimation(success);
+    
     }
 
     function isMyScriptLoaded(url) {

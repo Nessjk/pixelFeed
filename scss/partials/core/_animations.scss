@@ -61,4 +61,8 @@
     }
 }
 
-
+@keyframes slideshow {
+    0%    { margin-left: 0; }
+    50%  { margin-left: -300%; }
+    100%  { margin-left: 0; }
+  }

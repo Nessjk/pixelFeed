@@ -5,4 +5,23 @@
     left: 0;
     z-index: 1030;
     text-align: center;
+
+    @include mq('sm', max) {
+        position: initial;
+        width: 100vw;
+        overflow: hidden;
+    }
+   
+}
+
+.partnerLogos {
+    @include mq('sm', max) {
+      padding: 40px;
+    }
+
+    & svg {
+        @include mq('sm', max) {
+            animation: slideshow 90s linear infinite;
+          }
+    }
 }
