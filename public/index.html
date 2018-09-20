@@ -13,22 +13,16 @@
 </head>
 <body>
 
+<!-- Lottie Animation -->
 <div class="lottieAnimation d-none">
+    <!-- Hidden through JS until attributes of the v-show div result to false which add d-block class to show animation -->
     <div id="lottie">
-
-    </div>
-</div>
-
-<div class="lottieSuccess d-none">
-    <div id="lottieAnimationSuccess">
 
     </div>
 </div>
        
     <div id="app">
        
-
-
         <!-- START ANIMATION -->
 
 
@@ -519,31 +513,17 @@
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
 <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/bootstrap-slider.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js"></script>
-<script src="./js/components.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js"></script>
 
-<script>
+<script defer>
     var params = {
         container: document.getElementById('lottie'),
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        //path: './img/json/animation-loading.json'
         path: './img/json/animation-loading.json'
-        //path: 'https://www.dropbox.com/s/ivklcnjfue8zr1u/animation-loading.json?raw=1'
-        //path: 'data.json'
     };
     
-    // var success = {
-    //     container: document.getElementById('lottieAnimationSuccess'),
-    //     renderer: 'svg',
-    //     loop: true,
-    //     autoplay: false,
-    //     animationSpeed: 0.2,
-    //     path: './img/json/animation-success.json'
-    // };
-
     if (isMyScriptLoaded('https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js')) {
         var animParams = bodymovin.loadAnimation(params);
         //var animParams2 = bodymovin.loadAnimation(success);
@@ -557,20 +537,6 @@
         }
         return false;
     }
-
-    // Get Animation step
-    // setInterval(function(){ 
-    //     let animationContainerSuccess = document.querySelector('#animationStepFinal');
-    //     let lottieSuccess = document.querySelector('.lottieSuccess');
-    //     if(animationContainerSuccess.style.cssText !== 'display: none;') {
-    //         lottieSuccess.classList.add('d-block', 'fadeIn');
-    //     } else {
-    //         if(lottieSuccess.classList.contains('d-block')) {
-    //             lottieSuccess.classList.remove('d-block', 'fadeIn');
-    //         }
-        
-    //     }
-    // }, 300);
 
     //Set interval check to see if the correct page is loaded as vue and bodymovin don't work in the same environment
     setInterval(function(){ 
@@ -586,7 +552,10 @@
         
         }
     }, 300);
+
 </script>
+
+<!-- VUE APP -->
 <script type="text/javascript">
 
 // STEP 1
@@ -857,32 +826,27 @@ const app = new Vue({
     showMe(e) {
         this.selected.sectionOne = e.target.innerText;
         //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionOne);
+        //console.log(e.target.innerText, e.target, this.selected.sectionOne);
     },
     setStep1(e) {
         this.selected.sectionOne = e.target.innerText;
-        //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionOne);
+        //console.log(e.target.innerText, e.target, this.selected.sectionOne);
     },
     setStep2(e) {
         this.selected.sectionTwo = e.target.innerText;
-        //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionTwo);
+        //console.log(e.target.innerText, e.target, this.selected.sectionTwo);
     },
     setStep3(e) {
         this.selected.sectionThree = e.target.innerText;
-        //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionThree);
+        //console.log(e.target.innerText, e.target, this.selected.sectionThree);
     },
     setStep5(e) {
         this.selected.sectionFive1 = e.target.innerText;
-        //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionFive1);
+        //console.log(e.target.innerText, e.target, this.selected.sectionFive1);
     },
     setStep6(e) {
         this.selected.sectionSix = e.target.innerText;
-        //e.target.add.classList = "active";
-        console.log(e.target.innerText, e.target, this.selected.sectionSix);
+        //console.log(e.target.innerText, e.target, this.selected.sectionSix);
     }
 
   }
