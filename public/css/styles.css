@@ -219,6 +219,14 @@ h1 {
   100% {
     margin-left: 0; } }
 
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+
 .icon.active {
   background: #5BC0EB;
   color: #fdfdfd; }
@@ -681,6 +689,23 @@ input[type="range"]::-ms-thumb {
 .checkmark img {
   width: 150px;
   height: 150px; }
+
+.introductionAnimation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .introductionAnimation img {
+    width: 60px;
+    animation: scaleAnimation 3s ease-in-out;
+    margin-bottom: 36px; }
+  .introductionAnimation svg {
+    animation: pulse infinite ease-in-out; }
 
 .partnerLogos {
   right: 0;

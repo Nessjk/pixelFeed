@@ -66,3 +66,10 @@
     50%  { margin-left: -300%; }
     100%  { margin-left: 0; }
   }
+
+@keyframes scaleAnimation {
+    0%    {  transform: scale(1); }
+    50%  { transform: scale(1.2); }
+    100%  { transform: scale(1); }
+  }
+
