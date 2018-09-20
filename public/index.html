@@ -367,8 +367,8 @@
                                                 <ul>
                                                     <li>      
                                                         <p class="order-2 order-md-1 formQuestion">{{stepEightTitles[0].checkmarks[0]}}</p>
-                                                        <svg class="order-1 order-md-2" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
-                                                            <path fill="#5BC0EB;" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
+                                                        <svg class="order-1 order-md-2"  xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                                                            <path fill="#5BC0EB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
                                                             </svg>
                                                     </li>
                                                     <li>
@@ -529,7 +529,8 @@
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: 'img/json/animation-loading.json'
+        //path: './img/json/animation-loading.json'
+        path: './img/json/animation-loading.json'
         //path: 'https://www.dropbox.com/s/ivklcnjfue8zr1u/animation-loading.json?raw=1'
         //path: 'data.json'
     };
@@ -558,33 +559,33 @@
     }
 
     // Get Animation step
-    setInterval(function(){ 
-        let animationContainerSuccess = document.querySelector('#animationStepFinal');
-        let lottieSuccess = document.querySelector('.lottieSuccess');
-        if(animationContainerSuccess.style.cssText !== 'display: none;') {
-            lottieSuccess.classList.add('d-block', 'fadeIn');
-        } else {
-            if(lottieSuccess.classList.contains('d-block')) {
-                lottieSuccess.classList.remove('d-block', 'fadeIn');
-            }
-        
-        }
-    }, 300);
-
-    // Set interval check to see if the correct page is loaded as vue and bodymovin don't work in the same environment
     // setInterval(function(){ 
-    //     let animationContainer = document.querySelector('#animationStep');
-    //     let lottie = document.querySelector('.lottieAnimation');
-    //     if(animationContainer.style.cssText !== 'display: none;') {
-            
-    //         lottie.classList.add('d-block', 'fadeIn');
+    //     let animationContainerSuccess = document.querySelector('#animationStepFinal');
+    //     let lottieSuccess = document.querySelector('.lottieSuccess');
+    //     if(animationContainerSuccess.style.cssText !== 'display: none;') {
+    //         lottieSuccess.classList.add('d-block', 'fadeIn');
     //     } else {
-    //         if(lottie.classList.contains('d-block')) {
-    //             lottie.classList.remove('d-block', 'fadeIn');
+    //         if(lottieSuccess.classList.contains('d-block')) {
+    //             lottieSuccess.classList.remove('d-block', 'fadeIn');
     //         }
         
     //     }
     // }, 300);
+
+    //Set interval check to see if the correct page is loaded as vue and bodymovin don't work in the same environment
+    setInterval(function(){ 
+        let animationContainer = document.querySelector('#animationStep');
+        let lottie = document.querySelector('.lottieAnimation');
+        if(animationContainer.style.cssText !== 'display: none;') {
+            
+            lottie.classList.add('d-block', 'fadeIn');
+        } else {
+            if(lottie.classList.contains('d-block')) {
+                lottie.classList.remove('d-block', 'fadeIn');
+            }
+        
+        }
+    }, 300);
 </script>
 <script type="text/javascript">
 
@@ -784,7 +785,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 1,
+      step: 6,
       buttonNext: 'Weiter',
       buttonPrevious: 'Zurück',
       // STEP 1
