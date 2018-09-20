@@ -575,6 +575,9 @@
 <!-- VUE APP -->
 <script type="text/javascript">
 
+// INTRO SENTENCE
+const introSentence = "Bewertungstool wird geladen…";
+
 // STEP 1 == Anlass
 const stepOneTitles = [
     {
@@ -774,6 +777,7 @@ const app = new Vue({
       // GENERAL
       step: 1,
       loading: true,
+      introSentence: [...introSentence],
       buttonNext: 'Weiter',
       buttonPrevious: 'Zurück',
       // STEP 1
