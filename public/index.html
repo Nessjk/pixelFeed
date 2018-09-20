@@ -72,20 +72,22 @@
                         <!-- Fields -->
                         <div class="step__form">
                             
-                            <label for="name" class="formQuestion">{{stepOneTitles[0].question1}}</label>
-                            
-                            <div class="d-flex flex-wrap">
-                                <div  v-for="(card,index) in stepOneContent"
-                                      :class="[
-                                        'selectInput',
-                                        `selectInput--${stepOneTitles[0].size}`,
-                                        'formFieldSelectFont',
-                                        'icon', `icon--${card.icon}`,
-                                        {active: selected.sectionOne === card.value},
-                                        'justify-content-end'
-                                      ]"
-                                      @click="setStep1($event)">
-                                     {{card.value}}
+                            <div>
+                                <label for="name" class="formQuestion">{{stepOneTitles[0].question1}}</label>
+                                
+                                <div class="d-flex flex-wrap">
+                                    <div  v-for="(card,index) in stepOneContent"
+                                        :class="[
+                                            'selectInput',
+                                            `selectInput--${stepOneTitles[0].size}`,
+                                            'formFieldSelectFont',
+                                            'icon', `icon--${card.icon}`,
+                                            {active: selected.sectionOne === card.value},
+                                            'justify-content-end'
+                                        ]"
+                                        @click="setStep1($event)">
+                                        {{card.value}}
+                                    </div>
                                 </div>
                             </div>
                                 
@@ -104,21 +106,23 @@
                         
                         <!-- Fields -->
                         <div class="step__form">
+                            
+                            <div>
+                                <label for="name" class="formQuestion">{{stepTwoTitles[0].question1}}</label>
 
-                            <label for="name" class="formQuestion">{{stepTwoTitles[0].question1}}</label>
-
-                            <div class="d-flex flex-wrap">
-                                <div  v-for="(card,index) in stepTwoContent"
-                                        :class="[
-                                        'selectInput',
-                                        `selectInput--${stepTwoTitles[0].size}`,
-                                        'formFieldSelectFont',
-                                        'icon', `icon--${card.icon}`,
-                                        {active: selected.sectionTwo === card.value},
-                                        'justify-content-end'
-                                        ]"
-                                        @click="setStep2($event)">
-                                        {{card.value}}
+                                <div class="d-flex flex-wrap">
+                                    <div  v-for="(card,index) in stepTwoContent"
+                                            :class="[
+                                            'selectInput',
+                                            `selectInput--${stepTwoTitles[0].size}`,
+                                            'formFieldSelectFont',
+                                            'icon', `icon--${card.icon}`,
+                                            {active: selected.sectionTwo === card.value},
+                                            'justify-content-end'
+                                            ]"
+                                            @click="setStep2($event)">
+                                            {{card.value}}
+                                    </div>
                                 </div>
                             </div>
         
@@ -139,20 +143,22 @@
                         <!-- Fields -->
                         <div class="step__form">
 
-                            <label for="name" class="formQuestion"> {{stepThreeTitles[0].question1}}</label>
-        
-                            <div class="d-flex flex-wrap ">
-                                <div  v-for="(card,index) in stepThreeContent"
-                                        :class="[
-                                        'selectInput',
-                                        `selectInput--${stepThreeTitles[0].size}`,
-                                        'formFieldSelectFont--big',
-                                        'icon', 
-                                        {active: selected.sectionThree === card.value},
-                                        'justify-content-center'
-                                        ]"
-                                        @click="setStep3($event)">
-                                        {{card.value}}
+                            <div>
+                                <label for="name" class="formQuestion"> {{stepThreeTitles[0].question1}}</label>
+            
+                                <div class="d-flex flex-wrap ">
+                                    <div  v-for="(card,index) in stepThreeContent"
+                                            :class="[
+                                            'selectInput',
+                                            `selectInput--${stepThreeTitles[0].size}`,
+                                            'formFieldSelectFont--big',
+                                            'icon', 
+                                            {active: selected.sectionThree === card.value},
+                                            'justify-content-center'
+                                            ]"
+                                            @click="setStep3($event)">
+                                            {{card.value}}
+                                    </div>
                                 </div>
                             </div>
 
@@ -173,6 +179,7 @@
                             <!-- Fields -->
                             <div class="step__form">
     
+                                <div class="d-flex flex-column">
                                 <!-- Question 1 -->
                                 <label for="step4Question1" class="formQuestion"> {{stepFourTitles[0].question1}}</label>
                                 <input 
@@ -191,6 +198,7 @@
                                     v-model="selected.sectionFour2"
                                     :placeholder="stepFourTitles[0].field2">
 
+                                </div>
                                 <br><br>
     
                                 <div class="formButtons">
@@ -260,20 +268,22 @@
                                 <!-- Fields -->
                                 <div class="step__form">
         
-                                    <label for="name" class="formQuestion"> {{stepSixTitles[0].question1}}</label>
-                
-                                    <div class="d-flex flex-wrap ">
-                                        <div  v-for="(card,index) in stepSixContent"
-                                                :class="[
-                                                'selectInput',
-                                                `selectInput--${stepSixTitles[0].size}`,
-                                                'formFieldSelectFont--medium',
-                                                'icon', 
-                                                {active: selected.sectionSix === card.value},
-                                                'justify-content-center'
-                                                ]"
-                                                @click="setStep6($event)">
-                                                {{card.value}}
+                                    <div>
+                                        <label for="name" class="formQuestion"> {{stepSixTitles[0].question1}}</label>
+                    
+                                        <div class="d-flex flex-wrap ">
+                                            <div  v-for="(card,index) in stepSixContent"
+                                                    :class="[
+                                                    'selectInput',
+                                                    `selectInput--${stepSixTitles[0].size}`,
+                                                    'formFieldSelectFont--medium',
+                                                    'icon', 
+                                                    {active: selected.sectionSix === card.value},
+                                                    'justify-content-center'
+                                                    ]"
+                                                    @click="setStep6($event)">
+                                                    {{card.value}}
+                                            </div>
                                         </div>
                                     </div>
         
