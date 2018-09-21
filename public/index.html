@@ -94,7 +94,7 @@
                 </div>
 
                 <!-- FORM -->
-                <form action="#" method="post">
+                <form action="#" id="contactForm" method="post">
 
                     <!-- STEP 1 -->
                     <div class="step" v-show="step === 1">
@@ -1060,14 +1060,35 @@ const app = new Vue({
 
         return re.test(email);
 
+    },
+    handleFormSubmit(event) {  
+        event.preventDefault();          
+        var data = getFormDataPop();         
+        let data = {...this.profile, ...this.selected };
+        console.log(data);
+        
+            var url = event.target.action;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', url);
+            // xhr.withCredentials = true;
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+            // url encode form data for sending as post data
+            var encoded = Object.keys(data).map(function(k) {
+                return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+            }).join('&')
+            xhr.send(encoded);
     }
-
-
   },
   mounted() {
       setTimeout(() => {
         this.loading = false;
       }, 20);
+      //let data = [...this.selected];
+    //   var content = this.selected;
+    //   var profile = this.profile;
+    //   var data = profile.concat(content);
+     
   }
 });
 
