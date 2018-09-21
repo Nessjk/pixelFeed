@@ -191,6 +191,9 @@ h1 {
 .fadeIn {
   animation: fadeIn .3s ease-in; }
 
+.shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
+
 #lottie {
   height: 100%;
   width: 100%;
@@ -229,6 +232,16 @@ h1 {
     transform: scale(1.2); }
   100% {
     transform: scale(1); } }
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0); } }
 
 .icon.active {
   background: #5BC0EB;
@@ -803,6 +816,10 @@ input[type="range"]::-ms-thumb {
     margin-bottom: 36px; }
   .introductionAnimation svg {
     animation: pulse infinite ease-in-out; }
+
+.secure a {
+  text-decoration: underline;
+  color: #828282; }
 
 .secure p {
   margin-top: 12px;

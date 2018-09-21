@@ -131,7 +131,7 @@
                             </div>
                                 
                             <div class="formButtons--step1">
-                                <button class="button button--primary" @click.prevent="next()">{{buttonNext}}</button>
+                                <button class="button button--primary" @click.prevent="next($event)">{{buttonNext}}</button>
                             </div>
 
                         </div>      
@@ -167,7 +167,7 @@
         
                             <div class="formButtons">
                                 <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
-                                <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
+                                <button class="button button--primary"  @click.prevent="next($event)">{{buttonNext}}</button>
                             </div>
                             
                         </div>
@@ -203,7 +203,7 @@
 
                             <div class="formButtons">
                                 <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
-                                <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
+                                <button class="button button--primary"  @click.prevent="next($event)">{{buttonNext}}</button>
                             </div>
                             
                         </div>
@@ -222,16 +222,22 @@
                                 <!-- Question 1 -->
                                 <label for="step4Question1" class="formQuestion"> {{stepFourTitles[0].question1}}</label>
                                 <input 
+                                    type="number"
                                     id="step4Question1Input" 
                                     name="step4Question1Input" 
                                     v-model="selected.sectionFour1"
+                                    v-on:input="addDots($event.target.value)" 
+                                    
                                     :placeholder="stepFourTitles[0].field1">
+
+                                        {{selected.sectionFour1}}
                                 
                                 <hr>
 
                                  <!-- Question 2 -->
                                  <label for="step4Question2" class="formQuestion"> {{stepFourTitles[0].question2}}</label>
                                  <input 
+                                    type="number"
                                     id="step4Question2Input" 
                                     name="step4Question2Input" 
                                     v-model="selected.sectionFour2"
@@ -242,7 +248,7 @@
     
                                 <div class="formButtons">
                                     <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
-                                    <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
+                                    <button class="button button--primary"  @click.prevent="next($event)">{{buttonNext}}</button>
                                 </div>
                                 
                             </div>
@@ -292,7 +298,7 @@
     
                                 <div class="formButtons">
                                     <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
-                                    <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
+                                    <button class="button button--primary"  @click.prevent="next($event)">{{buttonNext}}</button>
                                 </div>
                                 
                             </div>
@@ -328,7 +334,7 @@
         
                                     <div class="formButtons">
                                         <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
-                                        <button class="button button--primary"  @click.prevent="next()">{{buttonNext}}</button>
+                                        <button class="button button--primary"  @click.prevent="next($event)">{{buttonNext}}</button>
                                     </div>
                                     
                                 </div>
@@ -440,7 +446,7 @@
 
                                     <div class="formButtons">
                                             <button class="button button--secondary" @click.prevent="prev2()">{{buttonPrevious}}</button>
-                                            <button class="button button--primary noMargin"  @click.prevent="next()">
+                                            <button class="button button--primary noMargin"  @click.prevent="next($event)">
                                             einreichen</button>
                                     </div>
                                     
@@ -465,7 +471,7 @@
                                                 margin: auto;
                                                 padding: 0px;"
                                                 class="button button--primary noMargin"  
-                                                @click.prevent="next()">
+                                                @click.prevent="next($event)">
                                                     {{stepNineTitles[0].button}}</button>
 
                                             <label for="name" class="formQuestion text-center"> {{stepNineTitles[0].text2}}</label>
@@ -822,7 +828,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 1,
+      step: 8,
       loading: true,
       introSentence: [...introSentence],
       buttonNext: 'Weiter',
@@ -881,19 +887,22 @@ const app = new Vue({
       step: function() {
           if(this.step == 7 ){
             setTimeout(() => {
-                this.next();
+                this.step++;
+                this.counter = Math.round((this.step -1 )/ 9 * 100);
             }, 2000);
         }
       }
   },
+  filters: {
+      
+   },
   methods:{
     prev() {
       this.step--;
       this.counter = Math.round((this.step -1) / 9 * 100);
     },
-    next() {
-      this.step++;
-      this.counter = Math.round((this.step -1 )/ 9 * 100);
+    next(e) {
+      this.validate(e);
     },
     prev2() {
         this.step = 6;
@@ -931,7 +940,101 @@ const app = new Vue({
     hideTooltip (){
         this.isHovered = null;
         console.log(this.isHovered);
+    },
+    validate(e) {
+        let event = e;
+
+        // Validation STEP 1
+        if(this.step === 1) {
+            if(this.selected.sectionOne !== null) {
+                this.goForward(); 
+            } else {
+                this.addShakeToButton(e);
+            }
+        }
+        // Validation STEP 2
+        if(this.step === 2) {
+            if(this.selected.sectionTwo !== null) {
+                this.goForward(); 
+            } else {
+                this.addShakeToButton(e);
+            }
+        }
+        // Validation STEP 3
+        if(this.step === 3) {
+            if(this.selected.sectionThree !== null) {
+                this.goForward(); 
+            } else {
+                this.addShakeToButton(e);
+            }
+        }
+        
+        // Validation STEP 4
+        if(this.step === 4) {
+            if(this.selected.sectionFour1 !== null && this.selected.sectionFour2 !== null) {
+                this.goForward(); 
+            } else {
+                this.addShakeToButton(e);
+            }
+        }
+       
+        // Validation STEP 5
+        if(this.step === 5) {
+            if(this.selected.sectionFive1 !== null && this.selected.sectionFive2 !== 0) {
+                this.goForward(); 
+            } else {
+                this.addShakeToButton(e);
+            }
+        }
+       
+        // Validation STEP 6
+        if(this.step === 6) {
+            if(this.selected.sectionSix !== null) {
+                this.goForward(); 
+            } else {
+                this.addShakeToButton(e);
+            }
+        }
+       
+        // Validation STEP 8
+        if(this.step === 8) {
+            if(this.profile.name !== null &&
+               this.profile.lastname !== null &&
+               this.profile.email !== null &&
+               this.profile.phone !== null
+            ) {
+                if (this.validateEmail(this.profile.email) == true) {
+                    this.goForward(); 
+                } else {
+                    this.addShakeToButton(e);
+                }
+            } else {
+                this.addShakeToButton(e);
+            }
+        }
+    },
+    addShakeToButton(e){
+        let event = e;
+        //console.log(event.toElement);
+        event.toElement.classList.add('shake');
+
+        setTimeout(() => {
+            if(event.toElement.classList.contains('shake')){
+                event.toElement.classList.remove('shake');
+            }
+        }, 1000);
+    },
+    goForward() {
+        this.step++;
+        this.counter = Math.round((this.step -1 )/ 9 * 100);
+    },
+    validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        return re.test(email);
+
     }
+
 
   },
   mounted() {
