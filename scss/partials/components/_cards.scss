@@ -135,3 +135,25 @@
         top: -7px;
     }
 }
+
+.tooltipMe--inline {
+    border-radius: 4px;
+    background-color: #5BC0EB;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    font-size: 12px;
+    text-align: center;
+    color: #101010;
+    vertical-align: middle;
+    height: 51px;
+
+    & p {
+        margin-bottom: 0!important;
+    }
+
+
+    @include mq('md', max) {
+        min-height: 70px!important;
+    }
+  
+}

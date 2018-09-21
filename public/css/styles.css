@@ -54,6 +54,9 @@ a:hover {
 p {
   color: #101010; }
 
+.width--100 {
+  width: 100%; }
+
 .is-hidden {
   display: none !important; }
 
@@ -642,6 +645,22 @@ input[type="range"]::-ms-thumb {
     border-bottom: 8px solid #5BC0EB;
     left: 46%;
     top: -7px; }
+
+.tooltipMe--inline {
+  border-radius: 4px;
+  background-color: #5BC0EB;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  text-align: center;
+  color: #101010;
+  vertical-align: middle;
+  height: 51px; }
+  .tooltipMe--inline p {
+    margin-bottom: 0 !important; }
+  @media only screen and (max-width: 767px) {
+    .tooltipMe--inline {
+      min-height: 70px !important; } }
 
 .navigation {
   min-height: 60px;

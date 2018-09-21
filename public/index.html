@@ -221,17 +221,23 @@
                                 <div class="d-flex flex-column">
                                 <!-- Question 1 -->
                                 <label for="step4Question1" class="formQuestion"> {{stepFourTitles[0].question1}}</label>
-                                <input 
-                                    type="number"
-                                    id="step4Question1Input" 
-                                    name="step4Question1Input" 
-                                    v-model="selected.sectionFour1"
-                                    v-on:input="addDots($event.target.value)" 
-                                    
-                                    :placeholder="stepFourTitles[0].field1">
+                                <div class="d-flex flex-column flex-md-row">
+                                        <input 
+                                        class="width--100"
+                                        type="number"
+                                        id="step4Question1Input" 
+                                        name="step4Question1Input" 
+                                        v-model.lazy="selected.sectionFour1"                                        
+                                        :placeholder="stepFourTitles[0].field1">
 
-                                        {{selected.sectionFour1}}
-                                
+                                        <div class="tooltipMe--inline" v-if="financeValueTooLow">
+                                            <p>
+                                                Unter EUR 1.000.000 Umsatz ist der errechnete Wert nicht aussagekräftig.
+                                            </p>
+                                        </div>
+
+                                </div>
+                                                                
                                 <hr>
 
                                  <!-- Question 2 -->
@@ -859,6 +865,7 @@ const app = new Vue({
       stepSixTitles: [...stepSixTitles],
       stepSixContent: [...stepSixContent],
       stepSixSelected: null,
+      financeValueTooLow: false,
       // STEP 7
       stepSevenTitles: [...stepSevenTitles],
       // STEP 8
@@ -891,10 +898,26 @@ const app = new Vue({
                 this.counter = Math.round((this.step -1 )/ 9 * 100);
             }, 2000);
         }
+      },
+      nestedComputedValueToWatch: function() {
+        if(this.selected.sectionFour1 < 500000) {
+               //console.log('too low');
+               this.financeValueTooLow = true;
+        }
       }
   },
   filters: {
       
+   },
+   computed: {
+    //    bubble(){
+    //        if(this.selected.sectionFour1 < 500000) {
+    //            console.log('too low');
+    //        }
+    //    }
+        nestedComputedValueToWatch() {
+            return this.selected.sectionFour1
+        }
    },
   methods:{
     prev() {
