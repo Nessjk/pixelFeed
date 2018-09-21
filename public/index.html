@@ -828,7 +828,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 8,
+      step: 1,
       loading: true,
       introSentence: [...introSentence],
       buttonNext: 'Weiter',
@@ -906,6 +906,7 @@ const app = new Vue({
     },
     prev2() {
         this.step = 6;
+        this.counter = Math.round((this.step -2) / 9 * 100);
     },
     showMe(e) {
         this.selected.sectionOne = e.target.innerText;
