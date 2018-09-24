@@ -834,7 +834,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 4,
+      step: 1,
       loading: true,
       introSentence: [...introSentence],
       buttonNext: 'Weiter',
@@ -959,7 +959,7 @@ const app = new Vue({
     updateValue(index) {
         //console.log(tooltip);
         this.isHovered = index;
-        console.log(this.isHovered);
+        //console.log(this.isHovered);
     },
     hideTooltip (){
         this.isHovered = null;

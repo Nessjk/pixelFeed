@@ -46,8 +46,10 @@
     @include boxAndShadow;
 
     &--big {
-        width: 180px!important;
-        height: 180px!important;
+        //width: 180px!important;
+        //height: 180px!important;
+        width: 160px!important;
+        height: 160px!important;
 
         @include mq('sm', max) {
             width: 100%!important;
@@ -103,19 +105,38 @@
 }
 
 .tooltipMe {
-	border-radius: 4px;
+
+    // Before changes
+	// border-radius: 4px;
+    // background-color: #5BC0EB;
+    // padding: 1rem;
+    // transition: all 0.3s ease;
+    // position: absolute;
+    // width: 178px;
+    // margin-top: calc(178px + 35px);
+    // font-size: 12px;
+    // text-align: center;
+    // color: #101010;
+    // //text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    // height: 178px;
+    // width: 178px;
+    // vertical-align: middle;
+    // display: flex;
+    // align-items: center;
+
+    // After changes 
+    border-radius: 4px;
     background-color: #5BC0EB;
-    padding: 1rem;
+    padding: 0.7rem;
     transition: all 0.3s ease;
     position: absolute;
     width: 178px;
     margin-top: calc(178px + 35px);
-    font-size: 12px;
+    font-size: 11px;
     text-align: center;
     color: #101010;
-    //text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-    height: 178px;
-    width: 178px;
+    height: 188px;
+    width: 160px;
     vertical-align: middle;
     display: flex;
     align-items: center;
