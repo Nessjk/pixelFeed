@@ -9,7 +9,7 @@
     <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/css/bootstrap-slider.min.css"/>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
@@ -64,7 +64,7 @@
                 <!-- PROGRESS BAR -->
 
                 <div class="progressBar">
-                    <b-progress height="11px" :value="counter" :max="max" animated></b-progress>
+                    <b-progress height="8px" :value="counter" :max="max" animated></b-progress>
 
                     <div class="progressBar__dots">
                         <div class="dot dot--1" :class="{active: step >= 1}">
@@ -94,7 +94,7 @@
                 </div>
 
                 <!-- FORM -->
-                <form action="#" id="contactForm" method="post">
+                <form action="https://script.google.com/macros/s/AKfycbxtDNqP8kNrTULGs-hm4a6-zhNafFtICKFbyppTJ1r19S7p-SX7/exec" id="contactForm" method="POST" class="" data-email="nessjk@gmail.com">
 
                     <!-- STEP 1 -->
                     <div class="step" v-show="step === 1">
@@ -393,11 +393,11 @@
                                             <label for="name" class="formQuestion"> {{ stepEightTitles[0].question1}}</label>
                                             <div class="form-row">
                                                 <div class="col-md-6">
-                                                    <input type="text" name="name" class="formWidth--half-1" id="inputEmail4" :placeholder="stepEightTitles[0].name"
+                                                    <input type="text" name="fname" class="formWidth--half-1" id="inputEmail4" :placeholder="stepEightTitles[0].name"
                                                     v-model="profile.name">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="text" name="fname" class="formWidth--half-2" id="inputPassword4" :placeholder="stepEightTitles[0].lastname"
+                                                    <input type="text" name="lname" class="formWidth--half-2" id="inputPassword4" :placeholder="stepEightTitles[0].lastname"
                                                     v-model="profile.lastname">
                                                 </div>
                                             </div>
@@ -452,7 +452,7 @@
 
                                     <div class="formButtons">
                                             <button class="button button--secondary" @click.prevent="prev2()">{{buttonPrevious}}</button>
-                                            <button class="button button--primary noMargin noPadding"  @click.prevent="next($event)">
+                                            <button class="button button--primary noMargin noPadding"  @click.prevent=" handleFormSubmit($event)">
                                             einreichen</button>
                                     </div>
                                     
@@ -474,10 +474,7 @@
                                     
                                             <a href="https://nachfolge.de/nachfolgemagazin-uebersicht-2/">
                                                 <button 
-                                                style="width: 300px;
-                                                margin: auto;
-                                                padding: 0px;"
-                                                class="button button--primary noMargin "  
+                                                class="button button--primary noMargin button--finalStep "  
                                                 @click.prevent="next($event)">
                                                     {{stepNineTitles[0].button}}
                                                 </button>
@@ -719,10 +716,10 @@ const stepThreeContent = [
                 value: "<5"
             },
             {
-                value: "5-10"
+                value: ">5-10"
             },
             {
-                value: "10-20"
+                value: "11-20"
             },
             {
                 value: "20-30"
@@ -752,7 +749,7 @@ const stepFiveTitles = [
         index: 5,
         section: "Kundenstruktur",
         question1: "Wie groß ist Ihr Kundenstamm?",
-        question2 : "Anteil Ihres größten Kunden (in%):",
+        question2 : "Anteil Ihres größten Kunden (in %):",
         fields2 : "10",
         size: "small"
     }
@@ -837,7 +834,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 8,
+      step: 4,
       loading: true,
       introSentence: [...introSentence],
       buttonNext: 'Weiter',
@@ -1062,8 +1059,8 @@ const app = new Vue({
 
     },
     handleFormSubmit(event) {  
-        event.preventDefault();          
-        var data = getFormDataPop();         
+        //event.preventDefault();          
+        //var data = getFormDataPop();         
         let data = {...this.profile, ...this.selected };
         console.log(data);
         

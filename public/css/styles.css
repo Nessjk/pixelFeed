@@ -211,12 +211,13 @@ h1 {
   bottom: 0;
   right: 0;
   width: 1067px;
-  height: 600px; }
+  height: 600px;
+  margin-top: 20%; }
   @media only screen and (max-width: 575px) {
     #lottie {
       width: 400px;
       height: 600px;
-      margin-top: 200px; } }
+      margin-top: 70%; } }
   #lottie svg {
     width: 300px; }
 
@@ -253,8 +254,7 @@ h1 {
 .icon {
   background-repeat: no-repeat;
   background-position: 50%;
-  background-size: 40%;
-  transition: all 0.3s ease-in-out; }
+  background-size: 40%; }
   .icon:hover {
     background: #5BC0EB;
     color: #fdfdfd; }
@@ -390,7 +390,7 @@ h1 {
 input {
   padding: 11px 20px 11px;
   border-radius: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   max-width: 400px;
   margin-right: 8px;
   /* Rectangle: */
@@ -512,6 +512,13 @@ input[type="range"]::-ms-thumb {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); }
     .button--secondary:hover {
       background: gainsboro; }
+
+.button--finalStep {
+  width: 300px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 0px;
+  margin-bottom: 50px; }
 
 .button-range {
   max-width: 50px;
@@ -666,7 +673,7 @@ input[type="range"]::-ms-thumb {
   min-height: 60px;
   height: 100%;
   background: #2B414E;
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.5);
   padding-left: 30px;
   padding-right: 30px;
   color: white; }
@@ -701,7 +708,7 @@ input[type="range"]::-ms-thumb {
   margin-top: 66px;
   margin-bottom: -20px; }
   .progressBar__dots {
-    margin-top: -9px;
+    margin-top: -8px;
     display: flex;
     justify-content: space-between; }
 
@@ -815,9 +822,11 @@ input[type="range"]::-ms-thumb {
   .noMargin {
     margin: 0 !important; } }
 
-.checkmark img {
-  width: 150px;
-  height: 150px; }
+.checkmark {
+  margin-top: 50px; }
+  .checkmark img {
+    width: 150px;
+    height: 150px; }
 
 .introductionAnimation {
   position: absolute;
