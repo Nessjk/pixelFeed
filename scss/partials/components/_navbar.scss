@@ -23,11 +23,21 @@
         width: 22px;
         height: 22px;
         margin-top: 2px;
+
+        @include mq('md', max) {
+            width: 12px;
+            height: 15px;
+            margin-top: 2px;
+        }
     }
 
     & p {
         font-size: 30px;
         color: white;
+
+        @include mq('md', max) {
+            font-size: 16px;
+        }
     }
 }
 
@@ -39,6 +49,10 @@
 
     & img:first-child {
         height: 40px;
+
+        @include mq('md', max) {
+            height: 25px;
+        }
     }
     & img:last-child {
         height: 34px;
@@ -47,5 +61,13 @@
         margin-top: -2px;
         margin-left: 16px;
        
+        @include mq('md', max) {
+            height: 23px;
+            opacity: 0.5;
+            width: 60px;
+            margin-top: -2px;
+            margin-left: 16px;
+        }
     }
+
 }

@@ -104,6 +104,12 @@
     transition: all .3s ease-in-out;
 }
 
+.currencyinput {
+    &:before{
+        content:''
+    }
+}
+
 .tooltipMe {
 
     // Before changes
@@ -167,6 +173,7 @@
     color: #101010;
     vertical-align: middle;
     height: 51px;
+    margin-left: 20px;
 
     & p {
         margin-bottom: 0!important;

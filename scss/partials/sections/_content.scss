@@ -1,12 +1,16 @@
 
 .content {
-    min-height: calc(100vh - 136px);
+    min-height: calc(100vh - 77px);
 	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQwIiBoZWlnaHQ9Ijk0OSIgdmlld0JveD0iMCAwIDE0NDAgOTQ5Ij4gIDxnIGZpbGw9Im5vbmUiPiAgICA8cG9seWdvbiBmaWxsPSIjRkZGIiBwb2ludHM9IjAgMCA4OTYgOTQ5IC4zIDk0OSIgb3BhY2l0eT0iLjYzOCIvPiAgICA8cG9seWdvbiBmaWxsPSIjODk5NkE1IiBwb2ludHM9IjE0NDAgMzU2IDUxMCA5NDkgMTQzOS43IDk0OSIgb3BhY2l0eT0iLjA3MyIvPiAgPC9nPjwvc3ZnPg==);
     background-repeat: no-repeat;
     background-position: 0 100%;
     background-size: 100%;
 
     overflow: hidden;
+
+    @include mq('md', max) {
+        background-image: none;
+     }
 }
 
 .container--maxWidth {
@@ -88,7 +92,7 @@
 
   .checkmark {
     margin-top: 50px;
-    
+
       & img {
           width: 150px;
           height: 150px;

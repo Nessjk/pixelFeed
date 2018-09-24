@@ -64,7 +64,7 @@
                 <!-- PROGRESS BAR -->
 
                 <div class="progressBar">
-                    <b-progress height="8px" :value="counter" :max="max" animated></b-progress>
+                    <b-progress height="6px" :value="counter" :max="max" animated></b-progress>
 
                     <div class="progressBar__dots">
                         <div class="dot dot--1" :class="{active: step >= 1}">
@@ -222,13 +222,17 @@
                                 <!-- Question 1 -->
                                 <label for="step4Question1" class="formQuestion"> {{stepFourTitles[0].question1}}</label>
                                 <div class="d-flex flex-column flex-md-row">
+                                        <span class="currencyinput">
+                                        <b> € {{  formatPrice(selected.sectionFour1) }}</b>
                                         <input 
                                         class="width--100"
                                         type="number"
                                         id="step4Question1Input" 
                                         name="step4Question1Input" 
                                         v-model.lazy="selected.sectionFour1"                                        
+                                    
                                         :placeholder="stepFourTitles[0].field1">
+                                        </span>
 
                                         <div class="tooltipMe--inline" v-if="financeValueTooLow">
                                             <p>
@@ -427,20 +431,20 @@
                                                     <li>      
                                                         <p class="order-2 order-md-1 formQuestion">{{stepEightTitles[0].checkmarks[0]}}</p>
                                                         <svg class="order-1 order-md-2"  xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
-                                                            <path fill="#2B414E" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
+                                                            <path fill="#5BC0EB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
                                                             </svg>
                                                     </li>
                                                     <li>
                                                         
                                                         <p class="order-2 order-md-1 formQuestion">{{stepEightTitles[0].checkmarks[1]}}</p>
                                                         <svg class="order-1 order-md-2"  xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
-                                                            <path fill="#2B414E" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
+                                                            <path fill="#5BC0EB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
                                                             </svg>
                                                     </li>
                                                     <li>
                                                         <p class="order-2 order-md-1 formQuestion">{{stepEightTitles[0].checkmarks[2]}}</p>
                                                         <svg class="order-1 order-md-2"  xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
-                                                            <path fill="#2B414E" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
+                                                            <path fill="#5BC0EB" d="M4.42492788,6.07507212 L3.375,7.125 L6.75,10.5 L14.25,3 L13.2000721,1.95007212 L6.75,8.36242788 L4.42492788,6.07507212 Z M13.5,7.5 C13.5,10.7999279 10.7998918,13.5 7.5,13.5 C4.20010817,13.5 1.5,10.7999279 1.5,7.5 C1.5,4.20007212 4.20007212,1.5 7.5,1.5 C8.0625,1.5 8.625,1.57507212 9.15014423,1.72503606 L10.3125,0.5625 C9.45007212,0.1875 8.51257212,0 7.5,0 C3.375,0 0,3.375 0,7.5 C0,11.625 3.375,15 7.5,15 C11.625,15 15,11.625 15,7.5 L13.5,7.5 Z"/>
                                                             </svg>
                                                     </li>
                                                 </ul>
@@ -834,7 +838,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 1,
+      step: 4,
       loading: true,
       introSentence: [...introSentence],
       buttonNext: 'Weiter',
@@ -901,8 +905,10 @@ const app = new Vue({
       },
       nestedComputedValueToWatch: function() {
         if(this.selected.sectionFour1 < 500000) {
-               //console.log('too low');
-               this.financeValueTooLow = true;
+            //console.log('too low');
+            this.financeValueTooLow = true;
+        } else {
+            this.financeValueTooLow = false;
         }
       }
   },
@@ -930,6 +936,10 @@ const app = new Vue({
     prev2() {
         this.step = 6;
         this.counter = Math.round((this.step -2) / 9 * 100);
+    },
+    formatPrice(value) {
+        let val = (value/1).toFixed(0).replace('.', ',')
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
     },
     showMe(e) {
         this.selected.sectionOne = e.target.innerText;

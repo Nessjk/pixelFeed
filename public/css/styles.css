@@ -623,6 +623,9 @@ input[type="range"]::-ms-thumb {
   padding: 0px;
   transition: all .3s ease-in-out; }
 
+.currencyinput:before {
+  content: ''; }
+
 .tooltipMe {
   border-radius: 4px;
   background-color: #5BC0EB;
@@ -662,7 +665,8 @@ input[type="range"]::-ms-thumb {
   text-align: center;
   color: #101010;
   vertical-align: middle;
-  height: 51px; }
+  height: 51px;
+  margin-left: 20px; }
   .tooltipMe--inline p {
     margin-bottom: 0 !important; }
   @media only screen and (max-width: 767px) {
@@ -687,9 +691,17 @@ input[type="range"]::-ms-thumb {
     width: 22px;
     height: 22px;
     margin-top: 2px; }
+    @media only screen and (max-width: 767px) {
+      .number svg {
+        width: 12px;
+        height: 15px;
+        margin-top: 2px; } }
   .number p {
     font-size: 30px;
     color: white; }
+    @media only screen and (max-width: 767px) {
+      .number p {
+        font-size: 16px; } }
 
 .logos {
   padding: 16px;
@@ -697,18 +709,28 @@ input[type="range"]::-ms-thumb {
   display: flex; }
   .logos img:first-child {
     height: 40px; }
+    @media only screen and (max-width: 767px) {
+      .logos img:first-child {
+        height: 25px; } }
   .logos img:last-child {
     height: 34px;
     opacity: 0.5;
     width: 90px;
     margin-top: -2px;
     margin-left: 16px; }
+    @media only screen and (max-width: 767px) {
+      .logos img:last-child {
+        height: 23px;
+        opacity: 0.5;
+        width: 60px;
+        margin-top: -2px;
+        margin-left: 16px; } }
 
 .progressBar {
   margin-top: 66px;
   margin-bottom: -20px; }
   .progressBar__dots {
-    margin-top: -8px;
+    margin-top: -6px;
     display: flex;
     justify-content: space-between; }
 
@@ -761,12 +783,15 @@ input[type="range"]::-ms-thumb {
   background: #5BC0EB; }
 
 .content {
-  min-height: calc(100vh - 136px);
+  min-height: calc(100vh - 77px);
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQwIiBoZWlnaHQ9Ijk0OSIgdmlld0JveD0iMCAwIDE0NDAgOTQ5Ij4gIDxnIGZpbGw9Im5vbmUiPiAgICA8cG9seWdvbiBmaWxsPSIjRkZGIiBwb2ludHM9IjAgMCA4OTYgOTQ5IC4zIDk0OSIgb3BhY2l0eT0iLjYzOCIvPiAgICA8cG9seWdvbiBmaWxsPSIjODk5NkE1IiBwb2ludHM9IjE0NDAgMzU2IDUxMCA5NDkgMTQzOS43IDk0OSIgb3BhY2l0eT0iLjA3MyIvPiAgPC9nPjwvc3ZnPg==);
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 100%;
   overflow: hidden; }
+  @media only screen and (max-width: 767px) {
+    .content {
+      background-image: none; } }
 
 .container--maxWidth {
   max-width: 1000px; }
