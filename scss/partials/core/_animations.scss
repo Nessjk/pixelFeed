@@ -28,6 +28,12 @@
     100% { opacity: 1; }
   }
 
+  @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }
+
+
 .sinusoid {
     animation: sinusoid 3s ease infinite;
 }
@@ -36,11 +42,15 @@
     animation: fadeIn .3s ease-in;
 }
 
+.fadeInSlow {
+    animation: fadeIn 1.1s ease-in-out;
+}
+
 .shake {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 }
 
-#lottie {
+.lottie {
     height: 100%;
     width: 100%;
     margin: auto;
@@ -58,12 +68,31 @@
         width: 400px;
         height: 600px;
         //margin-top: 200px;
-        margin-top: 70%;
+        margin-top: 70%!important;;
     }
+
+    
+    @include mq('xl', min) {
+        height: 500px;
+        //margin-top: 200px;
+        margin-top: 13%!important;
+    }
+
+    // @include mq('xl', min) {
+    //     margin-top: 13%!important;
+    // }
+ 
 
 
     & svg {
         width: 300px;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+    .lottie {
+  
+        margin-top: 15% !important;
     }
 }
 

@@ -16,7 +16,7 @@
 <!-- Lottie Animation -->
 <div class="lottieAnimation d-none">
     <!-- Hidden through JS until attributes of the v-show div result to false which add d-block class to show animation -->
-    <div id="lottie">
+    <div id="lottie" class="lottie">
 
     </div>
 </div>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="dot dot--2" :class="{active: step >= 4}">
                             <p>
-                                Finanzdaten
+                                Kundenstruktur
                             </p>
                         </div>
                         <div class="dot dot--3" :class="{active: step >= 6}">
@@ -96,8 +96,9 @@
                 <!-- FORM -->
                 <form action="https://script.google.com/macros/s/AKfycbxtDNqP8kNrTULGs-hm4a6-zhNafFtICKFbyppTJ1r19S7p-SX7/exec" id="contactForm" method="POST" class="" data-email="nessjk@gmail.com">
 
+                        
                     <!-- STEP 1 -->
-                    <div class="step" v-show="step === 1">
+                    <div class="step fadeInSlow" v-show="step === 1" v-bind:key="1">
                         <h1 class="formTitle">
                                 {{stepOneTitles[0].section}}
                         </h1>
@@ -138,7 +139,7 @@
                     </div>
 
                     <!-- STEP 2 -->
-                    <div class="step" v-show="step === 2">
+                    <div class="step fadeInSlow" v-show="step === 2" v-bind:key="2">
                         <h1 class="formTitle">
                             {{stepTwoTitles[0].section}}
                         </h1>
@@ -174,7 +175,7 @@
                     </div>
 
                     <!-- STEP 3 -->
-                    <div class="step" v-show="step === 3">
+                    <div class="step fadeInSlow" v-show="step === 3" v-bind:key="3">
                         <h1 class="formTitle">
                             {{stepThreeTitles[0].section}}
                         </h1>
@@ -208,64 +209,9 @@
                             
                         </div>
                     </div>
-
-                     <!-- STEP 4 -->
-                     <div class="step" v-show="step === 4">
-                            <h1 class="formTitle">
-                                {{stepFourTitles[0].section}}
-                            </h1>
-                            
-                            <!-- Fields -->
-                            <div class="step__form">
-    
-                                <div class="d-flex flex-column">
-                                <!-- Question 1 -->
-                                <label for="step4Question1" class="formQuestion"> {{stepFourTitles[0].question1}}</label>
-                                <div class="d-flex flex-column flex-md-row">
-                                        <span class="currencyinput">
-                                        <b> € {{  formatPrice(selected.sectionFour1) }}</b>
-                                        <input 
-                                        class="width--100"
-                                        type="number"
-                                        id="step4Question1Input" 
-                                        name="step4Question1Input" 
-                                        v-model.lazy="selected.sectionFour1"                                        
-                                    
-                                        :placeholder="stepFourTitles[0].field1">
-                                        </span>
-
-                                        <div class="tooltipMe--inline" v-if="financeValueTooLow">
-                                            <p>
-                                                Unter EUR 1.000.000 Umsatz ist der errechnete Wert nicht aussagekräftig.
-                                            </p>
-                                        </div>
-
-                                </div>
-                                                                
-                                <hr>
-
-                                 <!-- Question 2 -->
-                                 <label for="step4Question2" class="formQuestion"> {{stepFourTitles[0].question2}}</label>
-                                 <input 
-                                    type="number"
-                                    id="step4Question2Input" 
-                                    name="step4Question2Input" 
-                                    v-model="selected.sectionFour2"
-                                    :placeholder="stepFourTitles[0].field2">
-
-                                </div>
-                                <br><br>
-    
-                                <div class="formButtons">
-                                    <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
-                                    <button class="button button--primary"  @click.prevent="next($event)">{{buttonNext}}</button>
-                                </div>
-                                
-                            </div>
-                        </div>
-                   
-                    <!-- STEP 5 -->
-                     <div class="step" v-show="step === 5">
+         
+                    <!-- STEP 4 -->
+                     <div class="step fadeInSlow" v-show="step === 4" v-bind:key="4">
                             <h1 class="formTitle">
                                 {{stepFiveTitles[0].section}}
                             </h1>
@@ -314,8 +260,8 @@
                             </div>
                         </div>
 
-                        <!-- STEP 6 -->
-                        <div class="step" v-show="step === 6">
+                    <!-- STEP 5 -->
+                    <div class="step fadeInSlow" v-show="step === 5" v-bind:key="5">
                                 <h1 class="formTitle">
                                     {{stepSixTitles[0].section}}
                                 </h1>
@@ -348,10 +294,61 @@
                                     </div>
                                     
                                 </div>
-                            </div>
+                    </div>
+
+                     <!-- STEP 6 -->
+                     <div class="step fadeInSlow" v-show="step === 6" v-bind:key="6">
+                        <h1 class="formTitle">
+                            {{stepFourTitles[0].section}}
+                        </h1>
                         
-                        <!-- STEP 7 ANIMATION -->
-                        <div id="animationStep" class="step" v-show="step === 7">
+                        <!-- Fields -->
+                        <div class="step__form">
+
+                            <div class="d-flex flex-column">
+                            <!-- Question 1 -->
+                            <label for="step4Question1" class="formQuestion"> {{stepFourTitles[0].question1}}</label>
+                            <div class="d-flex flex-column flex-md-row">
+                                    <input 
+                                    class="width--100"
+                                    type="number"
+                                    id="step4Question1Input" 
+                                    name="step4Question1Input" 
+                                    v-model.lazy="selected.sectionFour1"
+                                    :placeholder="stepFourTitles[0].field1">
+
+                                    <div class="tooltipMe--inline" v-if="financeValueTooLow">
+                                        <p>
+                                            Unter EUR 1.000.000 Umsatz ist der errechnete Wert nicht aussagekräftig.
+                                        </p>
+                                    </div>
+
+                            </div>
+                                                            
+                            <hr>
+
+                             <!-- Question 2 -->
+                             <label for="step4Question2" class="formQuestion"> {{stepFourTitles[0].question2}}</label>
+                             <input 
+                                type="number"
+                                id="step4Question2Input" 
+                                name="step4Question2Input" 
+                                v-model="selected.sectionFour2"
+                                :placeholder="stepFourTitles[0].field2">
+
+                            </div>
+                            <br><br>
+
+                            <div class="formButtons">
+                                <button class="button button--secondary" @click.prevent="prev()">{{buttonPrevious}}</button>
+                                <button class="button button--primary"  @click.prevent="next($event)">{{buttonNext}}</button>
+                            </div>
+                            
+                        </div>
+                     </div>
+                        
+                    <!-- STEP 7 ANIMATION -->
+                    <div id="animationStep" class="step" v-show="step === 7" v-bind:key="7">
                                 <h1 class="formTitle">
                                     {{stepSevenTitles[0].section}}
                                 </h1>
@@ -366,10 +363,10 @@
                                     </div>
                                     
                                 </div>
-                            </div>
+                    </div>
 
-                            <!-- STEP 8 -->
-                            <div class="step" v-show="step === 8">
+                    <!-- STEP 8 -->
+                    <div class="step fadeInSlow" v-show="step === 8" v-bind:key="8">
                                 <h1 class="formTitle">
                                         {{ stepEightTitles[0].section}}
                                 </h1>
@@ -461,11 +458,11 @@
                                     </div>
                                     
                                 </div>
-                                </div>
+                    </div>
 
 
-                                <!-- STEP 9 ANIMATION -->
-                                <div id="animationStepFinal" class="step" v-show="step === 9">
+                    <!-- STEP 9 ANIMATION -->
+                    <div id="animationStepFinal" class="step fadeInSlow" v-show="step === 9" v-bind:key="9">
                                       
                                         <!-- Fields -->
                                         <div class="step__form d-flex justify-content-between text-center" style="min-height: 450px;">
@@ -487,17 +484,17 @@
                                             <label for="name" class="formQuestion text-center"> {{stepNineTitles[0].text2}}</label>
                                             
                                         </div>
-                                    </div>
+                    </div>
+            
+                    <!-- End of form -->
 
-                                
-                                <!-- End of form -->
-
-                            </div>
+                            
                    
 
                 </form>
                 <!-- Page: {{step}}
                 Debug: {{ selected }} {{profile}} -->
+            </div>
             </div>
         </section>
             
@@ -611,16 +608,19 @@
     setInterval(function(){ 
         let animationContainer = document.querySelector('#animationStep');
         let lottie = document.querySelector('.lottieAnimation');
-        if(animationContainer.style.cssText !== 'display: none;') {
+
+        if(animationContainer){
+            if(animationContainer.style.cssText !== 'display: none;') {
+                lottie.classList.add('d-block', 'fadeIn');
+            } else {
+                if(lottie.classList.contains('d-block')) {
+                    lottie.classList.remove('d-block', 'fadeIn');
+                }
             
-            lottie.classList.add('d-block', 'fadeIn');
-        } else {
-            if(lottie.classList.contains('d-block')) {
-                lottie.classList.remove('d-block', 'fadeIn');
             }
-        
         }
     }, 300);
+   
 
     // Settimout on footer for introductino
     const footer = document.querySelector('.footer');
@@ -641,7 +641,7 @@ const introSentence = "Bewertungstool wird geladen…";
 const stepOneTitles = [
     {
         index: 1,
-        section: "Anlass",
+        section: "Anlass der Unternehmensbewertung",
         question1: "Bitte wählen Sie eine Option aus:",
         size: "big"
     }
@@ -664,6 +664,11 @@ const stepOneContent = [
                 tooltip: "Sie benötigen zusätzliches Kapital für Investitionen oder Expansion und möchten in diesem Zuge den Wert Ihres Unternehmens bestimmen."
             },
             {
+                icon: "old",
+                value: "Erbschaftsregelung",
+                tooltip: "Content needed..."
+            },
+            {
                 icon: "dots",
                 value: "Sonstige",
                 tooltip: "Die anderen Optionen sind nicht zutreffend oder Sie möchten keine nähere Angabe machen."
@@ -674,7 +679,7 @@ const stepOneContent = [
 const stepTwoTitles = [
     {
         index: 2,
-        section: "Branche",
+        section: "Branchenzugehörigkeit Ihres Unternehmens",
         question1: "In welcher Branche sind Sie aktiv?",
         size: "medium"
     }
@@ -710,7 +715,7 @@ const stepTwoContent = [
 const stepThreeTitles = [
     {
         index: 3,
-        section: "Gründungsdatum",
+        section: "Gründungsdatum Ihres Unternehmens",
         question1: "Vor wie vielen Jahren haben Sie Ihr Unternehmen gegründet?",
         size: "medium"
     }
@@ -737,7 +742,7 @@ const stepThreeContent = [
 const stepFourTitles = [
     {
         index: 4,
-        section: "Finanzdaten",
+        section: "Finanzdaten Ihre Unternehmens",
         question1: "Wie hoch war Ihr erzielter Umsatz im letzten verfügbaren Jahr?",
         question1Warning : "Unter EUR 1.000.000 Umsatz ist der errechnete Wert nicht aussagekräftig.",
         question2: "Wie hoch war Ihr letzter Gewinn (vor Steuern und Zinsen)?",
@@ -751,7 +756,7 @@ const stepFourTitles = [
 const stepFiveTitles = [
     {
         index: 5,
-        section: "Kundenstruktur",
+        section: "Kundenstruktur Ihres Unternehmens",
         question1: "Wie groß ist Ihr Kundenstamm?",
         question2 : "Anteil Ihres größten Kunden (in %):",
         fields2 : "10",
@@ -779,10 +784,13 @@ const stepSixTitles = [
         index: 6,
         section: "Abhängigkeit vom Eigentümer",
         question1: "Wie abhängig ist das Unternehmen von Ihnen als Eigentümer?",
-        size: "big"
+        size: "medium"
     }
 ]
 const stepSixContent = [
+    {
+        value: "Sehr niedrig"
+    },
     {
         value: "Niedrig"
     },
@@ -810,7 +818,7 @@ const stepSevenTitles = [
 const stepEightTitles = [
     {
         index: 8,
-        section: "Empfänger",
+        section: "Ihre Kontaktdaten",
         question1: "Wer soll die kostenlose Werteinschätzung erhalten?",
         thumbnailText1: "Felix Engelhardt, CFA",
         thumbnailText2: "Abteilungsleiter Transaktions- und Nachfolgeberatung",
@@ -838,7 +846,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 4,
+      step: 1,
       loading: true,
       introSentence: [...introSentence],
       buttonNext: 'Weiter',
@@ -1003,26 +1011,36 @@ const app = new Vue({
             }
         }
         
-        // Validation STEP 4
-        if(this.step === 4) {
-            if(this.selected.sectionFour1 !== null && this.selected.sectionFour2 !== null) {
+        // Validation STEP 5
+        if(this.step === 5) {
+            if(this.selected.sectionSix !== null) {
                 this.goForward(); 
             } else {
                 this.addShakeToButton(e);
             }
         }
        
-        // Validation STEP 5
-        if(this.step === 5) {
+        // Validation STEP 4
+        if(this.step === 4) {
             if(this.selected.sectionFive1 !== null && this.selected.sectionFive2 !== 0) {
                 this.goForward(); 
             } else {
                 this.addShakeToButton(e);
             }
+              if(this.selected.sectionSix !== null) {
+                this.goForward(); 
+            } else {
+                this.addShakeToButton(e);
+            }
         }
        
-        // Validation STEP 6
+        // Validation STEP 6 Swaped with step 4
         if(this.step === 6) {
+             if(this.selected.sectionFour1 !== null && this.selected.sectionFour2 !== null) {
+                this.goForward(); 
+            } else {
+                this.addShakeToButton(e);
+            }
             if(this.selected.sectionSix !== null) {
                 this.goForward(); 
             } else {
@@ -1091,10 +1109,6 @@ const app = new Vue({
       setTimeout(() => {
         this.loading = false;
       }, 20);
-      //let data = [...this.selected];
-    //   var content = this.selected;
-    //   var profile = this.profile;
-    //   var data = profile.concat(content);
      
   }
 });
