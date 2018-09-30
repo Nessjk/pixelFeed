@@ -19,6 +19,7 @@
 
 }
 
+
 .selectInput {
     width: 128px;
     height: 128px;
@@ -42,6 +43,10 @@
         & svg {
             fill: white;
         }
+    }
+
+    @include mq('sm', max) {
+        margin-right: 0px!important;
     }
 
     @include boxAndShadow;

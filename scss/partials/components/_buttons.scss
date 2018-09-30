@@ -140,7 +140,7 @@ input[type="range"]::-ms-thumb {
 
     @include mq('sm', max) {
       width: 80%;
-      margin-right: 2rem;
+      margin-right: 0rem;
       width: 120px;
       text-align: center;
       padding: 0rem;

@@ -5,11 +5,14 @@
     z-index: 1030;
     text-align: center;
     padding-top: 40px;
+    padding-bottom: 40px;
+    box-shadow: 0 -5px 5px -5px #33333354;
 
     @include mq('sm', max) {
         position: initial;
         width: 100vw;
         overflow: hidden;
+        margin-top: 20px;
     }
    
 }
