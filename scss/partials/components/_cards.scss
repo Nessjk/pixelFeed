@@ -19,12 +19,16 @@
 
 }
 
+.inputBorderBlue {
+    border: 1px solid #5BC0EB;
+}
 
 .selectInput {
     width: 128px;
     height: 128px;
     text-align: center;
-    padding: 20px 20px 15px 20px;
+    // padding was 15px
+    padding: 20px 20px 8px 20px;
     margin-right: 20px;
     margin-bottom: 36px;
     display: flex;
@@ -101,6 +105,7 @@
     transition: all .3s ease-in-out;
 }
 .selectInput--medium.active {
+    line-height: 34px;
     font-size: 34px;
     transition: all .3s ease-in-out;
 }
