@@ -620,6 +620,9 @@ input[type="range"]::-ms-thumb {
     display: flex;
     flex-direction: column;
     justify-content: space-between; }
+    @media only screen and (max-width: 575px) {
+      .step__form {
+        padding: 20px; } }
 
 .inputBorderBlue {
   border: 1px solid #5BC0EB; }

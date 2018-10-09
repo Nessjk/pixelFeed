@@ -12,6 +12,10 @@
         //min-height: 500px;
         min-height: 400px;
 
+        @include mq('sm', max) {
+            padding: 20px;
+        }
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
