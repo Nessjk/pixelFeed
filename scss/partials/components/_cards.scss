@@ -147,16 +147,22 @@
     padding: 0.7rem;
     transition: all 0.3s ease;
     position: absolute;
-    width: 178px;
+    //width: 178px;
+    width: 80%;
     margin-top: calc(178px + 35px);
     font-size: 11px;
     text-align: center;
     color: #101010;
-    height: 188px;
+    //height: 188px;
     width: 160px;
     vertical-align: middle;
     display: flex;
     align-items: center;
+
+    // New
+    margin-top: calc(68px + 35px);
+    width: 256px; // twice as big to keep proportions
+    height: auto;
 
     &::after {
         content: '';
