@@ -114,6 +114,7 @@
                                         :class="[
                                             'selectInput',
                                             `selectInput--${stepOneTitles[0].size}`,
+                                            'position-relative',
                                             'formFieldSelectFont',
                                             'icon', `icon--${card.icon}`,
                                             {active: selected.sectionOne === card.value},
@@ -866,7 +867,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 8,
+      step: 1,
       loading: true,
       introSentence: [...introSentence],
       buttonNext: 'Weiter',

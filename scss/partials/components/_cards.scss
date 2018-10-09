@@ -149,7 +149,7 @@
     border-radius: 4px;
     background-color: #5BC0EB;
     padding: 0.7rem;
-    transition: all 0.3s ease;
+    //transition: all 0.3s ease;
     position: absolute;
     //width: 178px;
     width: 80%;
@@ -164,9 +164,10 @@
     align-items: center;
 
     // New
-    margin-top: calc(68px + 35px);
+    //margin-top: calc(68px + 35px);
+    margin-top: 130px;
     width: 256px; // twice as big to keep proportions
-    height: auto;
+    height: 100px;
 
     &::after {
         content: '';
@@ -183,6 +184,12 @@
         top: -7px;
     }
 }
+
+.tooltipMe:nth-child(2) {
+    margin-top: 140px!important;
+}
+
+
 
 .tooltipMe--inline {
     border-radius: 4px;
