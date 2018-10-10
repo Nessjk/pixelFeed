@@ -378,7 +378,7 @@
                                 <!-- Fields -->
                                 <div class="step__form">
     
-                                    <div class="row mb-md-5">
+                                    <div class="row">
                                         
                                         <!-- Thumbnail -->
                                         <div class="col-xs-12 col-md-3 order-1 order-md-1 d-flex flex-column justify-content-between">
@@ -479,29 +479,7 @@
 
 
                     <!-- STEP 9 ANIMATION -->
-                    <div id="animationStepFinal" class="step fadeInSlow" v-show="step === 9" v-bind:key="9">
-                                      
-                        <!-- Fields -->
-                        <div class="step__form d-flex justify-content-between text-center" style="min-height: 450px;">
-
-                            <label for="name" class="formQuestion text-center"> {{stepNineTitles[0].text1}}</label>
-
-                            <div class="checkmark sinusoid">
-                                    <img src="./img/img/check.png" alt="Checkmark">
-                            </div>
-                    
-                            <a href="https://nachfolge.de/nachfolgemagazin-uebersicht-2/">
-                                <button 
-                                class="button button--primary noMargin button--finalStep "  
-                                @click.prevent="next($event)">
-                                    {{stepNineTitles[0].button}}
-                                </button>
-                            </a>
-
-                            <label for="name" class="formQuestion text-center"> {{stepNineTitles[0].text2}}</label>
-                            
-                        </div>
-                    </div>
+                    <!-- Thank you page apart -->
             
                     <!-- End of form -->
 
@@ -509,8 +487,8 @@
                    
 
                 </form>
-                <!-- Page: {{step}}
-                Debug: {{ selected }} {{profile}} -->
+               Page: {{step}}
+                <!--  Debug: {{ selected }} {{profile}} -->
             </div>
             </div>
         </section>
@@ -928,7 +906,7 @@ const app = new Vue({
           if(this.step == 7 ){
             setTimeout(() => {
                 this.step++;
-                this.counter = Math.round((this.step -1 )/ 9 * 100);
+                this.counter = Math.round((this.step -1 )/ 8 * 100);
             }, 2000);
         }
       },
@@ -952,14 +930,14 @@ const app = new Vue({
   methods:{
     prev() {
       this.step--;
-      this.counter = Math.round((this.step -1) / 9 * 100);
+      this.counter = Math.round((this.step -1) / 8 * 100);
     },
     next(e) {
       this.validate(e);
     },
     prev2() {
         this.step = 6;
-        this.counter = Math.round((this.step -2) / 9 * 100);
+        this.counter = Math.round((this.step -2) / 8 * 100);
     },
     formatPrice(value) {
         let val = (value/1).toFixed(0).replace('.', ',')
@@ -1026,24 +1004,20 @@ const app = new Vue({
                 this.addShakeToButton(e);
             }
         }
+
+          // Validation STEP 4 originally but was swaped with section 6
+          if(this.step === 6) {
+            if(this.selected.sectionFour1 !== null && this.selected.sectionFour2 !== null) {
+                this.goForward(); 
+            } else {
+                this.addShakeToButton(e);
+            }
+       
+        }
         
         // Validation STEP 5
-        if(this.step === 5) {
-            if(this.selected.sectionSix !== null) {
-                this.goForward(); 
-            } else {
-                this.addShakeToButton(e);
-            }
-        }
-       
-        // Validation STEP 4
         if(this.step === 4) {
             if(this.selected.sectionFive1 !== null && this.selected.sectionFive2 !== 0) {
-                this.goForward(); 
-            } else {
-                this.addShakeToButton(e);
-            }
-              if(this.selected.sectionSix !== null) {
                 this.goForward(); 
             } else {
                 this.addShakeToButton(e);
@@ -1051,12 +1025,8 @@ const app = new Vue({
         }
        
         // Validation STEP 6 Swaped with step 4
-        if(this.step === 6) {
-             if(this.selected.sectionFour1 !== null && this.selected.sectionFour2 !== null) {
-                this.goForward(); 
-            } else {
-                this.addShakeToButton(e);
-            }
+        if(this.step === 5) {
+
             if(this.selected.sectionSix !== null) {
                 this.goForward(); 
             } else {
@@ -1094,7 +1064,7 @@ const app = new Vue({
     },
     goForward() {
         this.step++;
-        this.counter = Math.round((this.step -1 )/ 9 * 100);
+        this.counter = Math.round((this.step -1 )/ 8 * 100);
     },
     validateEmail(email) {
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
