@@ -840,7 +840,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 1,
+      step: 8,
       loading: true,
       introSentence: [...introSentence],
       buttonNext: 'Weiter',
@@ -945,7 +945,7 @@ const app = new Vue({
     },
     setStep1(e, value) {
         this.selected.sectionOne = value;
-        console.log("value:" + value , e.target.innerText, e.target, this.selected.sectionOne);
+        //console.log("value:" + value , e.target.innerText, e.target, this.selected.sectionOne);
     },
     setStep2(e) {
         this.selected.sectionTwo = e.target.innerText;
@@ -1084,6 +1084,8 @@ const app = new Vue({
                 return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
             }).join('&')
             xhr.send(encoded);
+            
+            window.location.href = 'http://bewertung.nachfolge.de/thankyou.html';
     }
   },
   mounted() {
