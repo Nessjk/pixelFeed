@@ -8,8 +8,8 @@
 }
 
 // Deal with the one line issue on step 1 due to smaller icons
-.selectInput:nth-child(2),
-.selectInput:nth-child(5) {
+.selectInput.selectInput--medium.position-relative.formFieldSelectFont.icon.icon--handshake.justify-content-end,
+.selectInput.selectInput--medium.position-relative.formFieldSelectFont.icon.icon--dots.justify-content-end {
     padding-bottom: 14px;
 }
 

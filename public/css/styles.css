@@ -274,8 +274,8 @@ h1 {
 .paddingOneLineIcon {
   padding-bottom: 14px; }
 
-.selectInput:nth-child(2),
-.selectInput:nth-child(5) {
+.selectInput.selectInput--medium.position-relative.formFieldSelectFont.icon.icon--handshake.justify-content-end,
+.selectInput.selectInput--medium.position-relative.formFieldSelectFont.icon.icon--dots.justify-content-end {
   padding-bottom: 14px; }
 
 .icon {
@@ -693,8 +693,7 @@ input[type="range"]::-ms-thumb {
 
 .selectInput--medium.active {
   line-height: 34px;
-  font-size: 34px;
-  transition: all .3s ease-in-out; }
+  font-size: 34px; }
 
 .selectInput--small.active {
   font-size: 18px;
