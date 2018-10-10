@@ -12,6 +12,8 @@
     padding-bottom: 40px;
     box-shadow: 0 -5px 5px -5px #33333354;
 
+    overflow: hidden;
+
     @include mq('sm', max) {
         position: initial;
         width: 100vw;

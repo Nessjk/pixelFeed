@@ -43,6 +43,12 @@ body {
   font-size: 17px;
   font-family: "Roboto", sans-serif; }
 
+hr {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
 a:hover {
   text-decoration: none; }
 
@@ -640,7 +646,7 @@ input[type="range"]::-ms-thumb {
   text-align: center;
   padding: 20px 20px 8px 20px;
   margin-right: 20px;
-  margin-bottom: 36px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -697,8 +703,7 @@ input[type="range"]::-ms-thumb {
 
 .selectInput--small.active {
   font-size: 18px;
-  padding: 0px;
-  transition: all .3s ease-in-out; }
+  padding: 0px; }
 
 .currencyinput:before {
   content: ''; }
@@ -974,7 +979,8 @@ input[type="range"]::-ms-thumb {
   text-align: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  box-shadow: 0 -5px 5px -5px #33333354; }
+  box-shadow: 0 -5px 5px -5px #33333354;
+  overflow: hidden; }
   @media only screen and (max-width: 575px) {
     .partnerLogos {
       position: initial;

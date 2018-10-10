@@ -34,7 +34,8 @@
     // padding was 15px
     padding: 20px 20px 8px 20px;
     margin-right: 20px;
-    margin-bottom: 36px;
+    //margin-bottom: 36px;
+    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,7 +117,7 @@
 .selectInput--small.active {
     font-size: 18px;
     padding: 0px;
-    transition: all .3s ease-in-out;
+    //transition: all .3s ease-in-out;
 }
 
 .currencyinput {
