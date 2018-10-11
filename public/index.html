@@ -394,33 +394,37 @@
                                         <!-- Form -->
                                         <div class="col-xs-12 col-md-6 order-2 order-md-2">
                                             <label for="name" class="formQuestion"> {{ stepEightTitles[0].question1}}</label>
-                                            <div class="form-row">
-                                                <div class="col-md-6">
-                                                    <input type="text" name="fname" class="formWidth--half-1" id="inputEmail4" :placeholder="stepEightTitles[0].name"
-                                                    :class="{inputBorderBlue: profile.name != null}"
-                                                    v-model="profile.name">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="text" name="lname" class="formWidth--half-2" id="inputPassword4" :placeholder="stepEightTitles[0].lastname"
-                                                    :class="{inputBorderBlue: profile.lastname != null}"
-                                                    v-model="profile.lastname">
-                                                </div>
-                                            </div>
 
-                                            <div class="">
-                                                <input type="email" class="formWidth--full" id="inputAddress" :placeholder="stepEightTitles[0].email"
-                                                :class="{inputBorderBlue: profile.email != null}"
-                                                v-model="profile.email">
-                                            </div>
-                                            <div class="">
-                                                <input type="tel" class="formWidth--full" id="inputAddress2" :placeholder="stepEightTitles[0].phone"
-                                                :class="{inputBorderBlue: profile.phone != null}"
-                                                v-model="profile.phone">
-                                            </div>
+                                            <div>
+                                                <div class="form-row">
+                                                    <div class="col-md-6">
+                                                        <input type="text" name="fname" class="formWidth--half-1" id="inputEmail4" :placeholder="stepEightTitles[0].name"
+                                                        :class="{inputBorderBlue: profile.name != null}"
+                                                        v-model="profile.name">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="text" name="lname" class="formWidth--half-2" id="inputPassword4" :placeholder="stepEightTitles[0].lastname"
+                                                        :class="{inputBorderBlue: profile.lastname != null}"
+                                                        v-model="profile.lastname">
+                                                    </div>
+                                                </div>
+    
+                                                <div class="">
+                                                    <input type="email" class="formWidth--full" id="inputAddress" :placeholder="stepEightTitles[0].email"
+                                                    :class="{inputBorderBlue: profile.email != null}"
+                                                    v-model="profile.email">
+                                                </div>
+                                                <div class="">
+                                                    <input type="tel" class="formWidth--full" id="inputAddress2" :placeholder="stepEightTitles[0].phone"
+                                                    :class="{inputBorderBlue: profile.phone != null}"
+                                                    v-model="profile.phone">
+                                                </div>
 
+                                            </div>
+                                         
                                             <div class="secure d-flex flex-column flex-sm-row">
                                                 <img src="./img/img/logo--comodo.png" alt="Comodo secure logo">
-                                                <p class="formFieldSelectFont text--light">
+                                                <p class="formFieldSelectFont text--light" style="margin-bottom: 0;">
                                                     Durch das Anfordern der Firmenbewertung stimme
                                                     <br> ich der <a href="https://nachfolge.de/datenschutzerklaerung/">Datenschutzerklärung</a> zu.
                                                 </p>
@@ -840,7 +844,7 @@ const app = new Vue({
   data() {
     return {
       // GENERAL
-      step: 2,
+      step: 8,
       loading: true,
       introSentence: [...introSentence],
       buttonNext: 'Weiter',
