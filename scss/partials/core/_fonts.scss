@@ -1,44 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Roboto:400,500');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
 // FONT VARIABLES
-$Roboto:'Roboto', sans-serif;
-$Noto: 'Noto+Serif', serif;
+$OpenSans: 'Open Sans', sans-serif;
 
-$font-titles: $Noto;
-$font-display: $Roboto;
-
-.formQuestion {
-    font-family: $Roboto;
-    color: $blue--dark;
-    font-weight: 400;
-    font-size: 18px;
-    margin-bottom: 16px;
-}
-
-.formTitle {
-    font-family: $Noto;
-    font-size: 32px;
-    color: $blue--dark;
-    text-align: center;
-}
-
-.formFieldSelectFont {
-    font-family: $Roboto;
-    font-size: 14px;
-    color: $black;
-
-    &--big {
-        font-size: 30px;
-        color: $black;
-    }
-    
-    &--medium {
-        font-size: 20px;
-        color: $black;
-    }
-
-}
-
-.text--light {
-    color: $text--grey;
-}
+$font-titles: $OpenSans;
+$font-display: $OpenSans;

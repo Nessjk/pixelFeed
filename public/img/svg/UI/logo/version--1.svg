@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="51" height="42" viewBox="0 0 51 42">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="14" height="14" y="28" fill="#224199"/>
+    <rect width="14" height="14" y="14" fill="#4166CC"/>
+    <rect width="14" height="14" fill="#5776CD"/>
+    <rect width="14" height="14" x="14" y="28" fill="#609AE6"/>
+    <rect width="14" height="14" x="14" y="14" fill="#2D57CC"/>
+    <rect width="14" height="14" x="14" fill="#6084E6"/>
+    <rect width="14" height="14" x="28" y="28" fill="#498DE6"/>
+    <rect width="7" height="7" x="44" y="35" fill="#498DE6"/>
+    <rect width="14" height="14" x="28" y="14" fill="#3262E6"/>
+    <rect width="14" height="14" x="28" fill="#6B93FF"/>
+    <text fill="#FFF" font-family="AllerDisplay, Aller Display" font-size="30">
+      <tspan x="13" y="32">P</tspan>
+    </text>
+  </g>
+</svg>

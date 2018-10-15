@@ -1,218 +1,47 @@
+.btn--CTA {
+    z-index: 9999;
+    margin-top: 50px;
+    background-color: white;
+    position: absolute;
+    width: 80%;
+    margin-left: 20%;
+    height: 60px;
+    background: white;
+    box-shadow: 0px 5px 20px rgba(46, 46, 46, 0.2);
 
-input {
-  padding: 11px 20px 11px;
-  border-radius: 4px;
-  //margin-bottom: 16px;
-  margin-bottom: 24px;
-  max-width: 400px;
-  margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 32px;
 
-  @include boxAndShadow;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-  & :hover {
-    outline: none;
-  }
-}
-
-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  font-size: 18px;
-}
-input::-moz-placeholder { /* Firefox 19+ */
-  font-size: 18px;
-}
-input:-ms-input-placeholder { /* IE 10+ */
-  font-size: 18px;
-}
-input:-moz-placeholder { /* Firefox 18- */
-  font-size: 18px;
-}
-
-input[type=range] {
-  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-  width: 100%; /* Specific width is required for Firefox. */
-  background: transparent; /* Otherwise white in Chrome */
-
-  @include mq('sm', max) {
-    width: 90%!important;;
-  }
-
-}
-
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-
-input[type=range]:focus {
-  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-}
-
-input[type=range]::-ms-track {
-  width: 110%;
-  cursor: pointer;
-
-  /* Hides the slider so custom styles can be added */
-  background: transparent; 
-  border-color: transparent;
-  color: transparent;
-}
-
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: $blue--primary;
-  border: none;
-  cursor: pointer;
-
-  margin: -10px; /* alignment fix for Chrome */
-  margin-left: 0px;
-}
-
-input[type="range"]::-ms-thumb {
-  margin: 0px; /* Reset margin in Edge since it supports -webkit-slider-thumb as well */
-}
-
-.btn-md-primary--white {
-  padding: 12px 42px 14px;
-  border-radius: 30px;
-  border: 1px white solid;
-  color: black;
-  background:  white;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
-  // margin-top: 54px;
-  transform: scale(1);
-  //font-family: $mont;
-
-  &:hover {
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.14);
-    transform: scale(0.98);
-    // border: 1px $blue--darker solid;
-    cursor: pointer;
-  }
-}
-
-.formWidth--full {
-  width: 400px;
-  font-size: 18px;
-  
-  @include mq('sm', max) {
-    width: 100%!important;
-  }
-}
-
-.formWidth--half-1 {
-  width: 190px;
-  font-size: 18px;
-
-  @include mq('sm', max) {
-    width: 100%!important;
-  }
-}
-
-.formWidth--half-2 {
-  width: 190px;
-  margin-left: -10px;
-  font-size: 18px;
-
-  @include mq('sm', max) {
-    margin-left: 0px;
-    width: 100%!important;
-  }
-}
-
-
-.button {
-    /* Rectangle */
-    border-radius: 4px;
-    height: 48px;
-    width: 156px;
-    padding: 0rem 2rem;
-    border: none;
-    /* TEXT */
-    font-family: $Roboto;
-    font-size: 16px;
-    letter-spacing: 1.45px;
-    text-transform: uppercase;
-
-    @include mq('sm', max) {
-      width: 80%;
-      margin-right: 0rem;
-      width: 120px;
-      text-align: center;
-      padding: 0rem;
-  }  
+    & svg {
+        transform: rotate(180deg);
+        transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
 
     &:hover {
-      cursor: pointer;
+        cursor: pointer;
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, .05);
+        //box-shadow: 0px 2px 5px rgba(46, 46, 46, 0.2);
+
+        & svg {
+            transform: rotate(180deg) translateX(-12px);
+        }
     }
+
+    &:before {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 100%;
+        margin-right: -150px;
+        background: green;
+        //background: orange;
+        animation: filter-animation 8s infinite;
+        margin-left: -32px;
+      }
     
-    &--primary {
-      background: $blue--primary;
-      color: $white--off;
-      box-shadow: 0 3px 6px 0 rgba(0,0,0,0.10);
-
-      &:hover {
-        background: $blue--hover;
-      }
-    }
-   
-    &--secondary {
-      background: $grey;
-      color: $text--grey;
-      /* Rectangle */
-      border: 1px solid rgba(151,151,151,0.20);
-      box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10);
-
-      &:hover {
-        background: $grey--hover;
-      }
-    }
-}
-
-.button--finalStep {
-  width: 300px;
-  margin: auto;
-  margin-top: 50px;
-  padding: 0px;
-  margin-bottom: 50px;
-}
-
-.button-range {
-  max-width: 50px;
-  margin-bottom: 26px;
-  margin-left: -5px;
-  padding: 10px;
-  background: $blue--primary;
-  color: $white--off;
-  position: relative;
-
-  &:after {
-    border-left: solid transparent 10px;
-    border-right: solid transparent 10px;
-    border-top: solid $blue--primary 10px;
-    bottom: -10px;
-    content: " ";
-    height: 0;
-    left: 54%;
-    margin-left: -13px;
-    position: absolute;
-    width: 0;
-
-    @include mq('sm', max) {
-      display: none;
-    }
-  }
-
-  @include mq('sm', max) {
-    margin-left: 0px!important;
-  }
-
-}
-
-button.button.button--primary.noMargin.noPadding.d-none.d-md-block {
-  background-color: #FE9920;
 }
