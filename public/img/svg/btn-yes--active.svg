@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="99" viewBox="0 0 99 99">
+  <defs>
+    <circle id="btn-yes--active-b" cx="45.5" cy="45.5" r="45.5"/>
+    <filter id="btn-yes--active-a" width="115.4%" height="115.4%" x="-7.7%" y="-5.5%" filterUnits="objectBoundingBox">
+      <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.161644345   0 0 0 0 0.161644345   0 0 0 0 0.161644345  0 0 0 1 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(4 2)">
+    <use fill="#000" filter="url(#btn-yes--active-a)" xlink:href="#btn-yes--active-b"/>
+    <use fill="#66962E" xlink:href="#btn-yes--active-b"/>
+    <g fill="#FFF" fill-rule="nonzero" transform="translate(26 31)">
+      <path d="M28.5,0 C34.303125,0.0555 39,4.70825 39,10.4525 C39,13.875 37.48125,18.73125 34.51875,22.72725 C28.875,30.34 19.5,37 19.5,37 C19.5,37 10.125,30.34 4.48125,22.72725 C1.51875,18.73125 0,13.875 0,10.4525 C0,4.70825 4.696875,0.0555 10.59375,0 C14.315625,0 17.60625,1.9425 19.5,4.81 C21.39375,1.9425 24.684375,0 28.5,0 Z"/>
+    </g>
+  </g>
+</svg>

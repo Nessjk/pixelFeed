@@ -1,6 +1,9 @@
 .motion {  
     height: 100vh;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
   .pixels {
@@ -23,4 +26,109 @@
     min-width: calc(100vw*7/12/ 6);
     animation: filter-animation 8s infinite;
     z-index: 9;
+  }
+
+  .browser {
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+ 
+    animation-delay: .5s;
+    animation: appear3d 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    // STEP 1
+    &__step1 {    
+
+       &--footer {
+        align-items: flex-end;
+        justify-content: space-between;
+        overflow: hidden;
+        display: flex;
+        height: 60px;
+        padding-bottom: 10px;
+        width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      &--content {
+        height: 80%;
+        width: 100%;
+      }
+
+      & svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &__step2 {
+      justify-content: center;
+      flex-direction: column;
+    }
+  
+    &__content {
+      width: 493px;
+      overflow: hidden;
+      height: 288px;
+      margin-top: 34px;
+      display: flex;    
+      flex-direction: column;
+
+      & > img {
+        width: 512px;
+        margin-top: 2150px;
+        animation-delay: 3s;
+        animation: scrollDown 8.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+        
+      }
+    }
+  }
+
+  .selectionIcons {
+    height: 30px;
+  }
+
+  .imageSelection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+    // height: 100px;
+    // width: 100px;
+    z-index: 99999;
+    animation-delay: 5s;
+    
+    //transition: imageSelect 3s ease-in-out;
+  }
+
+  .carouselAnimation {
+    animation: imageSelect 3s ease-in-out;
+  }
+
+  .step {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+  }
+
+  .animateOut {
+    display: none;
+    animation: fadeOut .5s ease-out;
+  }
+  
+
+  // Animate button Selection
+  .yesHide {
+    display: none;
+  }
+
+  .yesClicked {
+    display: none;
+  }
+
+  .btn-yes--active {
+    animation: scaleClick .2s ease-in-out;
   }

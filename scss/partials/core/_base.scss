@@ -1,17 +1,18 @@
-*,
-*::before,
-*::after {
-  margin:0;
-  padding:0;
-  box-sizing: inherit;
-}
+// *,
+// *::before,
+// *::after {
+//   margin:0;
+//   padding:0;
+//   box-sizing: inherit;
+// }
 
-html {
-  box-sizing: border-box;
-  font-size: 16.5px;
-}
+// html {
+//   box-sizing: border-box;
+//   font-size: 16.5px;
+// }
 
 body {
+  -webkit-font-smoothing: antialiased;
   font-weight: 300;
   line-height: 1.6;
   font-size: 17px;

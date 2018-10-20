@@ -1,16 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
-
-html {
-  box-sizing: border-box;
-  font-size: 16.5px; }
-
 body {
+  -webkit-font-smoothing: antialiased;
   font-weight: 300;
   line-height: 1.6;
   font-size: 17px;
@@ -256,6 +246,67 @@ h1 {
   100% {
     filter: hue-rotate(0deg); } }
 
+@keyframes appear3d {
+  from {
+    transform: scale(1.6) translateY(0px) perspective(400px) rotateY(-45deg) rotate3d(-30, 30, 60, 10deg);
+    opacity: 0; }
+  to {
+    transform: scale(1) translateY(0px) perspective(0px) rotateY(0deg) rotate3d(0, 0, 0, 0deg);
+    opacity: 1; } }
+
+@keyframes spinner5 {
+  from, 15% {
+    -moz-transform: rotateY(0);
+    -ms-transform: rotateY(0);
+    transform: rotateY(0); }
+  20%, 35% {
+    -moz-transform: rotateY(-72deg);
+    -ms-transform: rotateY(-72deg);
+    transform: rotateY(-72deg); }
+  40%, 55% {
+    -moz-transform: rotateY(-144deg);
+    -ms-transform: rotateY(-144deg);
+    transform: rotateY(-144deg); }
+  60%, 75% {
+    -moz-transform: rotateY(-216deg);
+    -ms-transform: rotateY(-216deg);
+    transform: rotateY(-216deg); }
+  80%, 95% {
+    -moz-transform: rotateY(-288deg);
+    -ms-transform: rotateY(-288deg);
+    transform: rotateY(-288deg); }
+  to {
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    transform: rotateY(-360deg); } }
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0%); }
+  50% {
+    transform: translateY(-24%); }
+  100% {
+    transform: translateY(-44%); } }
+
+@keyframes scaleClick {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.2); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes imageSelect {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateX(24%); }
+  50% {
+    opacity: 1;
+    transform: scale(1) translateX(0%); }
+  100% {
+    opacity: 0;
+    transform: scale(0.9) translateX(-24%); } }
+
 .btn--CTA {
   z-index: 9999;
   margin-top: 50px;
@@ -263,9 +314,10 @@ h1 {
   position: absolute;
   width: 80%;
   margin-left: 20%;
-  height: 60px;
+  height: 70px;
   background: white;
   box-shadow: 0px 5px 20px rgba(46, 46, 46, 0.2);
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -277,7 +329,9 @@ h1 {
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1); }
   .btn--CTA:hover {
     cursor: pointer;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05); }
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateY(4px); }
     .btn--CTA:hover svg {
       transform: rotate(180deg) translateX(-12px); }
   .btn--CTA:before {
@@ -290,11 +344,24 @@ h1 {
     animation: filter-animation 8s infinite;
     margin-left: -32px; }
 
+.earlyAccess {
+  width: 50%;
+  position: absolute; }
+
+.buttonArrow {
+  width: 50%;
+  position: absolute;
+  right: -35%;
+  margin-top: 3px;
+  align-self: center; }
+
 .content {
   padding: 100px; }
 
 .text h1 {
-  margin-top: 96px; }
+  margin-top: 96px;
+  color: #111111;
+  margin-bottom: 0px; }
 
 .text p {
   margin-top: 32px;
@@ -330,7 +397,10 @@ h1 {
 
 .motion {
   height: 100vh;
-  padding: 0; }
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .pixels {
   overflow: hidden;
@@ -350,3 +420,75 @@ h1 {
   min-width: calc(100vw*7/12/ 6);
   animation: filter-animation 8s infinite;
   z-index: 9; }
+
+.browser {
+  position: absolute;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  animation-delay: .5s;
+  animation: appear3d 1.2s cubic-bezier(0.22, 0.61, 0.36, 1); }
+  .browser__step1--footer {
+    align-items: flex-end;
+    justify-content: space-between;
+    overflow: hidden;
+    display: flex;
+    height: 60px;
+    padding-bottom: 10px;
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 8px; }
+  .browser__step1--content {
+    height: 80%;
+    width: 100%; }
+  .browser__step1 svg {
+    width: 30px;
+    height: 30px; }
+  .browser__step2 {
+    justify-content: center;
+    flex-direction: column; }
+  .browser__content {
+    width: 493px;
+    overflow: hidden;
+    height: 288px;
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column; }
+    .browser__content > img {
+      width: 512px;
+      margin-top: 2150px;
+      animation-delay: 3s;
+      animation: scrollDown 8.2s cubic-bezier(0.22, 0.61, 0.36, 1); }
+
+.selectionIcons {
+  height: 30px; }
+
+.imageSelection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+  z-index: 99999;
+  animation-delay: 5s; }
+
+.carouselAnimation {
+  animation: imageSelect 3s ease-in-out; }
+
+.step {
+  display: flex;
+  justify-content: center;
+  position: absolute; }
+
+.animateOut {
+  display: none;
+  animation: fadeOut .5s ease-out; }
+
+.yesHide {
+  display: none; }
+
+.yesClicked {
+  display: none; }
+
+.btn-yes--active {
+  animation: scaleClick .2s ease-in-out; }

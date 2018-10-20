@@ -7,9 +7,10 @@
     <title>PixelFeed</title>
 
     <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAM1BMVEUAAAArQU4rQU4rQU4rQU4rQU4rQU4rQU4rQU4rQU4rQU4rQU4rQU4rQU4rQU4rQU4rQU4eEfPvAAAAEHRSTlMAECAwQFBgcICPn6+/z9/vIxqCigAAAGZJREFUeAF1jksOAyEMQxPCTPm0wfc/bWVZzarzVn4GLOwvbSZw9vXz+0Bsl6PY9MbzHGMBeLFgeDtvfsJIAlByTQKAiYeCm80KjU6GGBppYBN+H6T+OlEc16PyMHElqMutiN670hdL4AZCzVz76AAAAABJRU5ErkJggg==" type="image/x-icon"/>
-    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+    <!-- <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/> -->
     <!-- <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/> -->
     <!-- <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.0/css/bootstrap-slider.min.css"/> -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -23,12 +24,8 @@
 </div>
 
 <!-- Vue App -->
-<div id="app">
+<!-- <div id="app"> -->
    
-<div class="">
-
-
-
     <div class="row">
         <div class="content col-md-5 col-12">
             <div class="logo">
@@ -52,13 +49,19 @@
             </div>
             <div class="text">
                 <h1>PixelFeed</h1>
-                <p>The most effective freelancer designer-to-client communication tool.</p>
+                <p>The most effective <strong>Designer</strong>-to-<strong>Client</strong> communication tool.</p>
             </div>
             <div class="optin">
                 <div class="btn--CTA" id="earlyAccess">
-                    Get Early Access
+                    
+                    <div class="earlyAccess">
+                        <p>Get Early Access</p>
+                    </div>
+                    <div class="buttonArrow">
+                        <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="32px" fill="#525252" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28,14H8.8l4.62-4.62C13.814,8.986,14,8.516,14,8c0-0.984-0.813-2-2-2c-0.531,0-0.994,0.193-1.38,0.58l-7.958,7.958  C2.334,14.866,2,15.271,2,16s0.279,1.08,0.646,1.447l7.974,7.973C11.006,25.807,11.469,26,12,26c1.188,0,2-1.016,2-2  c0-0.516-0.186-0.986-0.58-1.38L8.8,18H28c1.104,0,2-0.896,2-2S29.104,14,28,14z"/></svg>
+                    </div>
+                  
                 
-                    <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="32px" fill="#979797" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28,14H8.8l4.62-4.62C13.814,8.986,14,8.516,14,8c0-0.984-0.813-2-2-2c-0.531,0-0.994,0.193-1.38,0.58l-7.958,7.958  C2.334,14.866,2,15.271,2,16s0.279,1.08,0.646,1.447l7.974,7.973C11.006,25.807,11.469,26,12,26c1.188,0,2-1.016,2-2  c0-0.516-0.186-0.986-0.58-1.38L8.8,18H28c1.104,0,2-0.896,2-2S29.104,14,28,14z"/></svg>
                       
                 </div>
             </div>
@@ -66,7 +69,6 @@
         </div>
         <div class="motion col-md-7 col-12">
             <div class="pixels">
-                <!-- <div class="line"> -->
                   <div class="pixel"></div>
                   <div class="pixel"></div>
                   <div class="pixel"></div>
@@ -91,10 +93,211 @@
                 
                 <!-- </div> -->
             </div>
+
+
+                <!-- Browser App  -->
+                <div id="app" class="browser" :class="{ animateOut: activeClass }">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="533" height="356" viewBox="0 0 533 356">
+                    <defs>
+                        <filter id="browser-a" width="113.2%" height="120.6%" x="-6.6%" y="-8.7%" filterUnits="objectBoundingBox">
+                        <feOffset dy="5" in="SourceAlpha" result="shadowOffsetOuter1"/>
+                        <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+                        <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.184151786   0 0 0 0 0.18208566   0 0 0 0 0.180791219  0 0 0 0.2 0"/>
+                        <feMerge>
+                            <feMergeNode in="shadowMatrixOuter1"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                        </filter>
+                    </defs>
+                    <g fill="none" fill-rule="evenodd" filter="url(#browser-a)" transform="translate(20 15)">
+                        <rect width="493" height="316" fill="#FFF" rx="6"/>
+                        <circle cx="11" cy="11" r="3" fill="#D3D3D4"/>
+                        <circle cx="23" cy="11" r="3" fill="#D3D3D4"/>
+                        <circle cx="35" cy="11" r="3" fill="#D3D3D4"/>
+                    </g>
+                    </svg>
+
+                    <!-- STEP 1 -->
+                    <div class="step step--1" v-show="step === 1">
+                            <div class="browser__content browser__step1">
+
+                                <div class="browser__step1--content">
+                                    <div class="imageSelection">
+                                        <img v-show="increment == 1" :class="increment == 1 ? 'carouselAnimation' : 'd-none'" src="https://picsum.photos/180/180" alt="">
+                                        <img v-show="increment == 2" :class="increment == 2 ? 'carouselAnimation' : 'd-none'" src="https://picsum.photos/175/175" alt="">
+                                        <img v-show="increment == 3" :class="increment == 3 ? 'carouselAnimation' : 'd-none'" src="https://picsum.photos/185/185" alt="">
+                                        <img v-show="increment == 4" :class="increment == 4 ? 'carouselAnimation' : 'd-none'" src="https://picsum.photos/178/178" alt="">
+                                        <img v-show="increment == 5" :class="increment == 5 ? 'carouselAnimation' : 'd-none'" src="https://picsum.photos/179/179" alt="">
+                                        <!-- <img src="https://unsplash.com/random/110x100" alt=""> -->
+                                        <!-- <img src="" alt=""> -->
+                                        <!-- <img src="" alt=""> -->
+                                        <!-- <img src="" alt=""> -->
+                                    </div>
+                                </div>
+
+                                <div class="browser__step1--footer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54" height="54" viewBox="0 0 54 54">
+                                            <defs>
+                                              <circle id="btn-bottom-left-b" cx="22.75" cy="22.75" r="22.75"/>
+                                              <filter id="btn-bottom-left-a" width="130.8%" height="130.8%" x="-15.4%" y="-11%" filterUnits="objectBoundingBox">
+                                                <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                                <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+                                                <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.525490196   0 0 0 0 0.525490196   0 0 0 0 1  0 0 0 1 0"/>
+                                              </filter>
+                                            </defs>
+                                            <g fill="none" fill-rule="evenodd" transform="translate(4 2)">
+                                              <use fill="#000" filter="url(#btn-bottom-left-a)" xlink:href="#btn-bottom-left-b"/>
+                                              <use fill="#FFF" xlink:href="#btn-bottom-left-b"/>
+                                              <text fill="#9262DB" font-family="AlTarikh, Al Tarikh" font-size="36">
+                                                <tspan x="15" y="33">&lt;</tspan>
+                                              </text>
+                                            </g>
+                                          </svg>
+    
+                                         <!-- SELECTION ICONS MIDDLE -->
+                                          <div class="selectionIcons" >
+                                              <!-- Chat Icon -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="99" viewBox="0 0 99 99">
+                                                    <defs>
+                                                      <circle id="btn-chat-b" cx="45.5" cy="45.5" r="45.5"/>
+                                                      <filter id="btn-chat-a" width="115.4%" height="115.4%" x="-7.7%" y="-5.5%" filterUnits="objectBoundingBox">
+                                                        <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                                        <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+                                                        <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.541176471   0 0 0 0 0.4   0 0 0 0 0.831372549  0 0 0 1 0"/>
+                                                      </filter>
+                                                    </defs>
+                                                    <g fill="none" fill-rule="evenodd" transform="translate(4 2)">
+                                                      <use fill="#000" filter="url(#btn-chat-a)" xlink:href="#btn-chat-b"/>
+                                                      <use fill="#FFF" xlink:href="#btn-chat-b"/>
+                                                      <g fill="#8A66D4" fill-rule="nonzero" transform="translate(25 29)">
+                                                        <path fill-opacity=".5" d="M40.6942735,10 L36.7770938,10 L36.7770938,24.5001776 C36.7770938,25.9567864 35.6084686,27.1365736 34.1656407,27.1365736 L19.9697818,27.1365736 L14,32.4093654 L25.913449,32.4093654 L34.7127402,38.7538522 C35.1057639,39.038583 35.625443,39.0820835 36.06939,38.8540353 C36.504197,38.6286234 36.7770938,38.1764815 36.7770938,37.6821573 L36.7770938,32.4093654 L40.6942735,32.4093654 C41.4150345,32.4093654 42,31.8188127 42,31.0911675 L42,11.318198 C42,10.5905527 41.4150345,10 40.6942735,10 Z"/>
+                                                        <path d="M32.6923077,0 L1.30769231,0 C0.584538462,0 0,0.584546702 0,1.30771074 L0,23.5387934 C0,24.2619574 0.584538462,24.8465041 1.30769231,24.8465041 L6.53846154,24.8465041 L6.53846154,32.6927686 C6.53846154,33.2066989 6.83792308,33.6709362 7.30607692,33.8827854 C7.76507692,34.0933268 8.31692308,34.0174796 8.70661538,33.6774748 L18.7993846,24.8465041 L32.6923077,24.8465041 C33.4154615,24.8465041 34,24.2619574 34,23.5387934 L34,1.30771074 C34,0.584546702 33.4154615,0 32.6923077,0 Z"/>
+                                                      </g>
+                                                    </g>
+                                                </svg>
+    
+                                                  <!-- No Icon -->
+                                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="99" viewBox="0 0 99 99">
+                                                    <defs>
+                                                      <circle id="btn-no-b" cx="45.5" cy="45.5" r="45.5"/>
+                                                      <filter id="btn-no-a" width="115.4%" height="115.4%" x="-7.7%" y="-5.5%" filterUnits="objectBoundingBox">
+                                                        <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                                        <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+                                                        <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.816203773   0 0 0 0 0.00751322834   0 0 0 0 0.106696017  0 0 0 1 0"/>
+                                                      </filter>
+                                                    </defs>
+                                                    <g fill="none" fill-rule="evenodd" transform="translate(4 2)">
+                                                      <use fill="#000" filter="url(#btn-no-a)" xlink:href="#btn-no-b"/>
+                                                      <use fill="#FFF" xlink:href="#btn-no-b"/>
+                                                      <g fill="#D0021B" fill-rule="nonzero" transform="translate(23 23)">
+                                                        <g transform="rotate(45 3.48 10.379)">
+                                                          <path d="M40.1684632,-3.26849658e-13 L5.03952522,-3.26849658e-13 C2.24890865,-3.26849658e-13 0,2.36526166 0,5.29289322 C0,8.27014565 2.24890865,10.5857864 5.02310983,10.5857864 L40.1520478,10.5857864 L40.1684632,-3.26849658e-13 Z"/>
+                                                          <path d="M50.6743138,-3.26849658e-13 L15.5453758,-3.26849658e-13 C12.7547593,-3.26849658e-13 10.5058506,2.36526166 10.5058506,5.29289322 C10.5058506,8.27014565 12.7547593,10.5857864 15.5289604,10.5857864 L50.6578984,10.5857864 L50.6743138,-3.26849658e-13 Z" transform="matrix(-1 0 0 1 61.18 0)"/>
+                                                        </g>
+                                                        <g transform="rotate(-45 44.52 17.621)">
+                                                          <path d="M40.1684632,-3.26849658e-13 L5.03952522,-3.26849658e-13 C2.24890865,-3.26849658e-13 0,2.36526166 0,5.29289322 C0,8.27014565 2.24890865,10.5857864 5.02310983,10.5857864 L40.1520478,10.5857864 L40.1684632,-3.26849658e-13 Z"/>
+                                                          <path d="M50.6743138,-3.26849658e-13 L15.5453758,-3.26849658e-13 C12.7547593,-3.26849658e-13 10.5058506,2.36526166 10.5058506,5.29289322 C10.5058506,8.27014565 12.7547593,10.5857864 15.5289604,10.5857864 L50.6578984,10.5857864 L50.6743138,-3.26849658e-13 Z" transform="matrix(-1 0 0 1 61.18 0)"/>
+                                                        </g>
+                                                      </g>
+                                                    </g>
+                                                  </svg>
+                                               
+                                                  <!-- Yes Icon -->
+                                                  <svg class="btn-yes"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="99" viewBox="0 0 99 99">
+                                                    <defs>
+                                                      <circle id="btn-yes-b" cx="45.5" cy="45.5" r="45.5"/>
+                                                      <filter id="btn-yes-a" width="115.4%" height="115.4%" x="-7.7%" y="-5.5%" filterUnits="objectBoundingBox">
+                                                        <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                                        <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+                                                        <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.4   0 0 0 0 0.588235294   0 0 0 0 0.180392157  0 0 0 1 0"/>
+                                                      </filter>
+                                                    </defs>
+                                                    <g fill="none" fill-rule="evenodd" transform="translate(4 2)">
+                                                      <use fill="#000" filter="url(#btn-yes-a)" xlink:href="#btn-yes-b"/>
+                                                      <use fill="#FFF" xlink:href="#btn-yes-b"/>
+                                                      <g fill="#66962E" fill-rule="nonzero" transform="translate(26 31)">
+                                                        <path d="M28.5,0 C34.303125,0.0555 39,4.70825 39,10.4525 C39,13.875 37.48125,18.73125 34.51875,22.72725 C28.875,30.34 19.5,37 19.5,37 C19.5,37 10.125,30.34 4.48125,22.72725 C1.51875,18.73125 0,13.875 0,10.4525 C0,4.70825 4.696875,0.0555 10.59375,0 C14.315625,0 17.60625,1.9425 19.5,4.81 C21.39375,1.9425 24.684375,0 28.5,0 Z"/>
+                                                      </g>
+                                                    </g>
+                                                  </svg>
+    
+                                                  <svg class="btn-yes--active yesClicked" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="99" viewBox="0 0 99 99">
+                                                    <defs>
+                                                      <circle id="btn-yes--active-b" cx="45.5" cy="45.5" r="45.5"/>
+                                                      <filter id="btn-yes--active-a" width="115.4%" height="115.4%" x="-7.7%" y="-5.5%" filterUnits="objectBoundingBox">
+                                                        <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                                        <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+                                                        <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.161644345   0 0 0 0 0.161644345   0 0 0 0 0.161644345  0 0 0 1 0"/>
+                                                      </filter>
+                                                    </defs>
+                                                    <g fill="none" fill-rule="evenodd" transform="translate(4 2)">
+                                                      <use fill="#000" filter="url(#btn-yes--active-a)" xlink:href="#btn-yes--active-b"/>
+                                                      <use fill="#66962E" xlink:href="#btn-yes--active-b"/>
+                                                      <g fill="#FFF" fill-rule="nonzero" transform="translate(26 31)">
+                                                        <path d="M28.5,0 C34.303125,0.0555 39,4.70825 39,10.4525 C39,13.875 37.48125,18.73125 34.51875,22.72725 C28.875,30.34 19.5,37 19.5,37 C19.5,37 10.125,30.34 4.48125,22.72725 C1.51875,18.73125 0,13.875 0,10.4525 C0,4.70825 4.696875,0.0555 10.59375,0 C14.315625,0 17.60625,1.9425 19.5,4.81 C21.39375,1.9425 24.684375,0 28.5,0 Z"/>
+                                                      </g>
+                                                    </g>
+                                                  </svg>
+                                                                  
+                                          </div>
+    
+                                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54" height="54" viewBox="0 0 54 54">
+                                            <defs>
+                                              <circle id="btn-bottom-right-b" cx="22.75" cy="22.75" r="22.75"/>
+                                              <filter id="btn-bottom-right-a" width="130.8%" height="130.8%" x="-15.4%" y="-11%" filterUnits="objectBoundingBox">
+                                                <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+                                                <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+                                                <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.525490196   0 0 0 0 0.525490196   0 0 0 0 1  0 0 0 1 0"/>
+                                              </filter>
+                                            </defs>
+                                            <g fill="none" fill-rule="evenodd" transform="translate(4 2)">
+                                              <use fill="#000" filter="url(#btn-bottom-right-a)" xlink:href="#btn-bottom-right-b"/>
+                                              <use fill="#FFF" xlink:href="#btn-bottom-right-b"/>
+                                              <text fill="#9262DB" font-family="AlTarikh, Al Tarikh" font-size="36" transform="rotate(180 23 18)">
+                                                <tspan x="16" y="20">&lt;</tspan>
+                                              </text>
+                                            </g>
+                                          </svg>
+                                </div>
+                                    
+                                      
+                                      
+                            </div>
+                    </div>
+
+                    <!-- STEP 2 -->
+                    <div class="step step--2" v-show="step === 2">
+                            <div class="browser__content browser__step2">
+                                <img src="./img/img/screenshot.png" alt="">
+                            </div>
+                            <div class="step--2__icons">
+                
+                            </div>
+                        </div>   
+
+                    <!-- STEP 3 -->
+                    <div class="step step--3" v-show="step === 3">
+                        <div class="browser__content">
+                            <img src="./img/img/screenshot.png" alt="">
+                        </div>
+                        <div class="step--3__icons">
+            
+                        </div>
+                    </div>                          
+                    <!-- <button @click="imageSwap">Next</button> -->
+            </div>
+           
         </div>
+
+        <div class="buttons">
+                <button @click="prevStep">Previous</button>
+                <button @click="imageSwap">Next</button>
+        </div>
+        
+     
+
     </div>
-</div>
-</div>
+<!-- </div> -->
 
 
 
@@ -110,8 +313,120 @@
 const app = new Vue({
   el:'#app',
   data() {
-    return {}
-  }
+    return {
+            step: 1,
+            imageSelect: 1,
+            activeClass: false,
+            btnYesActive: false,
+            showOptin: false,
+            increment: 0,
+            myText: 0
+        }
+    },
+    methods: {
+        nextStep: function(){
+            this.activeClass = !this.activeClass;
+            this.step ++;
+
+            setTimeout(() => {
+                this.activeClass = !this.activeClass;
+            }, 250);
+          
+        },
+        prevStep: function(){
+            this.activeClass = !this.activeClass;
+            this.step --
+            setTimeout(() => {
+                this.activeClass = !this.activeClass;
+            }, 250);
+        },
+        startInterval: function () {
+                  const self = this
+                  
+          },
+        createInterval(heartOrNot, time, iterations) {
+
+            const self = this;
+         
+            var intervalID =  setInterval(() => {
+
+                // If Heart
+                if(heartOrNot === "heart") {
+                    self.animateHeart();
+                }
+
+                // Increment iterations
+                this.increment = this.increment + 1;
+                console.log(this.increment);
+                
+                // Numbers of iterations until stop
+                if (this.increment === iterations) {
+                    console.log('in interval');
+                    window.clearInterval(intervalID);
+                }
+
+            }, time);
+
+        },
+        incrementIterations() {
+            this.x = x + 1
+            console.log(x);
+        },
+        // STEP 1 yes no clicks
+        intervalClick: function() {
+
+            const self = this;
+           
+           setInterval(function(){ 
+                // Alternate active state of Yes button
+                console.log('interval running..', this.btnYesActive);
+                this.btnYesActive = !this.btnYesActive
+                
+                // Toggle Yes
+                self.animateHeart();
+
+            }, 3000);
+
+
+        },
+        animateHeart: function() {
+            setTimeout(() => {
+             // Assign Yes button to variable and Toggle Class
+             const btnYes = document.querySelector('.btn-yes');
+             const btnYesActive = document.querySelector('.btn-yes--active');
+             btnYes.classList.toggle('yesHide');
+             btnYesActive.classList.toggle('yesClicked');
+
+                var self = this;
+                setTimeout(() => {
+                    const btnYes = document.querySelector('.btn-yes');
+                    const btnYesActive = document.querySelector('.btn-yes--active');
+                    btnYesActive.classList.toggle('yesClicked');
+                    btnYes.classList.toggle('yesHide');
+                }, 250);
+                
+            }, 1500);
+        },
+        imageSwap: function() {
+            console.log('pressed');
+            this.btnYesActive = !this.btnYesActive    
+            // Toggle Yes
+            this.imageSelect++ ;
+            this.animateHeart();
+        }
+    },
+    mounted() {
+        // setTimeout(() => {
+        //     this.intervalClick();
+        // }, 30);
+           // this.startInterval();
+        this.createInterval( 'heart', 2500, 5);
+       
+        // setTimeout(() => {
+        //     this.nextStep();
+        // }, 10000);
+        
+    }
 });
 
 

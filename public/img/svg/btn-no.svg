@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="99" viewBox="0 0 99 99">
+  <defs>
+    <circle id="btn-no-b" cx="45.5" cy="45.5" r="45.5"/>
+    <filter id="btn-no-a" width="115.4%" height="115.4%" x="-7.7%" y="-5.5%" filterUnits="objectBoundingBox">
+      <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.816203773   0 0 0 0 0.00751322834   0 0 0 0 0.106696017  0 0 0 1 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(4 2)">
+    <use fill="#000" filter="url(#btn-no-a)" xlink:href="#btn-no-b"/>
+    <use fill="#FFF" xlink:href="#btn-no-b"/>
+    <g fill="#D0021B" fill-rule="nonzero" transform="translate(23 23)">
+      <g transform="rotate(45 3.48 10.379)">
+        <path d="M40.1684632,-3.26849658e-13 L5.03952522,-3.26849658e-13 C2.24890865,-3.26849658e-13 0,2.36526166 0,5.29289322 C0,8.27014565 2.24890865,10.5857864 5.02310983,10.5857864 L40.1520478,10.5857864 L40.1684632,-3.26849658e-13 Z"/>
+        <path d="M50.6743138,-3.26849658e-13 L15.5453758,-3.26849658e-13 C12.7547593,-3.26849658e-13 10.5058506,2.36526166 10.5058506,5.29289322 C10.5058506,8.27014565 12.7547593,10.5857864 15.5289604,10.5857864 L50.6578984,10.5857864 L50.6743138,-3.26849658e-13 Z" transform="matrix(-1 0 0 1 61.18 0)"/>
+      </g>
+      <g transform="rotate(-45 44.52 17.621)">
+        <path d="M40.1684632,-3.26849658e-13 L5.03952522,-3.26849658e-13 C2.24890865,-3.26849658e-13 0,2.36526166 0,5.29289322 C0,8.27014565 2.24890865,10.5857864 5.02310983,10.5857864 L40.1520478,10.5857864 L40.1684632,-3.26849658e-13 Z"/>
+        <path d="M50.6743138,-3.26849658e-13 L15.5453758,-3.26849658e-13 C12.7547593,-3.26849658e-13 10.5058506,2.36526166 10.5058506,5.29289322 C10.5058506,8.27014565 12.7547593,10.5857864 15.5289604,10.5857864 L50.6578984,10.5857864 L50.6743138,-3.26849658e-13 Z" transform="matrix(-1 0 0 1 61.18 0)"/>
+      </g>
+    </g>
+  </g>
+</svg>
