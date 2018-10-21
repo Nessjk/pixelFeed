@@ -66,6 +66,38 @@
     &__step2 {
       justify-content: center;
       flex-direction: column;
+
+      & > img {
+        width: 512px;
+        margin-top: 2150px;
+        animation-delay: 3s;
+        animation: scrollDown 8.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+        
+      }
+    }
+
+    &__step3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+
+      &--footer {
+        align-items: flex-end;
+        justify-content: space-between;
+        overflow: hidden;
+        display: flex;
+        height: 60px;
+        padding-bottom: 10px;
+        width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      & svg {
+        width: 30px;
+        height: 30px;
+      }
     }
   
     &__content {
@@ -76,15 +108,97 @@
       display: flex;    
       flex-direction: column;
 
-      & > img {
-        width: 512px;
-        margin-top: 2150px;
-        animation-delay: 3s;
-        animation: scrollDown 8.2s cubic-bezier(0.22, 0.61, 0.36, 1);
-        
+    
+    }
+  }
+
+  .step {
+    &--3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+
+      &__icons {
+        //position: absolute;
       }
     }
   }
+
+  .step--3 .browser__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .step--3 {
+    &__images {
+      height: 80%;
+      display: flex;
+      justify-content: center;
+    }
+
+    &__icons {
+      height: 20%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-bottom: 5px;
+
+      & img {
+        height: 35px;
+        width: 35px;
+      }
+    }
+  }
+
+  .icon-heart--big,
+  .icon-no--big  {
+    position: absolute;
+    width: 140px;
+    display: flex;
+    align-self: center;
+    animation: scaleClick .3s ease-in-out;
+  }
+
+  .fadeOutSelect {
+    
+    animation: fadeOut  .4s linear;
+    //animation-delay: 1s;
+  }
+
+
+  .browser__icons {
+    position: relative;
+  }
+
+  .icon {
+    &__yes {
+      &--active {
+        position: absolute;
+        z-index: 9999!important;
+        top: 0;
+        right: 0;
+        animation: scaleClick .3s linear;
+      }
+      &--inactive {
+
+      }
+    }
+
+    &__no {
+      &--active {
+        position: absolute;
+        top: 0;
+        left: 39px;
+        animation: scaleClick .3s linear;
+      }
+    }
+  }
+
+
 
   .selectionIcons {
     height: 30px;
@@ -99,13 +213,21 @@
     // height: 100px;
     // width: 100px;
     z-index: 99999;
-    animation-delay: 5s;
+    //animation-delay: 5s;
     
     //transition: imageSelect 3s ease-in-out;
   }
 
   .carouselAnimation {
     animation: imageSelect 3s ease-in-out;
+  }
+  
+  .carouselIn {
+    animation: fadeInSelect 3s ease-in-out;
+  }
+  
+  .carouselOut {
+    animation: fadeOutSelect 3s ease-in-out;
   }
 
   .step {
@@ -116,7 +238,7 @@
 
   .animateOut {
     display: none;
-    animation: fadeOut .5s ease-out;
+    animation: fadeOut 1s linear;
   }
   
 

@@ -217,3 +217,29 @@
       transform: scale(0.9) translateX(-24%);
     }
  }
+
+ @keyframes fadeOutSelect {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateX(0%);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: scale(0.9) translateX(-24%);
+    display: none;
+  }
+ }
+
+ @keyframes fadeInSelect {
+    0% {
+      opacity: 0;
+      
+      transform: scale(0.9) translateX(24%);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1) translateX(0%);
+    }
+ }

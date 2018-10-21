@@ -23,9 +23,7 @@
     </div>
 </div>
 
-<!-- Vue App -->
-<!-- <div id="app"> -->
-   
+
     <div class="row">
         <div class="content col-md-5 col-12">
             <div class="logo">
@@ -95,7 +93,7 @@
             </div>
 
 
-                <!-- Browser App  -->
+                <!-- Browser & Vue App  -->
                 <div id="app" class="browser" :class="{ animateOut: activeClass }">
                     <svg xmlns="http://www.w3.org/2000/svg" width="533" height="356" viewBox="0 0 533 356">
                     <defs>
@@ -152,7 +150,7 @@
                                                 <tspan x="15" y="33">&lt;</tspan>
                                               </text>
                                             </g>
-                                          </svg>
+                                        </svg>
     
                                          <!-- SELECTION ICONS MIDDLE -->
                                           <div class="selectionIcons" >
@@ -277,12 +275,43 @@
 
                     <!-- STEP 3 -->
                     <div class="step step--3" v-show="step === 3">
+
+                        <!-- Browser window | height and width of svg -->
                         <div class="browser__content">
-                            <img src="./img/img/screenshot.png" alt="">
-                        </div>
-                        <div class="step--3__icons">
-            
-                        </div>
+
+                            <!-- Images Browswer Content | 80% height -->
+                            <div class="step--3__images">
+                                <transition name="fade" mode="out-in">
+                                    <img :src="image" :key="image" class="carouselIn" :class="{ carouselOut: imageActive}" alt="">
+                                </transition>
+
+                                <transition name="fade" mode="out-in">
+                                    <img  v-show="showActiveYes === true" class="icon-heart--big  " :class="showActiveYes ? 'd-block' : 'fadeOutSelect' " src="./img/svg/icon-heart--big.svg" alt="">
+                                </transition>
+                               
+                                <transition name="fade" mode="out-in">
+                                    <img  v-show="showActiveNo === true" class="icon-no--big  " :class="showActiveNo ? 'd-block' : 'fadeOutSelect' " src="./img/svg/icon-no--big.svg" alt="">
+                                </transition>
+                            </div>
+                         
+                            <!-- Icons Selection Footer | 20% height -->
+                            <div class="step--3__icons">
+                           
+                                <img src="./img/svg/btn-bottom-left.svg" alt="">
+                                <div class="browser__icons">
+                                    <img src="./img/svg/btn-chat.svg" alt="">
+                                    <img src="./img/svg/btn-no.svg" alt="">
+                                    <img class="icon__yes--inactive" src="./img/svg/btn-yes.svg" alt="">
+
+                                    <img class="icon__no--active" :class="showActiveNo ? 'd-block' : 'hide' " src="./img/svg/btn-no--active.svg" alt="">
+                                    <img class="icon__yes--active" :class="showActiveYes ? 'd-block' : 'hide' " src="./img/svg/btn-yes--active.svg" alt="">
+                                </div>
+                                <img src="./img/svg/btn-bottom-right.svg" alt="">
+                          
+                            </div>
+
+                        </div><!-- end browswer window -->
+
                     </div>                          
                     <!-- <button @click="imageSwap">Next</button> -->
             </div>
@@ -297,7 +326,6 @@
      
 
     </div>
-<!-- </div> -->
 
 
 
@@ -309,18 +337,26 @@
 
 <!-- VUE APP -->
 <script type="application/javascript">
-    
+
+const images = ["https://picsum.photos/175/175", "https://picsum.photos/180/180","https://picsum.photos/170/170","https://picsum.photos/172/172","https://picsum.photos/181/181","https://picsum.photos/168/168"];
+
 const app = new Vue({
   el:'#app',
   data() {
     return {
-            step: 1,
+            step: 3,
             imageSelect: 1,
             activeClass: false,
             btnYesActive: false,
             showOptin: false,
             increment: 0,
-            myText: 0
+ 
+            // Tinder style option properties
+            image: null,
+            images: [...images],
+            imageActive: false,
+            showActiveYes: false,
+            showActiveNo: false
         }
     },
     methods: {
@@ -340,91 +376,148 @@ const app = new Vue({
                 this.activeClass = !this.activeClass;
             }, 250);
         },
-        startInterval: function () {
-                  const self = this
-                  
-          },
-        createInterval(heartOrNot, time, iterations) {
+        // STEP 1: Heart or No the image in Carousel
+        runStep(iterations) {
+            let x = 0;
+            const swipes = ["yes", "yes", "no", "yes", "no", "no"];
+
+            console.log('run step');
+
+            setTimeout(() => {
+                this.image = this.images[x];
+                //console.log(x);
+                x++;
+                
+                ////// HEART
+                //Toggle on
+                if(swipes[x] == "yes"){
+                    setTimeout(() => {
+                        this.showActiveYes = !this.showActiveYes
+                        this.imageActive = true
+
+                        // Toggle off
+                        setTimeout(() => {
+                            this.showActiveYes = !this.showActiveYes
+                            this.imageActive = false
+                            this.image = null
+                        }, 420);
+
+                    }, 500);
+                }
+            }, 500);
+
+            setInterval(() => { 
+                this.image = this.images[x];
+                //console.log(x);
+                x++;
+                
+                ////// HEART
+                //Toggle on
+                if(swipes[x] == "yes"){
+                    setTimeout(() => {
+                        this.showActiveYes = !this.showActiveYes
+                        this.imageActive = true
+
+                        // Toggle off
+                        setTimeout(() => {
+                            this.showActiveYes = !this.showActiveYes
+                            this.imageActive = false
+                        }, 420);
+
+                    }, 1500);
+                }
+               
+                ////// NO
+                //Toggle on
+                if(swipes[x] == "no"){
+                    setTimeout(() => {
+                        this.showActiveNo = !this.showActiveNo
+                        this.imageActive = true
+
+                        // Toggle off
+                        setTimeout(() => {
+                            this.showActiveNo = !this.showActiveNo
+                            this.imageActive = false
+                        }, 420);
+
+                    }, 1850);
+                }
+
+                // Numbers of iterations until stop
+                if (this.increment === iterations) {
+                    //console.log('in interval');
+                    window.clearInterval(intervalID);
+                }
+
+            }, 3000)
+        },
+        rotateImages(iterations, time) {
+          
+            console.log('rotate');
 
             const self = this;
+            let x = 0;
+            
+            
+            this.image = "https://picsum.photos/170/170";
+           
          
             var intervalID =  setInterval(() => {
 
-                // If Heart
-                if(heartOrNot === "heart") {
-                    self.animateHeart();
-                }
-
                 // Increment iterations
                 this.increment = this.increment + 1;
-                console.log(this.increment);
+                //console.log(this.increment);
+
+                // Rotate images
+                this.image = this.images[x];
+                //console.log(x);
+                x++;
                 
                 // Numbers of iterations until stop
                 if (this.increment === iterations) {
-                    console.log('in interval');
+                    //console.log('in interval');
                     window.clearInterval(intervalID);
                 }
 
             }, time);
 
-        },
-        incrementIterations() {
-            this.x = x + 1
-            console.log(x);
-        },
-        // STEP 1 yes no clicks
-        intervalClick: function() {
-
-            const self = this;
-           
-           setInterval(function(){ 
-                // Alternate active state of Yes button
-                console.log('interval running..', this.btnYesActive);
-                this.btnYesActive = !this.btnYesActive
-                
-                // Toggle Yes
-                self.animateHeart();
-
-            }, 3000);
-
-
-        },
-        animateHeart: function() {
-            setTimeout(() => {
-             // Assign Yes button to variable and Toggle Class
-             const btnYes = document.querySelector('.btn-yes');
-             const btnYesActive = document.querySelector('.btn-yes--active');
-             btnYes.classList.toggle('yesHide');
-             btnYesActive.classList.toggle('yesClicked');
-
-                var self = this;
-                setTimeout(() => {
-                    const btnYes = document.querySelector('.btn-yes');
-                    const btnYesActive = document.querySelector('.btn-yes--active');
-                    btnYesActive.classList.toggle('yesClicked');
-                    btnYes.classList.toggle('yesHide');
-                }, 250);
-                
-            }, 1500);
-        },
-        imageSwap: function() {
-            console.log('pressed');
-            this.btnYesActive = !this.btnYesActive    
-            // Toggle Yes
-            this.imageSelect++ ;
-            this.animateHeart();
         }
     },
-    mounted() {
-        // setTimeout(() => {
-        //     this.intervalClick();
-        // }, 30);
-           // this.startInterval();
-        this.createInterval( 'heart', 2500, 5);
-       
-        // setTimeout(() => {
-        //     this.nextStep();
-        // }, 10000);
+    created() {
+
+        //this.createInterval( 'heart', 2500, 5);
+        //this.createInterval( 'no', 2500, 5);
+
+        //this.image = "https://picsum.photos/175/175";
+        
+        //setTimeout(() => {
+            this.rotateImages(4, 3000);
+         
+            // Run Swipes
+            this.runStep(6);
+        //}, 2000);
+        
+
+        //let x = 0;
+
+        // setInterval(() => { 
+        //     this.image = this.images[x];
+        //     console.log(x);
+        //     x++;
+            
+            // Toggle on
+            // setTimeout(() => {
+            //     this.showActiveYes = !this.showActiveYes
+
+            //     // Toggle off
+            //     setTimeout(() => {
+            //         this.showActiveYes = !this.showActiveYes
+            //     }, 420);
+
+            // }, 1500);
+
+        //}, 3000)
+
         
     }
 });
