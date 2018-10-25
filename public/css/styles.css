@@ -327,6 +327,36 @@ h1 {
     opacity: 1;
     transform: scale(1) translateX(0%); } }
 
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .750s ease; }
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1); }
+
+.slide-fade-enter {
+  transform: translateX(10px);
+  opacity: 0; }
+
+.slide-fade-leave-to {
+  transform: translateX(-10px);
+  opacity: 0; }
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0%); } }
+
+@keyframes fadeUpIconSlow {
+  0% {
+    transform: translateY(0%); }
+  100% {
+    transform: translateY(-40%); } }
+
 .btn--CTA {
   z-index: 9999;
   margin-top: 50px;
@@ -421,6 +451,19 @@ h1 {
   align-items: center;
   justify-content: center; }
 
+.motion h2 {
+  position: absolute;
+  z-index: 9999;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  padding: 100px;
+  color: #111111 !important;
+  transition: slideInUp  1s ease-in-out;
+  animation: slideInUp 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation-delay: 1s;
+  animation-fill-mode: forwards; }
+
 .pixels {
   overflow: hidden;
   height: 100vh;
@@ -444,9 +487,17 @@ h1 {
   position: absolute;
   z-index: 9999;
   display: flex;
-  justify-content: center;
-  animation-delay: .5s;
-  animation: appear3d 1.2s cubic-bezier(0.22, 0.61, 0.36, 1); }
+  justify-content: center; }
+  .browser svg {
+    animation-delay: .5s;
+    animation: appear3d 1.2s cubic-bezier(0.22, 0.61, 0.36, 1); }
+  .browser h2 {
+    position: absolute;
+    top: -180px;
+    left: 0;
+    transition: all 1s ease-in-out;
+    animation-delay: 1s;
+    animation: slideInUp 1.2s cubic-bezier(0.22, 0.61, 0.36, 1); }
   .browser__step1--footer {
     align-items: flex-end;
     justify-content: space-between;
@@ -469,8 +520,8 @@ h1 {
     .browser__step2 > img {
       width: 512px;
       margin-top: 2150px;
-      animation-delay: 3s;
-      animation: scrollDown 8.2s cubic-bezier(0.22, 0.61, 0.36, 1); }
+      animation: scrollDown 8.2s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+      animation-delay: 3s; }
   .browser__step3 {
     display: flex;
     justify-content: center;
@@ -497,23 +548,26 @@ h1 {
     display: flex;
     flex-direction: column; }
 
-.step--3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute; }
+.step {
+  animation-delay: .8s;
+  animation: appear3d 1.2s cubic-bezier(0.22, 0.61, 0.36, 1); }
+  .step--3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; }
 
 .step--3 .browser__content {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly; }
 
-.step--3__images {
+.step--1__images {
   height: 80%;
   display: flex;
   justify-content: center; }
 
-.step--3__icons {
+.step--1__icons {
   height: 20%;
   display: flex;
   justify-content: space-between;
@@ -521,7 +575,7 @@ h1 {
   padding-left: 5px;
   padding-right: 5px;
   padding-bottom: 5px; }
-  .step--3__icons img {
+  .step--1__icons img {
     height: 35px;
     width: 35px; }
 
@@ -589,3 +643,21 @@ h1 {
 
 .btn-yes--active {
   animation: scaleClick .2s ease-in-out; }
+
+.step--heartIcon {
+  position: absolute;
+  right: -100px;
+  top: 20px; }
+
+.step--boltIcon {
+  position: absolute;
+  right: -50px;
+  bottom: 180px; }
+
+.step--bulbIcon {
+  position: absolute;
+  height: 35%;
+  right: -60px;
+  top: -80px;
+  z-index: -9;
+  animation: fadeUpIconSlow 20s ease-out; }
