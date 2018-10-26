@@ -327,6 +327,14 @@ h1 {
     opacity: 1;
     transform: scale(1) translateX(0%); } }
 
+@keyframes fadeInMagnify {
+  0% {
+    opacity: 0;
+    transform: scale(0.7); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
@@ -523,10 +531,14 @@ h1 {
       animation: scrollDown 8.2s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
       animation-delay: 3s; }
   .browser__step3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute; }
+    width: 493px;
+    overflow: hidden;
+    height: 296px !important;
+    margin-top: 10px !important; }
+    .browser__step3 > img {
+      width: 512px;
+      margin-top: 80px;
+      z-index: 9999; }
     .browser__step3--footer {
       align-items: flex-end;
       justify-content: space-between;
@@ -578,6 +590,10 @@ h1 {
   .step--1__icons img {
     height: 35px;
     width: 35px; }
+
+video {
+  height: 400px;
+  width: 495px; }
 
 .icon-heart--big,
 .icon-no--big {
@@ -661,3 +677,17 @@ h1 {
   top: -80px;
   z-index: -9;
   animation: fadeUpIconSlow 20s ease-out; }
+
+.magnify {
+  position: absolute;
+  z-index: 9999;
+  animation: fadeInMagnify .4s ease-in-out;
+  transition: all .4s ease-in-out; }
+  .magnify--1 {
+    left: -40px;
+    top: -30px; }
+  .magnify--2 {
+    right: 40px;
+    top: 0px; }
+  .magnify--3 {
+    right: 30px; }

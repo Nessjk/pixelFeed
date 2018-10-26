@@ -108,10 +108,16 @@
     }
 
     &__step3 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
+      width: 493px;
+      overflow: hidden;
+      height: 296px!important;
+      margin-top: 10px!important;
+
+       & > img {
+        width: 512px;
+        margin-top: 80px;
+        z-index: 9999;
+      }
 
       &--footer {
         align-items: flex-end;
@@ -186,6 +192,12 @@
         width: 35px;
       }
     }
+  }
+
+
+  video {
+    height: 400px;
+    width:495px;
   }
 
   .icon-heart--big,
@@ -309,3 +321,24 @@
 
     animation: fadeUpIconSlow 20s ease-out;
   }
+
+  .magnify {
+    position: absolute;
+    z-index: 9999;
+
+    animation: fadeInMagnify .4s ease-in-out;
+    transition: all .4s ease-in-out;
+
+    &--1 {
+      left: -40px;
+      top: -30px;
+    }
+    &--2 {
+      right: 40px;
+      top: 0px;
+    }
+    &--3 {
+      right: 30px;
+    }
+  }
+

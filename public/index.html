@@ -108,14 +108,19 @@
             <!-- Top Title -->
             <div v-show="step === 1">
                 <h2 >Get Ideas and Brainstorm <br> with you client  quickly</h2>
-              
+            </div>
+            <div v-show="step === 2">
+                <h2 >Get Ideas and Brainstorm <br> with you client  quickly</h2>
+            </div>
+            <div v-show="step === 3">
+                <h2>Skip emails, get all your clients <br> activity in one place.</h2>
             </div>
           
             <!-- Browser & Vue App  -->
             <div  class="browser">
 
                 <!-- Browswer SVG -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="533" height="356" viewBox="0 0 533 356">
+                <svg v-show="step === 1 || step === 3" xmlns="http://www.w3.org/2000/svg" width="533" height="356" viewBox="0 0 533 356">
                     <defs>
                         <filter id="browser-a" width="113.2%" height="120.6%" x="-6.6%" y="-8.7%" filterUnits="objectBoundingBox">
                             <feOffset dy="5" in="SourceAlpha" result="shadowOffsetOuter1" />
@@ -135,9 +140,9 @@
                     </g>
                 </svg>
 
-                <img class="step--heartIcon" src="./img/svg/heart.svg" alt="">
-                <img class="step--boltIcon" src="./img/svg/bolt.svg" alt="">
-                <img class="step--bulbIcon" src="./img/svg/lightBulb--2.svg" alt="">
+                <img v-show="step === 1" class="step--heartIcon" src="./img/svg/heart.svg" alt="">
+                <img v-show="step === 1" class="step--boltIcon" src="./img/svg/bolt.svg" alt="">
+                <img v-show="step === 1" class="step--bulbIcon" src="./img/svg/lightBulb--2.svg" alt="">
 
                 <!-- STEP 1 -->
                 <div class="step step--1" v-show="step === 1">
@@ -186,13 +191,32 @@
 
                 <!-- STEP 2 -->
                 <div class="step step--2" v-show="step === 2">
-                    <div class="browser__content browser__step2">
+                    <!-- <div class="browser__content browser__step2">
                         <img src="./img/img/screenshot.png" alt="">
-                    </div>
-                    <div class="step--2__icons">
+                    </div> -->
+                    <video width="695" height="600" autoplay="autoplay">
+                            <source src="./img/videos/feedback-step--2.mov" type="video/mp4" />
+                          </video>
+                    <!-- <video width="320" height="240" controls>
+                            <source src="./img/videos/feedback-step--2.mov" type="video/mp4">
+                          Your browser does not support the video tag.
+                          </video>
+                    <div class="step--2__icons"> -->
 
                     </div>
                 </div>
+
+                 <!-- STEP 3 -->
+                 <div class="step step--3" v-show="step === 3">
+                        <div class="browser__content browser__step3">
+                            <img src="./img/img/dashboard-activity--min.png" alt="">
+                        </div>
+                        <div class="step--3__zoom">
+                            <img v-show="magnify === 1" class="magnify magnify--1" src="./img/img/magnify--1-min.png" alt="">
+                            <img v-show="magnify === 2" class="magnify magnify--2" src="./img/img/magnify--2-min.png" alt="">
+                            <img v-show="magnify === 3" class="magnify magnify--3" src="./img/img/magnify--3-min.png" alt="">
+                        </div>
+                    </div>
 
             </div> <!-- End Browser & Vue App  -->
 
@@ -218,18 +242,26 @@
             "https://picsum.photos/168/168"
         ];
 
+        //import PxlStep1 from './components/PxlStep1';
+
         const app = new Vue({
             el: '#app',
+            // components: [
+            //     'pxl-step-1'
+            // ],
             data() {
                 return {
-                    step: 1,
+                    step: 3,
 
-                    // Tinder style option properties
+                    // Step 1: Tinder style option properties
                     image: null,
                     images: [...images],
                     imageActive: false,
                     showActiveYes: false,
-                    showActiveNo: false
+                    showActiveNo: false,
+
+                    // Step 3
+                    magnify: 1
                 }
             },
             methods: {
@@ -300,8 +332,32 @@
                         }
                     }, 3000)
 
+                },
+                //// STEP 3
+                step3() {
+                    let x = 1;
+
+                    var interval = setInterval(() => {
+
+                        this.magnify += 1
+                        x++;
+
+                        if (x == 4) { 
+                            x = 1;
+                            this.magnify = 1;
+                        };
+
+
+                        if (x == 3) {
+                            console.log('clear interval and move step');
+                            
+                            // TEMP paused the step progress
+                            //this.step++
+                            
+                           // window.clearInterval(interval);
+                        }
+                    }, 3000)
                 }
-                //// STEP 2
             },
             beforeMount() {
 
@@ -310,8 +366,16 @@
             },
             mounted() {
                 // STEP 1
-                this.step1();
+                if (this.step === 1 ) {
+                    this.step1();
+                }
+               
                 // STEP 2
+
+                // STEP 3
+                if (this.step === 3 ) {
+                    this.step3();
+                }
 
             }
         });
