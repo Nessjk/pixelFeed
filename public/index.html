@@ -26,8 +26,8 @@
     <div id="app">
 
     
-    <div :class=" showOptin ? 'd-flex' : 'd-none' " @click="optinNow()" class="optinWindow">
-        <div class="optinModal">
+    <div :class=" showOptin ? 'd-flex' : 'd-none' " @click.stop="optinNow()" class="optinWindow">
+        <div class="optinModal" @click.stop>
             <h2>Welcome! You are a:</h2>
             <div class="choice">
                     <div class="choice__input">Freelancer</div>
@@ -43,7 +43,7 @@
     <div class="row">
 
         <!-- Content Part -->
-        <div class="content col-md-5 col-12">
+        <div class="content col-md-5 col-xs-12">
 
             <!-- Logo -->
             <div class="logo">
@@ -94,7 +94,7 @@
         </div>
 
         <!-- Motion Part -->
-        <div id="app" class="motion col-md-7 col-12">
+        <div id="app" class="motion col-md-7  d-lg-block">
             <div class="pixels">
                 <div class="pixel"></div>
                 <div class="pixel"></div>
@@ -121,19 +121,19 @@
                 <!-- </div> -->
             </div>
 
-            <!-- Top Title -->
-            <div v-show="step === 1">
-                <h2 >Get Ideas and Brainstorm <br> with you client  quickly</h2>
-            </div>
-            <div v-show="step === 2">
-                <h2 >Get Direct and Clear Feedback <br> straight in the app</h2>
-            </div>
-            <div v-show="step === 3">
-                <h2>Skip emails, get all your clients <br> activity in one place.</h2>
-            </div>
-          
             <!-- Browser & Vue App  -->
             <div  class="browser">
+                <div v-show="step === 1">
+                    <h2>IDEATE & BRAINSTORM </h2>
+                </div>
+
+                <div v-show="step === 2">
+                    <h2>DIRECT FEEDBACK</h2>
+                </div>
+
+                <div v-show="step === 3">
+                    <h2>CLIENT OVERVIEW</h2>
+                </div>
 
                 <!-- Browswer SVG -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="533" height="356" viewBox="0 0 533 356">
@@ -210,10 +210,6 @@
                     <div class="browser__content browser__step2">
                         <img src="./img/img/screenshot--2-min.jpg" alt="">
                     </div>
-                    <!-- <video oncanplay="logOnPlay()" id="feedbackVid" width="695" height="600" autoplay="autoplay" loop="true">
-                            <source src="./img/videos/feedback-step--2.mp4" type="video/mp4" />
-                          </video> -->
-                    <!-- <img src="./img/" alt=""> -->
 
                     <div class="step--1__icons" style="position: absolute;bottom: 0;display: flex;">
 

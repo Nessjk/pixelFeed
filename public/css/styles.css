@@ -364,7 +364,7 @@ h1 {
 @keyframes slideInUp {
   0% {
     opacity: 0;
-    transform: translateY(10%); }
+    transform: translateY(30%); }
   100% {
     opacity: 1;
     transform: translateY(0%); } }
@@ -391,6 +391,9 @@ h1 {
   padding-left: 32px;
   padding-right: 32px;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1); }
+  @media (max-width: 768px) {
+    .btn--CTA {
+      width: 70%; } }
   .btn--CTA svg {
     transform: rotate(180deg);
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1); }
@@ -424,11 +427,17 @@ h1 {
 
 .content {
   padding: 100px; }
+  @media (max-width: 768px) {
+    .content {
+      padding: 60px; } }
 
 .text h1 {
   margin-top: 96px;
   color: #111111;
   margin-bottom: 0px; }
+  @media (max-width: 768px) {
+    .text h1 {
+      font-size: 62px; } }
 
 .text p {
   margin-top: 32px;
@@ -468,19 +477,9 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center; }
-
-.motion h2 {
-  position: absolute;
-  z-index: 9999;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  padding: 100px;
-  color: #111111 !important;
-  transition: slideInUp  1s ease-in-out;
-  animation: slideInUp 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
-  animation-delay: 1s;
-  animation-fill-mode: forwards; }
+  @media (max-width: 1024px) {
+    .motion {
+      display: none; } }
 
 .pixels {
   overflow: hidden;
@@ -510,12 +509,16 @@ h1 {
     animation-delay: .5s;
     animation: appear3d 1.2s cubic-bezier(0.22, 0.61, 0.36, 1); }
   .browser h2 {
+    opacity: 1;
+    z-index: 99999;
     position: absolute;
-    top: -180px;
+    top: -80px;
+    padding-left: 18px;
     left: 0;
-    transition: all 1s ease-in-out;
+    animation-fill-mode: forwards;
     animation-delay: 1s;
-    animation: slideInUp 1.2s cubic-bezier(0.22, 0.61, 0.36, 1); }
+    animation: slideInUp 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+    color: #111111 !important; }
   .browser__step1--footer {
     align-items: flex-end;
     justify-content: space-between;

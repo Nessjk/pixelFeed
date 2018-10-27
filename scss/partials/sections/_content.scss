@@ -1,5 +1,9 @@
 .content {
     padding: 100px;
+
+    @media (max-width: 768px) {
+        padding: 60px;
+    }
 }
 
 .text {
@@ -7,6 +11,10 @@
         margin-top: 96px;
         color: #111111;
         margin-bottom: 0px;
+
+        @media (max-width: 768px) {
+            font-size: 62px;
+        }
     }
 
     & p {
@@ -14,3 +22,4 @@
         color: #525252;
     }
 }
+
