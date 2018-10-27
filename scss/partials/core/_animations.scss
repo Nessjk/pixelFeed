@@ -193,6 +193,13 @@
     100%  { transform: translateY(-44%); }
   }
 
+  @keyframes scrollDownVersion2 {
+    0%    { transform: translateY(0%); }
+    20%    { transform: translateY(0%); }
+    80%  { transform: translateY(-50%); }
+    100%  { transform: translateY(0%); }
+  }
+
   @keyframes scaleClick {
     0%    { transform: scale(1); }
     50%  { transform: scale(1.2); }
@@ -256,7 +263,6 @@
       transform: scale(1);
     }
  }
-
 
 
  /* Enter and leave animations can use different */

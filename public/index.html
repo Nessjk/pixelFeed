@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
-<body>
+<body >
 
     <!-- Lottie Animation -->
     <div class="lottieAnimation d-none">
@@ -21,6 +21,22 @@
         <div id="lottie" class="lottie">
 
         </div>
+    </div>
+
+    <div id="app">
+
+    
+    <div :class=" showOptin ? 'd-flex' : 'd-none' " @click="optinNow()" class="optinWindow">
+        <div class="optinModal">
+            <h2>Welcome! You are a:</h2>
+            <div class="choice">
+                    <div class="choice__input">Freelancer</div>
+                    <div class="choice__input">Agency</div>
+                    <div class="choice__input">Friend</div>
+            </div>
+           
+        </div>
+      
     </div>
 
   
@@ -58,7 +74,7 @@
 
             <!-- Optin -->
             <div class="optin">
-                <div class="btn--CTA" id="earlyAccess">
+                <div class="btn--CTA" id="earlyAccess" @click="optinNow()">
 
                     <div class="earlyAccess">
                         <p>Get Early Access</p>
@@ -110,7 +126,7 @@
                 <h2 >Get Ideas and Brainstorm <br> with you client  quickly</h2>
             </div>
             <div v-show="step === 2">
-                <h2 >Get Ideas and Brainstorm <br> with you client  quickly</h2>
+                <h2 >Get Direct and Clear Feedback <br> straight in the app</h2>
             </div>
             <div v-show="step === 3">
                 <h2>Skip emails, get all your clients <br> activity in one place.</h2>
@@ -120,7 +136,7 @@
             <div  class="browser">
 
                 <!-- Browswer SVG -->
-                <svg v-show="step === 1 || step === 3" xmlns="http://www.w3.org/2000/svg" width="533" height="356" viewBox="0 0 533 356">
+                <svg xmlns="http://www.w3.org/2000/svg" width="533" height="356" viewBox="0 0 533 356">
                     <defs>
                         <filter id="browser-a" width="113.2%" height="120.6%" x="-6.6%" y="-8.7%" filterUnits="objectBoundingBox">
                             <feOffset dy="5" in="SourceAlpha" result="shadowOffsetOuter1" />
@@ -191,18 +207,41 @@
 
                 <!-- STEP 2 -->
                 <div class="step step--2" v-show="step === 2">
-                    <!-- <div class="browser__content browser__step2">
-                        <img src="./img/img/screenshot.png" alt="">
-                    </div> -->
-                    <video width="695" height="600" autoplay="autoplay">
-                            <source src="./img/videos/feedback-step--2.mov" type="video/mp4" />
-                          </video>
-                    <!-- <video width="320" height="240" controls>
-                            <source src="./img/videos/feedback-step--2.mov" type="video/mp4">
-                          Your browser does not support the video tag.
-                          </video>
-                    <div class="step--2__icons"> -->
+                    <div class="browser__content browser__step2">
+                        <img src="./img/img/screenshot--2-min.jpg" alt="">
+                    </div>
+                    <!-- <video oncanplay="logOnPlay()" id="feedbackVid" width="695" height="600" autoplay="autoplay" loop="true">
+                            <source src="./img/videos/feedback-step--2.mp4" type="video/mp4" />
+                          </video> -->
+                    <!-- <img src="./img/" alt=""> -->
 
+                    <div class="step--1__icons" style="position: absolute;bottom: 0;display: flex;">
+
+                     
+                        <div class="browser__icons" >
+                            <img src="./img/img/wand--active.png" alt="">
+                            <img src="./img/svg/btn-no.svg" alt="">
+                            <img class="icon__yes--inactive" src="./img/svg/btn-yes.svg" alt="">
+
+                        </div>
+                     
+
+                    </div><!-- end footer icons -->
+
+                        
+                    <div class="step--2__chat">
+                        <div class="chat chat--1">
+                            <p>Great job on this section!</p>
+                        </div>
+                        <div class="chat chat--2">
+                            <p>Could you uppercase every word</p>
+                        </div>
+                        <div class="chat chat--3">
+                            <p>Fantastic job on the icons</p>
+                        </div>
+                        <div class="chat chat--4">
+                            <p>Could you reduce the gap</p>
+                        </div>
                     </div>
                 </div>
 
@@ -225,9 +264,16 @@
 
     </div> <!-- End Row -->
 
+</div>
+    <script>
+            function logOnPlay() {
+                console.log('detected playing...');
+            }
+    </script>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
     <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+   
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js"></script> -->
 
 
@@ -251,7 +297,7 @@
             // ],
             data() {
                 return {
-                    step: 3,
+                    step: 1,
 
                     // Step 1: Tinder style option properties
                     image: null,
@@ -261,7 +307,10 @@
                     showActiveNo: false,
 
                     // Step 3
-                    magnify: 1
+                    magnify: 1,
+
+                    // Other on page interactions
+                    showOptin: false
                 }
             },
             methods: {
@@ -326,12 +375,19 @@
                             console.log('clear interval and move step');
                             
                             // TEMP paused the step progress
-                            //this.step++
+                            this.step++
+                            this.step2();
                             
                             window.clearInterval(interval);
                         }
                     }, 3000)
 
+                },
+                step2() {
+                    setTimeout(() => {
+                        this.step++
+                        this.step3();
+                    }, 11000);
                 },
                 //// STEP 3
                 step3() {
@@ -342,21 +398,26 @@
                         this.magnify += 1
                         x++;
 
-                        if (x == 4) { 
-                            x = 1;
+                        // if (x == 4) { 
+                        //     x = 1;
+                        //     this.magnify = 1;
+                        // };
+
+
+                        if (x == 4) {
+                            console.log('Magnify looped once');
+                            
+                            // Reset
+                            this.step = 1;
+                            this.step1();
                             this.magnify = 1;
-                        };
-
-
-                        if (x == 3) {
-                            console.log('clear interval and move step');
                             
-                            // TEMP paused the step progress
-                            //this.step++
-                            
-                           // window.clearInterval(interval);
+                            window.clearInterval(interval);
                         }
                     }, 3000)
+                },
+                optinNow() {
+                    this.showOptin = !this.showOptin
                 }
             },
             beforeMount() {
@@ -365,18 +426,10 @@
                 this.image = this.images[0];
             },
             mounted() {
-                // STEP 1
-                if (this.step === 1 ) {
-                    this.step1();
-                }
+                // First Run
+                this.step1();
+                //this.step3();
                
-                // STEP 2
-
-                // STEP 3
-                if (this.step === 3 ) {
-                    this.step3();
-                }
-
             }
         });
     </script>
